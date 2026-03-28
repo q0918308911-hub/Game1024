@@ -1,0 +1,20 @@
+
+UI_Back.webp
+size: 960,1120
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+FG_backgronud
+  rotate: false
+  xy: 2, 2
+  size: 956, 548
+  orig: 956, 548
+  offset: 0, 0
+  index: -1
+NG_backgronud
+  rotate: false
+  xy: 2, 552
+  size: 956, 564
+  orig: 956, 564
+  offset: 0, 0
+  index: -1

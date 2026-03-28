@@ -1,0 +1,76 @@
+
+skeleton.png
+size: 444,76
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+FG_remaining_fnt_0
+  rotate: false
+  xy: 2, 2
+  size: 42, 70
+  orig: 42, 70
+  offset: 0, 0
+  index: -1
+FG_remaining_fnt_1
+  rotate: false
+  xy: 46, 2
+  size: 42, 70
+  orig: 42, 70
+  offset: 0, 0
+  index: -1
+FG_remaining_fnt_2
+  rotate: false
+  xy: 90, 2
+  size: 42, 70
+  orig: 42, 70
+  offset: 0, 0
+  index: -1
+FG_remaining_fnt_3
+  rotate: false
+  xy: 134, 2
+  size: 42, 70
+  orig: 42, 70
+  offset: 0, 0
+  index: -1
+FG_remaining_fnt_4
+  rotate: false
+  xy: 178, 2
+  size: 42, 70
+  orig: 42, 70
+  offset: 0, 0
+  index: -1
+FG_remaining_fnt_5
+  rotate: false
+  xy: 222, 2
+  size: 42, 70
+  orig: 42, 70
+  offset: 0, 0
+  index: -1
+FG_remaining_fnt_6
+  rotate: false
+  xy: 266, 2
+  size: 42, 70
+  orig: 42, 70
+  offset: 0, 0
+  index: -1
+FG_remaining_fnt_7
+  rotate: false
+  xy: 310, 2
+  size: 42, 70
+  orig: 42, 70
+  offset: 0, 0
+  index: -1
+FG_remaining_fnt_8
+  rotate: false
+  xy: 354, 2
+  size: 42, 70
+  orig: 42, 70
+  offset: 0, 0
+  index: -1
+FG_remaining_fnt_9
+  rotate: false
+  xy: 398, 2
+  size: 42, 70
+  orig: 42, 70
+  offset: 0, 0
+  index: -1

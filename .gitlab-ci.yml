@@ -1,0 +1,100 @@
+variables:
+  GAME_CODE: "game1001"
+
+  FTP_URL: "ftp://34.80.102.55"
+  FTP_USER: "ftpuser"
+  FTP_PASSWORD: "Wan@123"
+  FTP_REMOTE_PATH: "/var/www/html/h5_game/cocos"
+  WEBROOT_PATH: "/opt/homebrew/var/www"
+
+stages:
+  - build
+  - upload
+  - typedoc
+
+job_build:
+  stage: build
+  before_script:
+    #因為會reset系統環境變數，但若job中斷，系統環境變數不會回復，因此在這邊直接新增要用到的系統環境變數
+    - export PATH="/opt/homebrew/bin:$PATH"
+    - export PATH="/opt/homebrew/sbin:$PATH"
+    - tr -d '\r' < compress_astc.sh > temp_compress_astc.sh
+    - mv temp_compress_astc.sh compress_astc.sh
+    - chmod +x compress_astc.sh
+  script:
+    - echo $PATH
+    - echo $CI_PROJECT_DIR
+    - echo $CI_COMMIT_REF_NAME
+    - pwd
+    #cocos creator在mac上的build process目前會不正常結束，但打出的包是可用的，因此在這邊忽略執行結果
+    - chmod -R 777 /Users/user/builds
+    - /Applications/Cocos/Creator/3.8.3/CocosCreator.app/Contents/MacOS/CocosCreator --project $CI_PROJECT_DIR --build "configPath=./buildConfig/buildConfig_web-mobile.json;" || true
+    - ./compress_astc.sh ./build/${GAME_CODE}
+  after_script:
+    - echo "CocosCreator build complete."
+  artifacts:
+    paths:
+      - build
+  #when: manual
+  #避免自動觸發流水線
+  rules:
+    - if: '$CI_PIPELINE_SOURCE != "push"'
+
+job_upload:
+  stage: upload
+  before_script:
+    #因為會reset系統環境變數，但若job中斷，系統環境變數不會回復，因此在這邊直接新增要用到的系統環境變數
+    - export PATH="/opt/homebrew/bin:$PATH"
+    - export PATH="/opt/homebrew/sbin:$PATH"
+  script:
+    - echo $PATH
+    - echo $FTP_REMOTE_PATH
+    #ftp server目前在內網，改用主動模式，server主動連線到client
+    #ftp server若在外網，可改用被動模式，client主動連線到server
+    - localpath="${CI_PROJECT_DIR}/build/${GAME_CODE}"
+    - echo $localpath
+    - remotepath="${FTP_REMOTE_PATH}/${GAME_CODE}"
+    - echo $remotepath
+    - lftp -u $FTP_USER,$FTP_PASSWORD -e "set ftp:passive-mode no; rm -r $remotepath/*; mirror -R $localpath $remotepath --delete; quit" $FTP_URL
+  # when: manual
+  #避免自動觸發流水線
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "push" || $CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: never
+    - when: on_success
+
+generate_typedoc:
+  image: node:latest
+  stage: typedoc
+  rules:
+    # 如果沒有 tag，這個 job 不會執行
+    - if: '$CI_COMMIT_TAG == null || $CI_COMMIT_TAG == ""'
+      when: never
+    # 有 tag 的情況 → 自動執行
+    - if: "$CI_COMMIT_TAG"
+      when: on_success
+  before_script:
+    - export PATH="/opt/homebrew/bin:$PATH"
+    - export PATH="/opt/homebrew/sbin:$PATH"
+  script:
+    - echo $PATH
+    - echo $CI_PROJECT_DIR
+    - echo $CI_COMMIT_TAG
+    - pwd
+    - npm install
+    - mkdir -p temp
+    - touch temp/tsconfig.cocos.json
+    - typedocpath="${WEBROOT_PATH}/typedoc/${CI_PROJECT_NAME}/${CI_COMMIT_TAG}"
+    #- sourcepath="${CI_PROJECT_DIR}/assets/**/*.ts"
+    #- echo "Checking TypeScript files..."
+    #- find assets -name "*.ts"
+    #- npx typedoc --skipErrorChecking --entryPointStrategy expand --out $typedocpath $sourcepath
+    - npx typedoc --skipErrorChecking --entryPointStrategy expand --tsconfig tsconfig.json --out $typedocpath --excludeProtected false --excludePrivate false $(find assets -name "*.ts") 
+    - mkdir -p $typedocpath/images
+    - shopt -s nullglob #bash 如果找不到檔案，不會報錯
+    - cp -R assets/TypeDocAssets/${CI_COMMIT_TAG}/*.{png,jpg,jpeg} $typedocpath/images #拷貝圖片
+  after_script:
+    - echo "Generate docs complete."
+  artifacts:
+    paths:
+      - typedoc

@@ -1,0 +1,258 @@
+
+FG.webp
+size: 976,1908
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+lig
+  rotate: false
+  xy: 804, 293
+  size: 128, 64
+  orig: 128, 64
+  offset: 0, 0
+  index: -1
+somke/somke_00
+  rotate: false
+  xy: 632, 1735
+  size: 170, 170
+  orig: 170, 170
+  offset: 0, 0
+  index: -1
+somke/somke_01
+  rotate: false
+  xy: 632, 1563
+  size: 170, 170
+  orig: 170, 170
+  offset: 0, 0
+  index: -1
+somke/somke_02
+  rotate: false
+  xy: 632, 1391
+  size: 170, 170
+  orig: 170, 170
+  offset: 0, 0
+  index: -1
+somke/somke_03
+  rotate: false
+  xy: 632, 1219
+  size: 170, 170
+  orig: 170, 170
+  offset: 0, 0
+  index: -1
+somke/somke_04
+  rotate: false
+  xy: 632, 1047
+  size: 170, 170
+  orig: 170, 170
+  offset: 0, 0
+  index: -1
+somke/somke_05
+  rotate: false
+  xy: 632, 875
+  size: 170, 170
+  orig: 170, 170
+  offset: 0, 0
+  index: -1
+somke/somke_06
+  rotate: false
+  xy: 632, 703
+  size: 170, 170
+  orig: 170, 170
+  offset: 0, 0
+  index: -1
+somke/somke_07
+  rotate: false
+  xy: 632, 531
+  size: 170, 170
+  orig: 170, 170
+  offset: 0, 0
+  index: -1
+somke/somke_08
+  rotate: false
+  xy: 632, 359
+  size: 170, 170
+  orig: 170, 170
+  offset: 0, 0
+  index: -1
+somke/somke_09
+  rotate: false
+  xy: 632, 187
+  size: 170, 170
+  orig: 170, 170
+  offset: 0, 0
+  index: -1
+somke/somke_10
+  rotate: false
+  xy: 632, 15
+  size: 170, 170
+  orig: 170, 170
+  offset: 0, 0
+  index: -1
+somke/somke_11
+  rotate: false
+  xy: 804, 1735
+  size: 170, 170
+  orig: 170, 170
+  offset: 0, 0
+  index: -1
+somke/somke_12
+  rotate: false
+  xy: 804, 1563
+  size: 170, 170
+  orig: 170, 170
+  offset: 0, 0
+  index: -1
+somke/somke_13
+  rotate: false
+  xy: 804, 1391
+  size: 170, 170
+  orig: 170, 170
+  offset: 0, 0
+  index: -1
+somke/somke_14
+  rotate: false
+  xy: 804, 1219
+  size: 170, 170
+  orig: 170, 170
+  offset: 0, 0
+  index: -1
+somke/somke_15
+  rotate: false
+  xy: 804, 1047
+  size: 170, 170
+  orig: 170, 170
+  offset: 0, 0
+  index: -1
+somke/somke_16
+  rotate: false
+  xy: 804, 875
+  size: 170, 170
+  orig: 170, 170
+  offset: 0, 0
+  index: -1
+somke/somke_17
+  rotate: false
+  xy: 804, 703
+  size: 170, 170
+  orig: 170, 170
+  offset: 0, 0
+  index: -1
+somke/somke_18
+  rotate: false
+  xy: 804, 531
+  size: 170, 170
+  orig: 170, 170
+  offset: 0, 0
+  index: -1
+somke/somke_19
+  rotate: false
+  xy: 804, 359
+  size: 170, 170
+  orig: 170, 170
+  offset: 0, 0
+  index: -1
+star_01/star_01_00
+  rotate: false
+  xy: 2, 1526
+  size: 208, 379
+  orig: 208, 379
+  offset: 0, 0
+  index: -1
+star_01/star_01_01
+  rotate: false
+  xy: 2, 1145
+  size: 208, 379
+  orig: 208, 379
+  offset: 0, 0
+  index: -1
+star_01/star_01_02
+  rotate: false
+  xy: 2, 764
+  size: 208, 379
+  orig: 208, 379
+  offset: 0, 0
+  index: -1
+star_01/star_01_03
+  rotate: false
+  xy: 2, 383
+  size: 208, 379
+  orig: 208, 379
+  offset: 0, 0
+  index: -1
+star_01/star_01_04
+  rotate: false
+  xy: 2, 2
+  size: 208, 379
+  orig: 208, 379
+  offset: 0, 0
+  index: -1
+star_01/star_01_05
+  rotate: false
+  xy: 212, 1526
+  size: 208, 379
+  orig: 208, 379
+  offset: 0, 0
+  index: -1
+star_01/star_01_06
+  rotate: false
+  xy: 212, 1145
+  size: 208, 379
+  orig: 208, 379
+  offset: 0, 0
+  index: -1
+star_01/star_01_07
+  rotate: false
+  xy: 212, 764
+  size: 208, 379
+  orig: 208, 379
+  offset: 0, 0
+  index: -1
+star_01/star_01_08
+  rotate: false
+  xy: 212, 383
+  size: 208, 379
+  orig: 208, 379
+  offset: 0, 0
+  index: -1
+star_01/star_01_09
+  rotate: false
+  xy: 212, 2
+  size: 208, 379
+  orig: 208, 379
+  offset: 0, 0
+  index: -1
+star_01/star_01_10
+  rotate: false
+  xy: 422, 1526
+  size: 208, 379
+  orig: 208, 379
+  offset: 0, 0
+  index: -1
+star_01/star_01_11
+  rotate: false
+  xy: 422, 1145
+  size: 208, 379
+  orig: 208, 379
+  offset: 0, 0
+  index: -1
+star_01/star_01_12
+  rotate: false
+  xy: 422, 764
+  size: 208, 379
+  orig: 208, 379
+  offset: 0, 0
+  index: -1
+star_01/star_01_13
+  rotate: false
+  xy: 422, 383
+  size: 208, 379
+  orig: 208, 379
+  offset: 0, 0
+  index: -1
+star_01/star_01_14
+  rotate: false
+  xy: 422, 2
+  size: 208, 379
+  orig: 208, 379
+  offset: 0, 0
+  index: -1

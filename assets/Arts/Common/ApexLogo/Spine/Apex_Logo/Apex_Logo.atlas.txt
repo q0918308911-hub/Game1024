@@ -1,0 +1,494 @@
+
+Apex_Logo.webp
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+jpeg_LogoAni_300x360_00005
+  rotate: false
+  xy: 2, 1512
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00006
+  rotate: false
+  xy: 2, 1210
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00007
+  rotate: false
+  xy: 364, 1512
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00008
+  rotate: false
+  xy: 2, 908
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00009
+  rotate: false
+  xy: 364, 1210
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00010
+  rotate: false
+  xy: 726, 1512
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00011
+  rotate: false
+  xy: 2, 606
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00012
+  rotate: false
+  xy: 364, 908
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00013
+  rotate: false
+  xy: 726, 1210
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00014
+  rotate: false
+  xy: 1088, 1512
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00015
+  rotate: false
+  xy: 2, 304
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00016
+  rotate: false
+  xy: 364, 606
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00017
+  rotate: false
+  xy: 726, 908
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00018
+  rotate: false
+  xy: 1088, 1210
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00019
+  rotate: false
+  xy: 1450, 1512
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00020
+  rotate: false
+  xy: 2, 2
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00021
+  rotate: false
+  xy: 364, 304
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00022
+  rotate: false
+  xy: 726, 606
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00023
+  rotate: false
+  xy: 1088, 908
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00024
+  rotate: false
+  xy: 1450, 1210
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00025
+  rotate: false
+  xy: 364, 2
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00026
+  rotate: false
+  xy: 726, 304
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00027
+  rotate: false
+  xy: 1088, 606
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00028
+  rotate: false
+  xy: 1450, 908
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00029
+  rotate: false
+  xy: 726, 2
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00030
+  rotate: false
+  xy: 1088, 304
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00031
+  rotate: false
+  xy: 1450, 606
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00032
+  rotate: false
+  xy: 1088, 2
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00033
+  rotate: false
+  xy: 1450, 304
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00034
+  rotate: false
+  xy: 1450, 2
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+
+Apex_Logo2.webp
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+jpeg_LogoAni_300x360_00035
+  rotate: false
+  xy: 2, 1512
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00036
+  rotate: false
+  xy: 2, 1210
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00037
+  rotate: false
+  xy: 364, 1512
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00038
+  rotate: false
+  xy: 2, 908
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00039
+  rotate: false
+  xy: 364, 1210
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00040
+  rotate: false
+  xy: 726, 1512
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00041
+  rotate: false
+  xy: 2, 606
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00042
+  rotate: false
+  xy: 364, 908
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00043
+  rotate: false
+  xy: 726, 1210
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00044
+  rotate: false
+  xy: 1088, 1512
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00045
+  rotate: false
+  xy: 2, 304
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00046
+  rotate: false
+  xy: 364, 606
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00047
+  rotate: false
+  xy: 726, 908
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00048
+  rotate: false
+  xy: 1088, 1210
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00049
+  rotate: false
+  xy: 1450, 1512
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00050
+  rotate: false
+  xy: 2, 2
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00051
+  rotate: false
+  xy: 364, 304
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00052
+  rotate: false
+  xy: 726, 606
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00053
+  rotate: false
+  xy: 1088, 908
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00054
+  rotate: false
+  xy: 1450, 1210
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00055
+  rotate: false
+  xy: 364, 2
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00056
+  rotate: false
+  xy: 726, 304
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00057
+  rotate: false
+  xy: 1088, 606
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00058
+  rotate: false
+  xy: 1450, 908
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00059
+  rotate: false
+  xy: 726, 2
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00060
+  rotate: false
+  xy: 1088, 304
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00061
+  rotate: false
+  xy: 1450, 606
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00062
+  rotate: false
+  xy: 1088, 2
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00063
+  rotate: false
+  xy: 1450, 304
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00064
+  rotate: false
+  xy: 1450, 2
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+
+Apex_Logo3.webp
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+jpeg_LogoAni_300x360_00065
+  rotate: false
+  xy: 2, 726
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00066
+  rotate: true
+  xy: 364, 666
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00067
+  rotate: true
+  xy: 2, 364
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00068
+  rotate: false
+  xy: 304, 364
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00069
+  rotate: true
+  xy: 666, 666
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00070
+  rotate: true
+  xy: 666, 304
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00071
+  rotate: true
+  xy: 2, 2
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1
+jpeg_LogoAni_300x360_00072
+  rotate: true
+  xy: 304, 2
+  size: 360, 300
+  orig: 360, 300
+  offset: 0, 0
+  index: -1

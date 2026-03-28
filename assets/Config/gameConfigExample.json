@@ -1,0 +1,12 @@
+{
+  "gameID": "Game1001",
+  "gameNumber": 12099,
+  "versionCode": "1",
+  "gameCode": "W002",
+  "idleTimeoutLimit": 600,
+  "isExhibition": false,
+  "isOnline": true,
+  "debugLocalization": false,
+  "debugLanguageKey": "en",
+  "mobileFPS": 61
+}

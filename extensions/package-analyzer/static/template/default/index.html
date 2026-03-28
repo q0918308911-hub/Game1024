@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <label for="comboBuild">選擇包體目錄:</label>
+            <select id="comboBuild">
+                <option selected disabled>-- 選擇包體資料夾 --</option>
+            </select>
+            <span id="labelLoading"></span>
+
+            <label class="info-label" id="labelTotal">總檔案大小:</label>
+            <label class="info-label" id="labelBasePath">包體路徑:</label>
+            <div class="tip">點擊檔案會在資源管理器選中對應資源</div>
+
+            <div class="tree-view" id="tree">
+                <!-- 這裡放檔案樹狀結構 -->
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

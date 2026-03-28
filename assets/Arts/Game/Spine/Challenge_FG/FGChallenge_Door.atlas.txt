@@ -1,0 +1,20 @@
+
+FGChallenge_Door.webp
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+door A
+  rotate: false
+  xy: 2, 2
+  size: 320, 361
+  orig: 320, 361
+  offset: 0, 0
+  index: -1
+door B
+  rotate: false
+  xy: 324, 2
+  size: 320, 361
+  orig: 320, 361
+  offset: 0, 0
+  index: -1

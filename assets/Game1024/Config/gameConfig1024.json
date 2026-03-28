@@ -1,0 +1,14 @@
+{
+    "gameID": "Game1024",
+    "gameNumber": 12052,
+    "versionCode": "2.1",
+    "annotationGameCode": "註解:尚未給,要去總表看",
+    "gameCode": "W031",
+    "idleTimeoutLimit": 600,
+    "annotationIsExhibition": "isExhibition,在開發站上要true,星城webTest是false,產品上線再打開true",
+    "isExhibition": true,
+    "annotationIsOnline": "註解:gameCode尚未給,就先ofLine",
+    "isOnline": false,
+    "debugLocalization": false,
+    "debugLanguageKey": "en"
+}

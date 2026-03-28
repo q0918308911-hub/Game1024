@@ -1,0 +1,272 @@
+
+loading_page1_top.webp
+size: 1588,264
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Icon00_02/Icon00_02_00
+  rotate: false
+  xy: 1466, 89
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon01_02/Icon01_02_00
+  rotate: false
+  xy: 2, 88
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon02_02/Icon02_02_00
+  rotate: false
+  xy: 124, 175
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon04_02/Icon04_02_00
+  rotate: false
+  xy: 2, 2
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon05_02/Icon05_02_00
+  rotate: false
+  xy: 124, 89
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon06_02/Icon06_02_00
+  rotate: false
+  xy: 246, 175
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon07_02/Icon07_02_00
+  rotate: false
+  xy: 124, 3
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon08_02/Icon08_02_00
+  rotate: false
+  xy: 2, 174
+  size: 120, 85
+  orig: 128, 96
+  offset: 4, 5
+  index: -1
+Icon11/Icon11_00
+  rotate: false
+  xy: 246, 89
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon11/Icon11_01
+  rotate: false
+  xy: 368, 175
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon11/Icon11_02
+  rotate: false
+  xy: 246, 3
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon11/Icon11_03
+  rotate: false
+  xy: 368, 89
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon11/Icon11_04
+  rotate: false
+  xy: 490, 175
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon11/Icon11_05
+  rotate: false
+  xy: 368, 3
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon11/Icon11_06
+  rotate: false
+  xy: 490, 89
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon11/Icon11_07
+  rotate: false
+  xy: 612, 175
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon11/Icon11_08
+  rotate: false
+  xy: 490, 3
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon11/Icon11_09
+  rotate: false
+  xy: 612, 89
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon11/Icon11_10
+  rotate: false
+  xy: 734, 175
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon11/Icon11_11
+  rotate: false
+  xy: 612, 3
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon11/Icon11_12
+  rotate: false
+  xy: 734, 89
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon11/Icon11_13
+  rotate: false
+  xy: 856, 175
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon11/Icon11_14
+  rotate: false
+  xy: 734, 3
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon11/Icon11_15
+  rotate: false
+  xy: 856, 89
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon11/Icon11_16
+  rotate: false
+  xy: 978, 175
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon11/Icon11_17
+  rotate: false
+  xy: 856, 3
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon11/Icon11_18
+  rotate: false
+  xy: 978, 89
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon11/Icon11_19
+  rotate: false
+  xy: 1100, 175
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon11/Icon11_20
+  rotate: false
+  xy: 978, 3
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon11/Icon11_21
+  rotate: false
+  xy: 1100, 89
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon11/Icon11_22
+  rotate: false
+  xy: 1222, 175
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon11/Icon11_23
+  rotate: false
+  xy: 1100, 3
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon11/Icon11_24
+  rotate: false
+  xy: 1222, 89
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon11/Icon11_25
+  rotate: false
+  xy: 1344, 175
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon11/Icon11_26
+  rotate: false
+  xy: 1222, 3
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon11/Icon11_27
+  rotate: false
+  xy: 1344, 89
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon11/Icon11_28
+  rotate: false
+  xy: 1466, 175
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon11/Icon11_29
+  rotate: false
+  xy: 1344, 3
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1

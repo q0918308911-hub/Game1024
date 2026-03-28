@@ -1,0 +1,25 @@
+import { _decorator } from "cc";
+import { BasicWayAni } from "../IWayAniDef/IWayAniDef";
+
+const WAN_SHOW_ANI_STATE = 'Show';
+
+const { ccclass, property } = _decorator;
+@ccclass('FgWayAni')
+export class FgWayAni extends BasicWayAni {
+
+    public playWayAni(): void {
+
+        //this.setScoreLabel(wayNum);
+        this._wayAniController.playAni({ aniState: WAN_SHOW_ANI_STATE });
+    }
+    public goBackToDefault(): void {
+
+        this._wayAniController.goBackToDefault();
+    }
+
+    public resetWayAni(): void {
+
+        //this.setScoreLabel(0);
+        this._wayAniController.goBackToDefault();
+    }
+}

@@ -1,0 +1,2985 @@
+var slotDataParser9991015: Function = null;
+
+Array.prototype.count = function (value) {
+    return this.filter(x => x == value).length;
+}
+
+//計算陣列中，所有參數陣列元素出現的次數 例如 arr = [1,2,3,3,4] arr.countOccurrencesOfArray([2,3]) 會等於 3 
+Array.prototype.countOccurrencesOfArray = function (arr) {
+    return arr.reduce((count, elem) => {
+        return count + this.filter(x => x === elem).length;
+    }, 0);
+};
+
+Array.prototype.indexesOf = function (value) {
+    var positions = this.map(function (e, i) {
+        return e === value ? i : -1;
+    }).filter(function (e) {
+        return e !== -1;
+    });
+    return positions;
+}
+
+Array.prototype.set = function () {
+    let set = new Set(this);
+    let arr = Array.from(set);
+    return arr;
+}
+
+Array.prototype.setSelf = function () {
+    let uniqueValues = Array.from(new Set(this)); // 取得去重後的陣列
+    this.length = 0; // 清空原陣列
+    this.push(...uniqueValues); // 將去重後的元素推回原陣列
+    return this; // 返回修改後的陣列（可選）
+}
+
+// 為 Array.prototype 添加一個名為 remove 的方法
+Array.prototype.remove = function (value) {
+    // 找到元素的索引
+    const index = this.indexOf(value);
+    // 如果找到該元素
+    if (index > -1) {
+        // 使用 splice 方法從數組中移除該元素
+        this.splice(index, 1);
+    }
+    // 返回數組自身以便方法鏈接
+    return this;
+};
+
+Array.prototype.getRandomElement = function () {
+    let len = this.length;
+    let index = Math.floor(Math.random() * len);
+    return this[index];
+}
+
+Number.prototype.fixed = function () {
+    return parseFloat(this.toFixed(4));
+}
+
+Number.prototype.readByte = function (start, length) {
+    let byte = this.valueOf();
+    if (byte < 0 || byte > 255) {
+        console.error('Number out of range');
+        return byte;
+    }
+
+    let mask = (1 << length) - 1;
+    // 右移，使 start 位置的 bit 变成最低位
+    return (byte >> (8 - start - length)) & mask;
+}
+
+
+{
+
+    class ArrayUtil {
+        // 
+        /**
+         * 將陣列轉成正整數. 
+         * @param arbtNumber 每個number代表一個byte, 以BigEndian排列.
+         * @return number 正整數, 如果發生溢位則傳回0.
+         */
+        public static convertArrayToNumber(arbtNumber: number[]): number {
+            if (!arbtNumber) return 0;
+
+            let iLength: number = arbtNumber.length;
+            let nValue: number = 0;
+            try {
+                for (let i: number = 0; i < iLength; ++i) {
+                    nValue += (arbtNumber[i] << (8 * (iLength - i - 1)));
+                }
+            } catch (error) {
+                nValue = 0;
+            }
+            return nValue;
+        }
+
+        /**
+         * 將正整數轉成number陣列.
+         * @param nValue 要轉換的數字, 須為正整數.
+         * @param iDigits 處理幾位數
+         * @return number[] 轉換的結果, 陣列大小等於iDigits, 每個number存放一個byte的資料.
+         */
+        // 
+        public static convertNumberToArray(nValue: number, iDigits: number): number[] {
+            if (iDigits <= 0) {
+                return null;
+            }
+            let arbtNumber: number[] = [];
+            for (let i: number = 0; i < iDigits; ++i) {
+                arbtNumber[i] = (nValue >> (8 * (iDigits - i - 1))) & 0xff;
+            }
+            return arbtNumber;
+        }
+
+        /**
+         * 將字串的字碼以number陣列的形式傳回. 
+         * @param szData 
+         * @return number[] 每2個number代表一個utf16的字元. (LittleEndian)
+         */
+        public static convertStringToUtf16Array(szData: string): number[] {
+            let aruiArray: number[] = [];
+            let iLength: number = szData.length;	// TODO: test 是字數?
+            let iCharCode: number = 0;
+            for (let i: number = 0; i < iLength; ++i) {
+                iCharCode = szData.charCodeAt(i);
+                aruiArray[2 * i] = iCharCode & 0xff;
+                aruiArray[2 * i + 1] = (iCharCode >> 8) & 0xff;
+            }
+            return aruiArray;
+        }
+
+        /**
+         * 將utf-16陣列轉成字串.
+         * @param arbtArray 每2個number代表一個utf16的字元. (LittleEndian)
+         * @return string 失敗傳回空字串.
+         */
+        public static convertUtf16ArrayToString(arbtArray: number[]): string {
+            if (null == arbtArray) {
+                return "";
+            }
+            let iLength: number = arbtArray.length / 2;	// TODO: test 是字數?
+            let aruiCharCode: string[] = [];
+            for (let i: number = 0; i < iLength; ++i) {
+                // aruiCharCode[i] = arbtArray[i * 2] + (arbtArray[i * 2 + 1] << 8);
+                aruiCharCode[i] = String.fromCharCode(arbtArray[i * 2] + (arbtArray[i * 2 + 1] << 8));
+            }
+            return aruiCharCode.join("");//2021-02-26改用join，不然會爆掉
+            // return String.fromCharCode.apply(null, aruiCharCode);
+        }
+
+
+        // // 將整數轉成iDigits個byte, 高位元在前.
+        // public static numberToBytes(iValue: number, iDigits: number): Uint8Array {
+        //     if (iDigits <= 0) {
+        //         return null;
+        //     }
+        //     let arbtData: Uint8Array = new Uint8Array[iDigits];
+        //     // 傳給server時, 高位元在前.
+        //     for (let i = iDigits - 1; i >= 0; --i) {
+        //         arbtData[i] = iValue & 0xff;
+        //         iValue >>= 8;
+        //     }
+        //     return arbtData;
+        // }
+
+        // // 合併兩個byte array.
+        // public static merge(arbtData1: Uint8Array, arbtData2: Uint8Array): Uint8Array {
+        //     let iLength1: number = 0;
+        //     let iLength2: number = 0;
+        //     if (arbtData1) {
+        //         iLength1 = arbtData1.length;
+        //     }
+        //     if (arbtData2) {
+        //         iLength2 = arbtData2.length;
+        //     }
+        //     if (0 == (iLength1 + iLength2)) {
+        //         return null;
+        //     }
+        //     let arbtMerge: Uint8Array = new Uint8Array[iLength1 + iLength2];
+        //     if (iLength1 > 0) {
+        //         arbtMerge.set(arbtData1);
+        //     }
+        //     if (iLength2 > 0) {
+        //         arbtMerge.set(arbtData2, iLength1);
+        //     }
+        //     return arbtMerge;
+        // }
+        // // 複製byte array.
+        // public static duplicate(arbtSource: Uint8Array): Uint8Array {
+        //     if (arbtSource) {
+        //         return null;
+        //     }
+        //     let arbtDuplicate: Uint8Array = new Uint8Array[arbtSource.length];
+        //     arbtDuplicate.set(arbtSource);
+        //     return arbtDuplicate;
+        // }
+        // // 在陣列後端添加一個數字.
+        // public static append(arbtData: Uint8Array, btData: number): Uint8Array {
+        //     return ArrayUtil.merge(arbtData, new Uint8Array[(btData)]);
+        // }
+        // // 在陣列前端插入一個數字.
+        // public static insertFirst(btData: number, arbtData: Uint8Array): Uint8Array {
+        //     return ArrayUtil.merge(new Uint8Array[(btData)], arbtData);
+        // }
+
+        /**
+         * 數字陣列重新排序(小至大)
+         * @param array 
+         */
+        public static sortNumAsce(array: number[]): void {
+            array.sort((a, b) => a - b);
+        }
+
+        /**
+         * 數字陣列重新排序(大至小)
+         * @param array 
+         */
+        public static sortNumDesc(array: number[]): void {
+            array.sort((a, b) => b - a);
+        }
+    }
+
+
+    class NetConst {
+        public static readonly SAVE_BITS_MEGA_STRING: number = 3;	// 傳給server時用於紀錄超大字串長度的位元組數.
+        public static readonly SAVE_BITS_STRING: number = 2; // 傳給server時用於紀錄字串長度的位元組數.
+        public static readonly HEADER_SIZE: number = 3;	// 封包表頭大小.
+    }
+
+    class DictionaryIterator<T> implements IteratorX<T> {
+        constructor(dictionary: Dictionary<T>) {
+            this.m_dictTarget = dictionary;
+        }
+        public getFirst(): T {
+            this.m_iCurrentIndex = 0;
+            if (null == this.m_dictTarget) {
+                return null;
+            }
+            this.m_arIterKey = this.m_dictTarget.getKeys();
+            return this.getNext();
+        }
+        public getNext(): T {
+            if (null == this.m_dictTarget) {
+                return null;
+            }
+            if (this.m_iCurrentIndex >= this.m_arIterKey.length) {
+                return null;
+            }
+            return this.m_dictTarget.get(this.m_arIterKey[this.m_iCurrentIndex++]);
+        }
+        public getCurrentKey(): string {
+            let tmp = this.m_iCurrentIndex - 1;
+            return this.m_arIterKey[tmp];
+        }
+        private m_dictTarget: Dictionary<T> = null;
+        private m_arIterKey: string[] = null;
+        private m_iCurrentIndex: number = 0;
+    }
+
+
+    class Dictionary<T> {
+
+        public constructor() {
+            this.m_KeyValue = new KeyValue<T>();
+        }
+
+        public getCount(): number {
+            return this.m_iCount;
+        }
+
+        // 新增.
+        public add(key: string, value: T) {
+            if (!this.containsKey(key)) {
+                ++this.m_iCount;
+            }
+            this.m_KeyValue[key] = value;
+        }
+
+        // 判斷key是否存在.
+        public containsKey(key: string): boolean {
+            if (undefined === this.m_KeyValue[key]) {
+                return false;
+            }
+            return true;
+        }
+
+        // 刪除.
+        public remove(key: string) {
+            if (true == this.containsKey(key)) {
+                delete this.m_KeyValue[key];
+                --this.m_iCount;
+            }
+        }
+
+        public clear() {
+            this.m_KeyValue = new KeyValue<T>();
+            this.m_iCount = 0;
+        }
+
+        // 取值, 找不到傳回undefined.
+        public get(key: any): T {
+            return this.m_KeyValue[key];
+        }
+
+        // 列舉所有key.
+        public getKeys(): string[] {
+            let listKey: List<string> = new List<string>();
+            for (let key in this.m_KeyValue) {
+                listKey.add(key);
+            }
+            return listKey.toArray();
+        }
+
+        // 列舉所有key/value.
+        public getKeyValues(): [string[], T[]] {
+            let listKey: List<string> = new List<string>();
+            let listValue: List<T> = new List<T>();
+            for (let key in this.m_KeyValue) {
+                listKey.add(key);
+                listValue.add(this.m_KeyValue[key]);
+            }
+            return [listKey.toArray(), listValue.toArray()];
+        }
+
+        // 取出Iterator.
+        public getIterator(): IteratorX<T> {
+            return IteratorFactory.createDictionaryIterator(this);
+        }
+
+        private m_KeyValue: KeyValue<T>;
+        private m_iCount: number = 0;
+    }
+
+    class KeyValue<T> {
+        [index: string]: T;
+    }
+
+
+    // =============== 以下處理各種型別的轉換 ===============
+    interface IteratorX<T> {
+        // 取得第一個元素, 如沒有資料傳回null.
+        getFirst(): T;
+        // 取得下一個元素, 如沒有資料傳回null.
+        getNext(): T;
+    }
+
+    class ListIterator<T> implements IteratorX<T> {
+        constructor(list: List<T>) {
+            this.m_listTarget = list;
+        }
+        public getFirst(): T {
+            this.m_iCurrentIndex = 0;
+            return this.getNext();
+        }
+        public getNext(): T {
+            if (null === this.m_listTarget) {
+                return null;
+            }
+            if (this.m_iCurrentIndex >= this.m_listTarget.getCount()) {
+                return null;
+            }
+            return this.m_listTarget.get(this.m_iCurrentIndex++);
+        }
+        private m_listTarget: List<T> = null;
+        private m_iCurrentIndex: number = 0;
+    }
+
+
+    class List<T> {
+        private m_arItem: Array<T>;
+
+        constructor(array?: any[]) {
+            this.m_arItem = array ? array : [];
+        }
+
+        public get array(): Array<T> {
+            return this.m_arItem;
+        }
+
+        public get Count(): number {
+            return this.m_arItem ? this.m_arItem.length : 0;
+        }
+
+        // 在串列頭新增.
+        public insert(value: T) {
+            this.m_arItem.unshift(value);
+        }
+
+        // 任意地方新增. 不要太常用.
+        public insertAt(iIndexAt: number, value: T): void {
+            let iTotalCount: number = this.getCount();
+            if (iIndexAt <= 0) {
+                this.insert(value);
+            }
+            else if (iIndexAt >= iTotalCount) {
+                this.add(value);
+            } else {
+                let arPart1: T[] = this.m_arItem.slice(0, iIndexAt);
+                let arPart2: T[] = this.m_arItem.slice(iIndexAt, iTotalCount);
+                this.m_arItem = arPart1.concat([value], arPart2);
+            }
+        }
+
+        // 新增物件.
+        public add(value: T): void {
+            this.m_arItem.push(value);
+        }
+
+        // 取出物件, 找不到傳回undefined.
+        public get(index: number): T {
+            if (index < 0 || index >= this.getCount()) {
+                return undefined;
+            }
+            return this.m_arItem[index];
+        }
+        // 在指定位置設定數值
+        public set(index: number, value: T) {
+            this.m_arItem[index] = value;
+        }
+        // 移除一個項目(第一個遇到的項目).
+        public remove(value: T) {
+            let iIndex: number = this.indexOf(value);
+            if (iIndex >= 0) {
+                this.m_arItem[iIndex] = null;
+                this.m_arItem.splice(iIndex, 1);
+            }
+        }
+
+        // 移除第iIndex個項目.
+        public removeAt(iIndex: number) {
+            if (iIndex < 0 || iIndex >= this.m_arItem.length) {
+                return;
+            } else if (iIndex == 0) {
+                this.removeFirst();
+            } else if (iIndex == this.m_arItem.length - 1) {
+                this.removeLast();
+            } else {
+                this.m_arItem[iIndex] = null;
+                this.m_arItem.splice(iIndex, 1);
+            }
+        }
+
+        /**
+         * 移除第一項
+         */
+        public removeFirst(): void {
+            this.m_arItem.shift();
+        }
+
+        public removeLast(): void {
+            this.m_arItem.pop();
+        }
+
+        // 取出數量.
+        public getCount(): number {
+            return this.m_arItem.length;
+        }
+
+        // 反查value在第幾個index.
+        public indexOf(value: T): number {
+            return this.m_arItem.indexOf(value);
+        }
+
+        // 清除全部.
+        public clear() {
+            if (this.m_arItem && this.m_arItem.length > 0) {
+                let iCount: number = this.m_arItem.length;
+
+                for (let i: number = 0; i < iCount; ++i) {
+                    this.m_arItem[i] = null;
+                }
+
+                this.m_arItem = null;
+                this.m_arItem = new Array<T>();
+            }
+        }
+
+        // 取出Iterator.
+        public getIterator(): IteratorX<T> {
+            return IteratorFactory.createListIterator(this);
+        }
+
+        // 轉成陣列.
+        public toArray(): T[] {
+            let iCount: number = this.getCount();
+            let arDuplicate: Array<T> = Array<T>(iCount);
+            for (let i = 0; i < iCount; ++i) {
+                arDuplicate[i] = this.m_arItem[i];
+            }
+            return arDuplicate;
+        }
+
+        public forEach(callbackfn: (value: T, index: number, array: T[]) => void, thisArg?: any): void {
+            this.m_arItem.forEach(callbackfn, thisArg);
+        }
+
+        public contains(value: T) {
+            return (this.m_arItem.indexOf(value) < 0) ? false : true;
+        }
+
+        public copyTo(target: List<T>): List<T> {
+            if (target) {
+                this.m_arItem.forEach((item: T) => {
+                    target.add(item);
+                })
+            }
+            return target;
+        }
+    }
+
+
+    class IteratorFactory {
+        /** 
+         * 產生List的迭代器.
+         */
+        public static createListIterator(list: List<any>): IteratorX<any> {
+            return new ListIterator(list);
+        }
+        /** 
+         * 產生Dictionary的迭代器.
+         */
+        public static createDictionaryIterator(dictionary: Dictionary<any>): IteratorX<any> {
+            return new DictionaryIterator(dictionary);
+        }
+    }
+
+
+    // TODO -- 資源回收.
+
+    interface IDataType {
+        getSize(): number;
+        writeTo(dataView: DataView, iOffset: number): number;
+    }
+
+    class DataBinaryBuffer implements IDataType {
+        constructor(compositor: BinaryBufferWriter) {
+            this.m_Compositor = compositor;
+        }
+        public getSize(): number {
+            return this.m_Compositor.getSize();
+        }
+        public writeTo(dataView: DataView, iOffset: number): number {
+            this.m_Compositor.writeTo(dataView, iOffset);
+            return this.m_Compositor.getSize();
+        }
+        protected m_Compositor: BinaryBufferWriter = null;
+    }
+
+    class DataByteArray implements IDataType {
+        constructor(arbtArray: number[]) {
+            this.m_arbtArray = arbtArray;
+        }
+        public getSize(): number {
+            return this.m_arbtArray.length;
+        }
+        public writeTo(dataView: DataView, iOffset: number): number {
+            let iLength: number = this.m_arbtArray.length;
+            for (let i: number = 0; i < iLength; ++i) {
+                dataView.setUint8(iOffset + i, this.m_arbtArray[i]);
+            }
+            return this.m_arbtArray.length;
+        }
+        protected m_arbtArray: number[] = null;
+    }
+
+    class DataLittleEndianBytes implements IDataType {
+        constructor(nValue: number, iDigits: number) {
+            this.m_nValue = nValue;
+            this.m_iDigits = iDigits;
+        }
+        public getSize(): number {
+            return this.m_iDigits;
+        }
+        public writeTo(dataView: DataView, iOffset: number): number {
+            // 低位元在前.
+            let iValue: number = this.m_nValue;
+            for (let i = this.m_iDigits - 1; i >= 0; --i) {
+                dataView.setUint8(iOffset + this.m_iDigits - i - 1, iValue & 0xff);
+                iValue >>= 8;
+            }
+            return this.m_iDigits;
+        }
+        protected m_nValue: number = 0;
+        protected m_iDigits: number = 0;
+    }
+
+    class DataBytes implements IDataType {
+        constructor(nValue: number, iDigits: number) {
+            this.m_nValue = nValue;
+            this.m_iDigits = iDigits;
+        }
+        public getSize(): number {
+            return this.m_iDigits;
+        }
+        public writeTo(dataView: DataView, iOffset: number): number {
+            // 傳給server時, 高位元在前.
+            let iValue: number = this.m_nValue;
+            for (let i = this.m_iDigits - 1; i >= 0; --i) {
+                dataView.setUint8(iOffset + i, iValue & 0xff);
+                iValue >>= 8;
+            }
+            return this.m_iDigits;
+        }
+        protected m_nValue: number = 0;
+        protected m_iDigits: number = 0;
+    }
+
+    class Data8Bytes extends DataBytes {
+        private m_UseLittleEndian: boolean = true;
+        constructor(iValue: number, useLittleEndian: boolean = true) {
+            super(iValue, 8);
+            this.m_UseLittleEndian = useLittleEndian;
+        }
+        // float64 . 沒有long型態, 儲存long資料精度會跑掉.
+        public writeTo(dataView: DataView, iOffset: number): number {
+            dataView.setFloat64(iOffset, this.m_nValue, this.m_UseLittleEndian);
+            return this.m_iDigits;
+        }
+    }
+    class Data4Bytes extends DataBytes {
+        constructor(iValue: number) {
+            super(iValue, 4);
+        }
+        public writeTo(dataView: DataView, iOffset: number): number {
+            dataView.setUint32(iOffset, this.m_nValue, false);	// big endian.
+            return this.m_iDigits;
+        }
+    }
+    class Data2Bytes extends DataBytes {
+        constructor(iValue: number) {
+            super(iValue, 2);
+        }
+        public writeTo(dataView: DataView, iOffset: number): number {
+            dataView.setUint16(iOffset, this.m_nValue, false);	// big endian.
+            return this.m_iDigits;
+        }
+    }
+    class DataFloat32 extends DataBytes {
+        constructor(iValue: number) {
+            super(iValue, 4);
+        }
+        public writeTo(dataView: DataView, iOffset: number): number {
+            dataView.setFloat32(iOffset, this.m_nValue, false);	// big endian.
+            return this.m_iDigits;
+        }
+    }
+    class DataString implements IDataType {
+        constructor(szValue: string, bWithLength: boolean = true) {
+            this.m_utf8 = unescape(encodeURI(szValue)); // 轉utf8字串.
+            //this.m_utf8 = UtilString.toUTF8Array(szValue);	
+            this.m_bWithLength = bWithLength;
+        }
+        public getSize(): number {
+            return this.m_utf8.length + (this.m_bWithLength ? NetConst.SAVE_BITS_STRING : 0);
+        }
+        public writeTo(dataView: DataView, iOffset: number): number {
+            let iStringLength: number = this.m_utf8.length;
+            if (this.m_bWithLength) {
+                dataView.setUint16(iOffset, iStringLength, false);
+                iOffset += NetConst.SAVE_BITS_STRING;
+            }
+            for (var i = 0; i < iStringLength; i++) {
+                //dataView.setUint8(iOffset + i, this.m_utf8[i]);
+                dataView.setUint8(iOffset + i, this.m_utf8.charCodeAt(i));
+            }
+            //Log.warning("長度:" + iStringLength.toString());
+            return this.getSize();
+        }
+        //private m_utf8: any[] = null;		
+        private m_utf8: string = null; 	// 這邊是utf-8字串.
+        private m_bWithLength: boolean = true;
+    }
+
+    class DataString_MegaSize implements IDataType {
+        constructor(szValue: string, bWithLength: boolean = true) {
+            this.m_utf8 = unescape(encodeURI(szValue));
+            //this.m_utf8 = UtilString.toUTF8Array(szValue);	
+            this.m_bWithLength = bWithLength;
+        }
+        public getSize(): number {
+            return this.m_utf8.length + (this.m_bWithLength ? NetConst.SAVE_BITS_STRING : 0);
+        }
+        public writeTo(dataView: DataView, iOffset: number): number {
+            // 傳給server時, 高位元在前.
+            let iStringLength: number = this.m_utf8.length;
+            if (this.m_bWithLength) {
+                let iValue: number = iStringLength;
+                for (let i = NetConst.SAVE_BITS_MEGA_STRING - 1; i >= 0; --i) { // 3 bytes紀錄長度.
+                    dataView.setUint8(iOffset + i, iValue & 0xff);
+                    iValue >>= 8;
+                }
+                iOffset += NetConst.SAVE_BITS_MEGA_STRING;
+            }
+            // 紀錄文字.
+            for (var i = 0; i < iStringLength; i++) {
+                //dataView.setUint8(iOffset + i, this.m_utf8[i]);
+                dataView.setUint8(iOffset + i, this.m_utf8.charCodeAt(i));
+            }
+            return this.getSize();
+        }
+        //private m_utf8: any[] = null;
+        private m_utf8: string = null;	// 這邊是utf-8字串.
+        private m_bWithLength: boolean = true;
+    }
+
+    /**
+     * 字串以UTF-16編碼方式轉換成bytes
+     */
+    class DataString16 implements IDataType {
+        private m_szValue: string = null;
+        private m_utf16: any[] = null;
+        private m_bWithLength: boolean = true;
+
+        constructor(szValue: string, bWithLength: boolean = true) {
+            this.m_szValue = szValue;
+            this.m_utf16 = ArrayUtil.convertStringToUtf16Array(this.m_szValue);
+            this.m_bWithLength = bWithLength;
+        }
+        public getSize(): number {
+            return this.m_utf16.length + (this.m_bWithLength ? NetConst.SAVE_BITS_STRING : 0);
+        }
+        public writeTo(dataView: DataView, iOffset: number): number {
+            let iLength: number = this.m_utf16.length;
+            if (this.m_bWithLength) {
+                dataView.setUint16(iOffset, iLength, false);
+                iOffset += NetConst.SAVE_BITS_STRING;
+            }
+
+            for (var i = 0; i < this.m_utf16.length; i++) {
+                dataView.setUint8(iOffset + i, this.m_utf16[i]);
+            }
+            // Log.warning("長度:" + this.m_utf16.length);
+            return this.getSize();
+        }
+    }
+
+    class DataLong implements IDataType {
+        constructor(lValue: dcodeIO.Long, iDigits?: number) {
+            this.m_iDigits = (!iDigits || iDigits < 0 || iDigits >= this.m_iDigits) ? this.m_iDigits : iDigits;
+            this.m_lValue = lValue;
+            // Log.info("DataLong => " + lValue.toString(10));
+        }
+        public getSize(): number {
+            return this.m_iDigits;
+        }
+        public writeTo(dataView: DataView, iOffset: number): number {
+            // 傳給server時, 高位元在前.
+            let iValue: number = null;
+            for (let i = this.m_iDigits - 1; i >= 0; --i) {
+                iValue = this.m_lValue.shiftRight(8 * i).and(0xff).toNumber();
+                // iValue = this.m_lValue.div(Math.pow(2, (8 * i))).toNumber();
+                dataView.setUint8(iOffset + i, iValue);
+                // Log.info("DataLong pos: " + i + " => " + dataView.getUint8(iOffset + i));
+            }
+            return this.m_iDigits;
+        }
+        private m_lValue: dcodeIO.Long = null;
+        private m_iDigits: number = 8;
+    }
+    class DataLongByBig implements IDataType {
+        constructor(lValue: dcodeIO.Long, iDigits?: number) {
+            this.m_iDigits = (!iDigits || iDigits < 0 || iDigits >= this.m_iDigits) ? this.m_iDigits : iDigits;
+            this.m_lValue = lValue;
+            // xsh5core.Log.info("DataLong => " + lValue.toString(10));
+        }
+        public getSize(): number {
+            return this.m_iDigits;
+        }
+        public writeTo(dataView: DataView, iOffset: number): number {
+            // 傳給server時, 高位元在前.
+            let iValue: number = null;
+            let move = 0;
+            for (let i = this.m_iDigits - 1; i >= 0; --i) {
+                iValue = this.m_lValue.shiftRight(8 * i).and(0xff).toNumber();
+                // iValue = this.m_lValue.div(Math.pow(2, (8 * i))).toNumber();
+                dataView.setUint8(iOffset + move, iValue);
+                move++;
+                // xsh5core.Log.info("DataLong pos: " + i + " => " + dataView.getUint8(iOffset + i));
+            }
+            return this.m_iDigits;
+        }
+        private m_lValue: dcodeIO.Long = null;
+        private m_iDigits: number = 8;
+    }
+
+    /*
+     class UtilString {
+        public static toUTF8Array(str) { 
+            var utf8 = []; 
+            for (var i=0; i < str.length; i++) { 
+                var charcode = str.charCodeAt(i); 
+                if (charcode < 0x80) utf8.push(charcode); 
+                else if (charcode < 0x800) { 
+                    utf8.push(0xc0 | (charcode >> 6), 0x80 | (charcode & 0x3f)); 
+                } 
+                else if (charcode < 0xd800 || charcode >= 0xe000) { 
+                    utf8.push(0xe0 | (charcode >> 12), 0x80 | ((charcode>>6) & 0x3f), 0x80 | (charcode & 0x3f)); 
+                }
+                else { 
+                    i++; 
+                    // UTF-16 encodes 0x10000-0x10FFFF by 
+                    // subtracting 0x10000 and splitting the 
+                    // 20 bits of 0x0-0xFFFFF into two halves 
+                    charcode = 0x10000 + (((charcode & 0x3ff)<<10) | (str.charCodeAt(i) & 0x3ff));
+                    utf8.push(0xf0 | (charcode >>18), 
+                        0x80 | ((charcode>>12) & 0x3f),  
+                        0x80 | ((charcode>>6) & 0x3f),  
+                        0x80 | (charcode & 0x3f));
+                } 
+            } 
+            return utf8; 
+        }  
+    }	
+    */
+
+    /** 
+     * 把資料寫入二進位Buffer用.
+    */
+    class BinaryBufferWriter {
+
+
+        constructor() {
+        }
+        public addString(szValue: String, bWithLength: boolean = true) {
+            this.m_listData.add(new DataString(szValue.toString(), bWithLength));
+        }
+        public addString_MegaSize(szValue: String, bWithLength: boolean = true) {
+            this.m_listData.add(new DataString_MegaSize(szValue.toString(), bWithLength));
+        }
+        /**
+         * 字串以UTF-16編碼方式轉換成bytes，再寫入Buffer
+         * @param szValue 
+         * @param bWithLength 是否寫入字串長度
+         */
+        public addString16(szValue: String, bWithLength: boolean = true) {
+            this.m_listData.add(new DataString16(szValue.toString(), bWithLength));
+        }
+        public addInt8(btValue: number) {
+            this.m_listData.add(new DataBytes(btValue, 1));
+        }
+        public addInt16(sValue: number) {
+            this.m_listData.add(new Data2Bytes(sValue));
+        }
+        //寫入little位
+        public addInt32ByLittle(inValue: any) {
+            this.m_listData.add(new DataLittleEndianBytes(inValue, 4));
+        }
+        public addInt32(iValue: number) {
+            this.m_listData.add(new Data4Bytes(iValue));
+        }
+        public addFloat32(fValue: number) {
+            this.m_listData.add(new DataFloat32(fValue));
+        }
+        public addFloat64(lValue: number, useLittleEndian: boolean = true) {
+            this.m_listData.add(new Data8Bytes(lValue, useLittleEndian));
+        }
+        /** 在指定index插入內容,
+         * iDigits: index,
+         * iValue: 內容
+         */
+        public addPositiveNumber(iValue: number, iDigits: number) {
+            this.m_listData.add(new DataBytes(iValue, iDigits));
+        }
+        public addLong(lValue: dcodeIO.Long) {
+            this.m_listData.add(new DataLong(lValue));
+        }
+        public addLongByBig(lValue: dcodeIO.Long) {
+            this.m_listData.add(new DataLongByBig(lValue));
+        }
+        public addPositiveLong(lValue: dcodeIO.Long, iDigits: number) {
+            this.m_listData.add(new DataLong(lValue, iDigits));
+        }
+        // 加入byte array (每個number代表一個byte).
+        public addByteNumberArray(arbtArray: number[]) {
+            this.m_listData.add(new DataByteArray(arbtArray));
+        }
+        // 平常不會用.
+        public addPositiveNumberLittleEndian(iValue: number, iDigits: number) {
+            this.m_listData.add(new DataLittleEndianBytes(iValue, iDigits));
+        }
+        public insertBufferWriter(target: BinaryBufferWriter) {
+            this.m_listData.insert(new DataBinaryBuffer(target));
+        }
+        public insertInt8(btValue: number) {
+            this.m_listData.insert(new DataBytes(btValue, 1));
+        }
+        public insertInt16(sValue: number) {
+            this.m_listData.insert(new Data2Bytes(sValue));
+        }
+        public insertInt32(iValue: number) {
+            this.m_listData.insert(new Data4Bytes(iValue));
+        }
+        public insertNumber(iValue: number, iDigits: number) {
+            this.m_listData.insert(new DataBytes(iValue, iDigits));
+        }
+        public insertFloat64(lValue: number, useLittleEndian: boolean = true) {
+            this.m_listData.insert(new Data8Bytes(lValue, useLittleEndian));
+        }
+        public addBufferWriter(target: BinaryBufferWriter) {
+            this.m_listData.add(new DataBinaryBuffer(target));
+        }
+
+        public toArrayBuffer(): ArrayBuffer {
+            let iBufferSize: number = this.getSize();
+            let arrayBuffer: ArrayBuffer = new ArrayBuffer(iBufferSize);
+            let dataView: DataView = new DataView(arrayBuffer, 0);
+            let iter: IteratorX<IDataType> = IteratorFactory.createListIterator(this.m_listData);
+            let data: IDataType = iter.getFirst();
+            let iOffset: number = 0;
+            // 寫入內容.
+            while (data) {
+                iOffset += data.writeTo(dataView, iOffset);
+                data = iter.getNext();
+            }
+            return arrayBuffer;
+        }
+
+        /**
+         * 轉成ArrayBuffer, 並在前面加上3 bytes封包大小資訊.
+         */
+        public toArrayBufferWithSize(): ArrayBuffer {
+            let iPacketSize: number = this.getSize();
+            let iBufferSize: number = iPacketSize + NetConst.HEADER_SIZE;
+            let arrayBuffer: ArrayBuffer = new ArrayBuffer(iBufferSize);
+            let dataView: DataView = new DataView(arrayBuffer, 0);
+            let iter: IteratorX<IDataType> = IteratorFactory.createListIterator(this.m_listData);
+            let data: IDataType = iter.getFirst();
+            let iOffset: number = 0;
+            // 寫入表頭.
+            let headerData: DataBytes = new DataBytes(iPacketSize, NetConst.HEADER_SIZE);
+            iOffset += headerData.writeTo(dataView, iOffset);
+            // 寫入內容.
+            while (data) {
+                iOffset += data.writeTo(dataView, iOffset);
+                data = iter.getNext();
+            }
+            return arrayBuffer;
+        }
+
+        public getSize(): number {
+            let iter: IteratorX<IDataType> = this.m_listData.getIterator();
+            let data: IDataType = iter.getFirst();
+            let iSize: number = 0;
+            while (data) {
+                iSize += data.getSize();
+                data = iter.getNext();
+                // Log.info(" " + (<any>data).constructor.name + " > " + data.getSize());
+            }
+            return iSize;
+        }
+
+        public writeTo(dataView: DataView, iOffset: number) {
+            let iter: IteratorX<IDataType> = this.m_listData.getIterator();
+            let data: IDataType = iter.getFirst();
+            while (data) {
+                iOffset += data.writeTo(dataView, iOffset);
+                data = iter.getNext();
+            }
+        }
+        private m_listData: List<IDataType> = new List<IDataType>();
+
+        public toString(): string {
+            return new BinaryBuffer(this.toArrayBuffer()).toString();
+        }
+    }
+
+    class Utility {
+        private static byteArrayToArrayBuffer(byteArray: number[]): ArrayBuffer {
+            var uint8Array = new Uint8Array(byteArray.length);
+            for (var i = 0; i < uint8Array.length; i++) {
+                uint8Array[i] = byteArray[i];
+            }
+            return uint8Array.buffer;
+        }
+
+        private static base64ToArrayBuffer(base64: string): ArrayBuffer {
+            var binaryString = window.atob(base64);
+            var bytes = new Uint8Array(binaryString.length);
+            for (var i = 0; i < binaryString.length; i++) {
+                bytes[i] = binaryString.charCodeAt(i);
+            }
+            return bytes.buffer;
+        }
+
+        // 將base64字串 轉成 BinaryBuffer
+        public static base64ToBinaryBuffer(base64: string): BinaryBuffer {
+            let binaryBuffer = new BinaryBuffer(this.base64ToArrayBuffer(base64));
+            return binaryBuffer;
+        }
+
+        public static binaryBufferToDecimalArray(binaryBuffer: BinaryBuffer): number[] {
+            let success = true;
+            let decimalArray: number[] = []
+            while (success) {
+                let result = binaryBuffer.getByte();
+                success = result[0];
+                if (success) {
+                    decimalArray.push(result[1]);
+                }
+            }
+            return decimalArray;
+        }
+
+        // 將byte array 轉成 BinaryBuffer
+        public static byteArrayToBinaryBuffer(byteArray: number[]): BinaryBuffer {
+            let binaryBuffer = new BinaryBuffer(this.byteArrayToArrayBuffer(byteArray));
+            return binaryBuffer;
+        }
+
+        // 將base64字串轉乘number[]( byte array) 測試用
+        public static base64ToByteArray(base64: string): number[] {
+            var binaryString = atob(base64);
+            var bytes: number[] = []
+            for (var i = 0; i < binaryString.length; i++) {
+                bytes.push(binaryString.charCodeAt(i));
+            }
+            return bytes;
+        }
+    }
+
+
+    class BinaryBuffer {
+        ReadLittleEndianLong(arg0: number): dcodeIO.Long {
+            return this.getPositiveLong(arg0)[1];
+        }
+        ReadAttachedLengthString(): string {
+            return this.getString()[1];
+        }
+        public USE_LITTLE_ENDIAN: boolean = false;
+
+        constructor(buffer: ArrayBuffer) {
+            this.m_Buffer = buffer;
+            this.m_DataView = new DataView(this.m_Buffer);
+            this.m_nReadIndex = 0;
+        }
+
+        public getArrayBuffer(): ArrayBuffer {
+            return this.m_Buffer;
+        }
+
+        public getReadIndex(): number {
+            return this.m_nReadIndex;
+        }
+
+        public hasUnreadData(): boolean {
+            if (this.m_nReadIndex >= this.m_Buffer.byteLength) {
+                return false;
+            }
+            return true;
+        }
+
+        public getCurrentReadPos(): number {
+            return this.m_nReadIndex;
+        }
+
+        public setReadPosition(iReadPos: number) {
+            this.m_nReadIndex = iReadPos;
+            if (this.m_nReadIndex < 0) {
+                this.m_nReadIndex = 0;
+            }
+            else {
+                let iTotalLength: number = this.getCount();
+                if (this.m_nReadIndex > iTotalLength) {
+                    this.m_nReadIndex = iTotalLength;
+                }
+            }
+        }
+
+        /**
+         * 跳過幾個位元組.
+         * @param iBytes 
+         */
+        public skipBytes(iLength: number) {
+            if (iLength <= 0) {
+                return;
+            }
+            this.m_nReadIndex += iLength;
+            let iTotalLength: number = this.getCount();
+            if (this.m_nReadIndex > iTotalLength) {
+                this.m_nReadIndex = iTotalLength;
+            }
+        }
+
+        /**
+         * 取出某範圍的bytes, 不會影響讀取位置.
+         * @param iStartPos 起始讀取位置.
+         * @param iLength 讀取bytes數.
+         * @return BinaryBuffer  取出來的資料放進新的BinaryBuffer, 失敗傳回null.
+         */
+        public getBytesRanged(iStartPos: number, iLength: number): BinaryBuffer {
+            if (iStartPos < 0 || iLength <= 0) {
+                return null;
+            }
+            if (iStartPos + iLength > this.getCount()) {
+                return null;
+            }
+            let dataView: BinaryBuffer = new BinaryBuffer(this.m_Buffer.slice(iStartPos, iStartPos + iLength));
+            return dataView;
+        }
+
+        /**
+         * 取出某範圍的資料組合成整數(BigEndian), 不會影響讀取位置.
+         * @param iStartPos 起始讀取位置.
+         * @param iLength 讀取bytes數.
+         * @return number  取出來的資料, 失敗傳回0.
+         */
+        public getNumberRanged(iStartPos: number, iLength: number): number {
+            if (iStartPos < 0 || iLength <= 0) {
+                return 0;
+            }
+            if (iStartPos + iLength > this.getCount()) {
+                return 0;
+            }
+            let nNumber: number = 0;
+            let arbtNumber: number[] = [];
+            for (let i: number = 0; i < iLength; ++i) {
+                arbtNumber[i] = this.m_DataView.getUint8(iStartPos + i);
+            }
+            nNumber = ArrayUtil.convertArrayToNumber(arbtNumber);
+            return nNumber;
+        }
+
+        /**
+         * 取出bytes.
+         * @param iLength 取出的bytes數, 如果超過範圍或者傳入-1, 則會取出剩下所有資料.
+         * @return BinaryBuffer  取出來的資料放進新的BinaryBuffer.
+         */
+        public getBytes(iLength: number): BinaryBuffer {
+            if (iLength < 0 || iLength > this.getUnreadCount()) {
+                // 超過範圍就讀取全部.
+                iLength = this.getUnreadCount();
+            }
+            let dataView: BinaryBuffer = new BinaryBuffer(this.m_Buffer.slice(this.m_nReadIndex, this.m_nReadIndex + iLength));
+            this.m_nReadIndex += iLength;
+            return dataView;
+        }
+
+        // 取bytes array 含長度  等於 先取一個長度 在往後取該長度的陣列
+        // 例如  [3, 15, 27, 12, 8 ....] => [15, 27 , 12] 
+        public getBytesArray_WithLength(): number[] {
+            let byteResult = this.getByte();
+            if (byteResult[0]) {
+                let len = byteResult[1];
+                let result = this.getBytesArray(len);
+                return result;
+            }
+            return null;
+        }
+
+
+        public getBytesArray(iLength: number): number[] {
+            let binaryBuffer = this.getBytes(iLength);
+            let result: number[] = [];
+            for (let i = 0; i < iLength; i++) {
+                let byte = binaryBuffer.getByte();
+                if (byte[0] === true) {
+                    result.push(byte[1]);
+                } else {
+                    result.push(0);
+                }
+            }
+            return result;
+        }
+
+        public getBytesArrayAll(): number[] {
+            const iLength = this.m_Buffer.byteLength;
+            let binaryBuffer = this.getBytes(iLength);
+            let result: number[] = [];
+            for (let i = 0; i < iLength; i++) {
+                let byte = binaryBuffer.getByte();
+                if (byte[0] === true) {
+                    result.push(byte[1]);
+                } else {
+                    break;
+                }
+            }
+            return result;
+        }
+
+        private UnzipByteArray(bytes: number[]): number[] {
+            let result: number[] = [];
+            for (let item of bytes) {
+                let strHex = item.toString(16).padStart(2, "0");
+                result.push(parseInt(strHex[1], 16)); // 前面先放 1
+                result.push(parseInt(strHex[0], 16)); // 後面才放 0 這是公司壓縮的格式
+            }
+            return result;
+        }
+
+        public getBytesArrayAndUnzip(iLength: number): number[] {
+            let bytes = this.getBytesArray(iLength);
+            let result = this.UnzipByteArray(bytes);
+            return result;
+        }
+
+        /**
+         * 取出字串, 前3bytes紀錄長度.
+         */
+        public getString_MegaSize(): [boolean, string] {
+            let ret: [boolean, number] = this.getPositiveNumber(NetConst.SAVE_BITS_MEGA_STRING); // 3bytes記錄長度.
+            if (!ret[0]) {
+                return [false, null];
+            }
+            let szRet: string = this.getString_WithLength(ret[1]);
+            return [(null != szRet), szRet];
+        }
+
+        /**
+         * 取出字串, 前2bytes紀錄長度.
+         */
+        public getString(): [boolean, string] {
+            let ret: [boolean, number] = this.getPositiveNumber(NetConst.SAVE_BITS_STRING); // 2bytes紀錄長度.
+            if (!ret[0]) {
+                return [false, null];
+            }
+            let szRet: string = this.getString_WithLength(ret[1]);
+            return [(null != szRet), szRet];
+        }
+
+
+        public getByte(): [boolean, number] {
+            let binaryBuffer = this.getBytes(1);
+            var byteArray = new Uint8Array(binaryBuffer.getArrayBuffer());
+
+            let success: boolean = false;
+            if (Number.isInteger(byteArray?.[0])) {
+                success = true;
+            }
+
+            return [success, byteArray?.[0]]
+        }
+
+        /**
+         * 取出字串, 自帶長度.
+         * @param iLength 字串bytes數.
+         * @return string 字串, 找不到傳回null.
+         */
+        public getString_WithLength(iLength: number): string {
+            let szRet: string = null;
+            if (this.getUnreadCount() >= iLength) {
+                let buffer: ArrayBuffer = this.m_Buffer.slice(this.m_nReadIndex, this.m_nReadIndex + iLength);
+                if (buffer) {
+                    this.m_nReadIndex += iLength;
+                    // TextDecoder IE不支援, 先用別的方式.
+                    //szRet = this.fromUTF8Array(buffer);
+                    let view: DataView = new DataView(buffer);
+                    let arbtNumber: number[] = [];
+                    for (let i: number = 0; i < iLength; ++i) {
+                        arbtNumber[i] = view.getUint8(i);
+                    }
+                    szRet = ArrayUtil.convertUtf16ArrayToString(arbtNumber);
+                }
+            }
+            return szRet;
+        }
+
+        public mergeFrom(dataView: BinaryBuffer) {
+            if (null == dataView || null == this.m_DataView) {
+                return;
+            }
+            let iLength1: number = this.m_DataView.byteLength;
+            let iLength2: number = dataView.getCount();
+            if (0 == iLength2) {
+                return;
+            }
+            let mergedBuffer: Uint8Array = new Uint8Array(iLength1 + iLength2);
+            let firstBuffer: Uint8Array = new Uint8Array(this.m_DataView.buffer);
+            let secondBuffer: Uint8Array = new Uint8Array(dataView.m_Buffer);
+            if (iLength1 > 0) {
+                mergedBuffer.set(firstBuffer);
+            }
+            if (iLength2 > 0) {
+                mergedBuffer.set(secondBuffer);
+            }
+
+            this.m_Buffer = mergedBuffer.buffer;
+            this.m_DataView = new DataView(this.m_Buffer);
+        }
+
+        public getPositiveNumber(iDigits: number): [boolean, number] {
+            if (iDigits <= 0 || iDigits > 8 || this.getUnreadCount() < iDigits) {
+                return [false, 0];
+            }
+            let iValue: number = 0;
+            let bSucceed: boolean = true;
+            try {
+                for (let i = 0; i < iDigits; ++i) {
+                    // iDigit=3: 傳回  [0]*65536 + [1]*256 + [2] 
+                    iValue += (this.m_DataView.getUint8(this.m_nReadIndex + i) << (8 * (iDigits - i - 1)));
+                }
+                this.m_nReadIndex += iDigits;
+            } catch (error) {
+                bSucceed = false;
+                iValue = 0;
+            }
+            return [bSucceed, iValue];
+        }
+
+        // 平常不會用.
+        public getPositiveNumberLittleEndian(iDigits: number): [boolean, number] {
+            if (iDigits <= 0 || iDigits > 8 || this.getUnreadCount() < iDigits) {
+                return [false, 0];
+            }
+            let iValue: number = 0;
+            let bSucceed: boolean = true;
+            try {
+                for (let i = 0; i < iDigits; ++i) {
+                    // iDigit=3: 傳回  [2]*65536 + [1]*256 + [0] 
+                    iValue += (this.m_DataView.getUint8(this.m_nReadIndex + i) << (8 * i));
+                }
+                this.m_nReadIndex += iDigits;
+            } catch (error) {
+                bSucceed = false;
+                iValue = 0;
+            }
+            return [bSucceed, iValue];
+        }
+
+        public getSingle(useLittleEndian: boolean = true): [boolean, Decimal] {
+            let [boolean, num] = this.getFloat32(useLittleEndian);
+            return [boolean, boolean ? new Decimal(num) : null];
+        }
+        public getFloat32(useLittleEndian: boolean = true): [boolean, number] {
+            if (this.getUnreadCount() < 4) {
+                return [false, 0];
+            }
+            let fValue: number = 0;
+            let bSucceed: boolean = true;
+            try {
+                fValue = this.m_DataView.getFloat32(this.m_nReadIndex, useLittleEndian);
+                this.m_nReadIndex += 4;
+            } catch (error) {
+                bSucceed = false;
+            }
+            return [bSucceed, fValue];
+        }
+        public getFloat64(useLittleEndian: boolean = true): [boolean, number] {
+            if (this.getUnreadCount() < 8) {
+                return [false, 0];
+            }
+            let fValue: number = 0;
+            let bSucceed: boolean = true;
+            try {
+                fValue = this.m_DataView.getFloat64(this.m_nReadIndex, useLittleEndian);
+                this.m_nReadIndex += 8;
+            } catch (error) {
+                bSucceed = false;
+            }
+            return [bSucceed, fValue];
+        }
+        public getInt8(): [boolean, number] {
+            if (this.getUnreadCount() < 1) {
+                return [false, 0];
+            }
+            let fValue: number = 0;
+            let bSucceed: boolean = true;
+            try {
+                fValue = this.m_DataView.getInt8(this.m_nReadIndex);
+                this.m_nReadIndex += 1;
+            } catch (error) {
+                bSucceed = false;
+            }
+            return [bSucceed, fValue];
+        }
+        public getInt16(): [boolean, number] {
+            if (this.getUnreadCount() < 2) {
+                return [false, 0];
+            }
+            let fValue: number = 0;
+            let bSucceed: boolean = true;
+            try {
+                fValue = this.m_DataView.getInt16(this.m_nReadIndex, this.USE_LITTLE_ENDIAN);
+                this.m_nReadIndex += 2;
+            } catch (error) {
+                bSucceed = false;
+            }
+            return [bSucceed, fValue];
+        }
+        public getInt32(): [boolean, number] {
+            if (this.getUnreadCount() < 4) {
+                return [false, 0];
+            }
+            let fValue: number = 0;
+            let bSucceed: boolean = true;
+            try {
+                fValue = this.m_DataView.getInt32(this.m_nReadIndex, this.USE_LITTLE_ENDIAN);
+                this.m_nReadIndex += 4;
+            } catch (error) {
+                bSucceed = false;
+            }
+            return [bSucceed, fValue];
+        }
+        public getUint8(): [boolean, number] {
+            if (this.getUnreadCount() < 1) {
+                return [false, 0];
+            }
+            let fValue: number = 0;
+            let bSucceed: boolean = true;
+            try {
+                fValue = this.m_DataView.getUint8(this.m_nReadIndex);
+                this.m_nReadIndex += 1;
+            } catch (error) {
+                bSucceed = false;
+            }
+            return [bSucceed, fValue];
+        }
+        /**
+         * 取出一個unit8的數值, 但不改變已讀位置.
+         */
+        public peekUint8(): [boolean, number] {
+            if (this.getUnreadCount() < 1) {
+                return [false, 0];
+            }
+            let fValue: number = 0;
+            let bSucceed: boolean = true;
+            try {
+                fValue = this.m_DataView.getUint8(this.m_nReadIndex);
+            } catch (error) {
+                bSucceed = false;
+            }
+            return [bSucceed, fValue];
+        }
+
+        public getUint16(): [boolean, number] {
+            if (this.getUnreadCount() < 2) {
+                return [false, 0];
+            }
+            let fValue: number = 0;
+            let bSucceed: boolean = true;
+            try {
+                fValue = this.m_DataView.getUint16(this.m_nReadIndex, this.USE_LITTLE_ENDIAN);
+                this.m_nReadIndex += 2;
+            } catch (error) {
+                bSucceed = false;
+            }
+            return [bSucceed, fValue];
+        }
+
+        public getUint32(): [boolean, number] {
+            if (this.getUnreadCount() < 4) {
+                return [false, 0];
+            }
+            let fValue: number = 0;
+            let bSucceed: boolean = true;
+            try {
+                fValue = this.m_DataView.getUint32(this.m_nReadIndex, this.USE_LITTLE_ENDIAN);
+                this.m_nReadIndex += 4;
+            } catch (error) {
+                bSucceed = false;
+            }
+            return [bSucceed, fValue];
+        }
+
+        public getUint32ByBig(): [boolean, number] {
+            if (this.getUnreadCount() < 4) {
+                return [false, 0];
+            }
+            let fValue: number = 0;
+            let bSucceed: boolean = true;
+            try {
+                fValue = this.m_DataView.getUint32(this.m_nReadIndex, false);
+                this.m_nReadIndex += 4;
+            } catch (error) {
+                bSucceed = false;
+            }
+            return [bSucceed, fValue];
+        }
+        public getLong(bUnsigned: boolean = false): [boolean, dcodeIO.Long] {
+            return this.getPositiveLong(8, bUnsigned);
+        }
+
+        public getPositiveLongByBig(iDigits: number, bUnsigned: boolean = true): [boolean, dcodeIO.Long] {
+            if (this.getUnreadCount() < iDigits || iDigits < 0 || iDigits > 8) {
+                return [false, dcodeIO.Long.ZERO];
+            }
+            let bSucceed: boolean = true;
+            let lValue: dcodeIO.Long = dcodeIO.Long.fromNumber(0, bUnsigned);
+            try {
+                for (let i = iDigits - 1; i >= 0; i--) {
+
+                    lValue = lValue.add(dcodeIO.Long.fromNumber(this.m_DataView.getUint8(this.m_nReadIndex)).shiftLeft(8 * i));
+                    this.m_nReadIndex++;
+                    // xsh5core.Log.info("getLong pos: " + i + " => " + this.m_DataView.getUint8(this.m_nReadIndex + i));
+                }
+                // this.m_nReadIndex += 1;
+            } catch (error) {
+                bSucceed = false;
+            }
+
+            return [bSucceed, lValue];
+
+
+        }
+        public getPositiveLong(iDigits: number, bUnsigned: boolean = true): [boolean, dcodeIO.Long] {
+            if (this.getUnreadCount() < iDigits || iDigits < 0 || iDigits > 8) {
+                return [false, dcodeIO.Long.ZERO];
+            }
+            let bSucceed: boolean = true;
+            let lValue: dcodeIO.Long = dcodeIO.Long.fromNumber(0, bUnsigned);
+            try {
+                for (let i = 0; i < iDigits; ++i) {
+                    lValue = lValue.add(dcodeIO.Long.fromNumber(this.m_DataView.getUint8(this.m_nReadIndex + i)).shiftLeft(8 * i));
+                    // Log.info("getLong pos: " + i + " => " + this.m_DataView.getUint8(this.m_nReadIndex + i));
+                }
+                this.m_nReadIndex += iDigits;
+            } catch (error) {
+                bSucceed = false;
+            }
+
+            return [bSucceed, lValue];
+        }
+
+        public getCount(): number {
+            if (!this.m_DataView) {
+                return 0;
+            }
+            return this.m_DataView.byteLength;
+        }
+
+        public getUnreadCount(): number {
+            return this.m_Buffer.byteLength - this.m_nReadIndex;
+        }
+        /**
+         * 讀取剩於資料轉成int
+         */
+        public getUnreadUint8Array(): [boolean, Uint8Array] {
+            let dataInt8Array: number[] = [];
+
+            if (this.getUnreadCount() <= 0) {
+                return [false, null];
+            }
+            let bSucceed: boolean = true;
+            try {
+                while (this.getUnreadCount() > 0) {
+                    dataInt8Array.push(this.m_DataView.getUint8(this.m_nReadIndex));
+                    this.m_nReadIndex += 1;
+                }
+
+            } catch (error) {
+                bSucceed = false;
+            }
+            return [true, new Uint8Array(dataInt8Array)];
+        }
+
+        //add by humbert
+        public getUInt24(): [boolean, number] {
+            if (this.getUnreadCount() < 3) {
+                return [false, 0];
+            }
+            let fValue: number = 0;
+            let bSucceed: boolean = true;
+            try {
+                for (let i = 2; i >= 0; i--) {
+                    fValue += this.m_DataView.getUint8(this.m_nReadIndex) * Math.pow(256, i);
+                    this.m_nReadIndex++;
+                }
+            } catch (error) {
+                bSucceed = false;
+            }
+            return [bSucceed, fValue];
+        }
+
+        /**
+         *  utf-8陣列轉成字串(Javascript應該是utf-16).
+         */
+        protected fromUTF8Array(buffer: ArrayBuffer): string { // array of bytes
+            var str = '', i;
+            let iCount: number = buffer.byteLength;
+            let dataView: DataView = new DataView(buffer);
+            for (i = 0; i < iCount; i++) {
+                var value = dataView.getUint8(i);
+                if (value < 0x80) {
+                    str += String.fromCharCode(value);
+                } else if (value > 0xBF && value < 0xE0) {
+                    str += String.fromCharCode((value & 0x1F) << 6 | dataView.getUint8(i + 1) & 0x3F);
+                    i += 1;
+                } else if (value > 0xDF && value < 0xF0) {
+                    str += String.fromCharCode((value & 0x0F) << 12 | (dataView.getUint8(i + 1) & 0x3F) << 6 | dataView.getUint8(i + 2) & 0x3F);
+                    i += 2;
+                } else {
+                    // surrogate pair
+                    var charCode = ((value & 0x07) << 18 | (dataView.getUint8(i + 1) & 0x3F) << 12 | (dataView.getUint8(i + 2) & 0x3F) << 6 | dataView.getUint8(i + 3) & 0x3F) - 0x010000;
+
+                    str += String.fromCharCode(charCode >> 10 | 0xD800, charCode & 0x03FF | 0xDC00);
+                    i += 3;
+                }
+            }
+            return str.toString();
+        }
+
+        public static fromInt8Array(data: number[]): BinaryBuffer {
+            let buffer = new ArrayBuffer(data.length);
+            let view = new Int8Array(buffer);
+            for (let i = 0, n = data.length; i < n; i++) {
+                view.fill(data[i], i);
+            }
+            return new BinaryBuffer(view.buffer);
+        }
+
+        public toString(): string {
+            let szText: string = "";
+            let nOldReadPos: number = this.getCurrentReadPos();
+            this.setReadPosition(0);
+            for (let i = 0; i < this.getCount(); i++) {
+                szText = szText + this.getUint8()[1].toString() + ", ";
+            }
+            this.setReadPosition(nOldReadPos);
+            return szText;
+        }
+        //模擬Unity的BytesReader
+        public ReadAttatchedLengthBytes(): BinaryBuffer {
+            let length = this.getUint16()[1];
+            let arrTemp: number[] = [];
+            for (let i = 0; i < length; i++) {
+                arrTemp.push(this.getUint8()[1]);
+            }
+            return this.GetBinaryBuffer(arrTemp);
+        }
+        public ReadBool(): boolean {
+            return (this.getUint8()[1]) ? true : false;
+        }
+
+        public readUnsignedByte(): number {
+            return this.getUint8()[1];
+        }
+
+        public ReadByte(): number {
+            return this.getUint8()[1];
+        }
+
+        public ReadBigEndianUShort(): number {
+            return this.getUint16()[1];
+        }
+
+        public ReadBigEndianULong(num: number): dcodeIO.Long {
+            return this.getPositiveLongByBig(num)[1];
+        }
+
+        public ReadLittleEndianULong(num: number): dcodeIO.Long {
+            if (num = 8)
+                return this.getLong(true)[1];
+            else
+                window.alert("ReadLittleEndianULong:無此方法");
+        }
+
+        public ReadBigEndianUInt(num: number) {
+            return this.getPositiveLongByBig(num)[1].toNumber();
+        }
+
+        public readInt(): number {
+            return this.getInt32()[1];
+        }
+
+        public set Position(value: number) {
+            this.setReadPosition(value);
+        }
+
+        public get Position(): number {
+            return this.getCurrentReadPos();
+        }
+
+        public GetBinaryBuffer(arrTemp: number[]): BinaryBuffer {
+            let binaryBufferWriter: BinaryBufferWriter = new BinaryBufferWriter();
+            binaryBufferWriter.addByteNumberArray(arrTemp);
+
+            let arrayBuffer: ArrayBuffer = binaryBufferWriter.toArrayBuffer();
+            let data = new BinaryBuffer(arrayBuffer);
+            return data;
+        }
+
+        public static GetBinaryBuffer(arrTemp: number[]): BinaryBuffer {
+            let binaryBufferWriter: BinaryBufferWriter = new BinaryBufferWriter();
+            binaryBufferWriter.addByteNumberArray(arrTemp);
+
+            let arrayBuffer: ArrayBuffer = binaryBufferWriter.toArrayBuffer();
+            let data = new BinaryBuffer(arrayBuffer);
+            return data;
+        }
+
+        private m_Buffer: ArrayBuffer = null;
+        private m_DataView: DataView = null;
+        private m_nReadIndex: number = 0;
+    }
+
+
+    interface IBinBufferParser {
+        Parse(buffer: BinaryBuffer, ...params: any): void;
+    }
+
+    class HalfByte_IntArray implements IBinBufferParser {
+        byteSize: number = 0;
+        value: number[] = [];
+
+        constructor(byteSize: number) {
+            this.byteSize = byteSize;
+        }
+
+        Parse(buffer: BinaryBuffer): void {
+            this.value = buffer.getBytesArrayAndUnzip(this.byteSize);
+        }
+    }
+
+    class IntArray implements IBinBufferParser {
+        value: number[] = [];
+        Parse(buffer: BinaryBuffer, amount: number): void {
+            for (let i = 0; i < amount; i++) {
+                this.value.push(buffer.getByte()[1]);
+            }
+        }
+    }
+
+    class SizeBegin_IntArray implements IBinBufferParser {
+        value: number[] = [];
+
+        Parse(buffer: BinaryBuffer): void {
+            this.value = buffer.getBytesArray_WithLength();
+        }
+    }
+
+    type IconDataProcessor = (list: IconData[]) => IconData[];
+    type Item = [string, string | number | BoardData];
+    type Line = [string, Item[]];
+    type Section = [string, Item[] | Line[]];
+    type Board = [string, BoardData];
+    type SlotRoundData = [string, (Section | Board)[]];
+    type AllRoundDataData = [string, SlotRoundData[]];
+
+    type GameRecordAST = {
+        /** 整體細單架構 */
+        ast: AllRoundDataData[],
+        /** Icon圖片設定 */
+        icons?: Record<number, IconConfig>
+    }
+
+    type IconConfig = {
+        /** Icon路徑 */
+        src: string;
+        /** Icon寬度 */
+        width: number;
+        /** Icon高度 */
+        height: number;
+    };
+
+    type DetailData = {
+        /** 中獎圖案List */
+        winIconSymbolList: number[];
+        /** 中獎賠率List */
+        odds: number[];
+        /** 中獎線號List */
+        lineID?: number[];
+        /** 百搭路徑組合數量List */
+        megaWayCombinationCount?: number[];
+    }
+
+    enum SlotDataStringType {
+        /**遊戲模式*/
+        gameMode = "gamemode",
+        /**細單紀錄*/
+        records = "records",
+        /**當局Spin紀錄 */
+        round = "round",
+        /**當次顯示的標題 */
+        title = "title",
+        /**當次盤面 */
+        board = "board",
+        /**當次說明 */
+        summary = "summary",
+        /**詳細中獎資訊 */
+        details = "details",
+        /**分行 */
+        line = "line",
+        /**文字顯示 */
+        text = "text",
+        /**圖片編號 */
+        icon = "icon",
+        /**數字 */
+        number = "number",
+        /**運算符號 */
+        symbol = "symbol",
+    }
+
+    enum SlotDataGameModeType {
+        normal = "一般遊戲",
+        free = "免費遊戲",
+        bonus = "獎勵遊戲"
+    }
+
+    class SlotDataParser {
+        // /**使用者設定 */
+        // public slotDataConfig: SlotDataConfig = null;
+        /**整個細單紀錄 */
+        protected steps: any[] = [];
+        /**單次盤面紀錄 */
+        protected oneRound: (Section | Board)[] = [];
+        /**當局所有盤面紀錄 */
+        protected allRoundData: SlotRoundData[] = [];
+        /**下注金額 */
+        protected bet: number = 0;
+
+        /**
+         * 建立SlotDataParser
+         * @param config 設定檔
+         * @param bet 下注金額
+         */
+        constructor(bet: number) {
+            //this.slotDataConfig = config;
+            this.bet = bet;
+        }
+
+        /**
+         * 組裝要顯示的文字
+         * @param tag  Key值
+         * @param value 顯示文字
+         * @returns 當次文字排序
+         */
+        public createItem(key: string, value: string | number): Item {
+            return [key, value];
+        }
+
+        /**
+         * 組裝當次區塊文字排序
+         * @param tag  Key值
+         * @param arr 文字排序
+         * @returns 當次盤面文字排序
+         */
+        public createSection(tag: string, arr: Item[] | Line[]): Section {
+            return [tag, arr];
+        }
+
+        /**
+         * 組裝當次盤面Icon紀錄
+         * @param tag  Key值
+         * @param board 盤面資訊
+         * @returns 當次盤面Icon紀錄
+         */
+        public createBoard(tag: string, board: BoardData): Board {
+            return [tag, board];
+        }
+
+        /**
+         * 組裝當次盤面紀錄
+         * @param tag  Key值
+         * @param round 當次盤面紀錄 
+         * @returns 當次盤面紀錄
+         */
+        public createRound(tag: string, round: (Section | Board)[]): SlotRoundData {
+            return [tag, round];
+        }
+
+        /**
+         * 組裝此局全部盤面紀錄
+         * @param tag  Key值
+         * @param allRoundData 當前盤面紀錄 
+         * @returns 此局全部盤面紀錄
+         */
+        public createAllRoundData(tag: string, allRoundData: SlotRoundData[]): AllRoundDataData {
+            return [tag, allRoundData];
+        }
+
+        /**
+         * 設置此局遊戲模式，如果下局盤面紀錄與此局盤面紀錄不一樣，再重新呼叫一次
+         * @param gameMode 遊戲模式
+         * @returns  SlotDataParser，會把當前資料記錄起來
+         */
+        public setGameMode(gameMode: string): SlotDataParser {
+            const item = this.createItem(SlotDataStringType.text, gameMode);
+            const section = this.createSection(SlotDataStringType.gameMode, [item]);
+            this.steps.push(section);
+            return this;
+        }
+
+        /**
+         * 設置盤面Title，由使用者組裝要顯示的資訊
+         * @param items 顯示的資訊
+         * @returns  SlotDataParser，會把當前資料記錄起來
+         */
+        public setTitle(items: Item[]): SlotDataParser {
+            const section = this.createSection(SlotDataStringType.title, items);
+            this.oneRound.push(section);
+            return this;
+        }
+
+        /**
+         * 設置盤面資訊，由使用者組裝要顯示的資訊
+         * @param items 顯示的資訊
+         * @returns  SlotDataParser，會把當前資料記錄起來
+         */
+        public setSummary(items: Item[]): SlotDataParser {
+            const section = this.createSection(SlotDataStringType.summary, items);
+            this.oneRound.push(section);
+            return this;
+        }
+
+        /**
+         * 設置盤面資訊，由使用者組裝要顯示的資訊，使用後會置中
+         * @param items 顯示的資訊
+         * @returns  SlotDataParser，會把當前資料記錄起來
+         */
+        public setLineSummary(items: Line[]): SlotDataParser {
+            const section = this.createSection(SlotDataStringType.summary, items);
+            this.oneRound.push(section);
+            return this;
+        }
+
+        /**
+         * 設置詳細中獎資訊，由使用者組裝要顯示的資訊
+         * @param items 顯示的資訊
+         * @returns  SlotDataParser，會把當前資料記錄起來
+         */
+        public setDetailDescription(items: Line[]): SlotDataParser {
+            let section: Section = null;
+            if (items.length === 0) {
+                section = this.createSection(SlotDataStringType.details, [this.createItem(SlotDataStringType.text, "無中獎")]);
+            }
+            else {
+                section = this.createSection(SlotDataStringType.details, items);
+            }
+            this.oneRound.push(section);
+            return this;
+        }
+
+        /**
+         * 設置盤面詳細得分資訊，由工具組裝
+         * @param isWin 是否贏分 
+         * @param detailDataList 詳細得分，{@link DetailData}可根據不同的遊戲類型傳入不同的類型 
+         * @returns SlotDataParser，會把當前資料記錄起來
+         */
+        public setDetail(isWin: boolean, detailDataList?: DetailData): SlotDataParser {
+            let section: Section = null;
+            if (!isWin) {
+                section = this.createSection(SlotDataStringType.details, [
+                    this.createItem(SlotDataStringType.text, "無中獎")
+                ]);
+            }
+            else {
+                const winSection = [];
+                for (let i = 0; i < detailDataList.winIconSymbolList.length; i++) {
+                    const allDetails: Item[] = [];
+                    const score = detailDataList.megaWayCombinationCount !== undefined ?
+                        detailDataList.odds[i] * this.bet * detailDataList.megaWayCombinationCount[i] : detailDataList.odds[i] * this.bet;
+                    allDetails.push(this.createItem(SlotDataStringType.icon, detailDataList.winIconSymbolList[i]))
+                    allDetails.push(this.createItem(SlotDataStringType.number, this.bet))
+                    allDetails.push(this.createItem(SlotDataStringType.symbol, "*"))
+                    allDetails.push(this.createItem(SlotDataStringType.number, detailDataList.odds[i]))
+                    if (detailDataList.megaWayCombinationCount !== undefined) {
+                        allDetails.push(this.createItem(SlotDataStringType.symbol, "*"))
+                        allDetails.push(this.createItem(SlotDataStringType.number, detailDataList.megaWayCombinationCount[i]))
+                    }
+                    allDetails.push(this.createItem(SlotDataStringType.symbol, "="))
+                    allDetails.push(this.createItem(SlotDataStringType.number, score.fixed()))
+                    if (detailDataList.lineID !== undefined) {
+                        allDetails.push(this.createItem(SlotDataStringType.symbol, "("))
+                        allDetails.push(this.createItem(SlotDataStringType.text, "線"))
+                        allDetails.push(this.createItem(SlotDataStringType.number, (detailDataList.lineID[i] + 1)))
+                        allDetails.push(this.createItem(SlotDataStringType.symbol, ")"))
+                    }
+                    winSection.push(this.createSection(SlotDataStringType.line, allDetails));
+                }
+                section = this.createSection(SlotDataStringType.details, winSection);
+            }
+
+            this.oneRound.push(section);
+            return this;
+        }
+
+        /**
+         * 將先前的一局盤面紀錄包裝，並清空一局盤面紀錄
+         * @returns SlotDataParser，會把當前資料記錄起來
+         */
+        public combineOneRoundData(): SlotDataParser {
+            const round: SlotRoundData = this.createRound(SlotDataStringType.round, this.oneRound);
+            this.allRoundData.push(round);
+            this.oneRound = [];
+            return this;
+        }
+
+        /**
+         * 設置一次盤面紀錄結束
+         * @param isOneRoundEnd 判斷是否為當局最後一次盤面紀錄，有ReSpin請設False
+         * @returns SlotDataParser 會把當前資料記錄起來
+         */
+        public setRecords(): SlotDataParser {
+            const allRoundData = this.createAllRoundData(SlotDataStringType.records, this.allRoundData);
+            this.steps.push(allRoundData);
+            this.allRoundData = [];
+            return this;
+        }
+
+        /**
+         * 獲取細單最終結果
+         * @returns SlotDataParser紀錄的整體細單架構
+         */
+        public getFinalSlotData(): AllRoundDataData[] {
+            return this.steps;
+        }
+
+        /**
+         * 處理細單盤面，在{@link processors}裡放入需要額外處理的盤面功能，會按照順序執行
+         * EX:標記顏色{@link setMark}，需要合併{@link mergesIconData}，多層圖案顯示{@link addIconList}
+         * @param row 盤面高度
+         * @param col 盤面寬度
+         * @param iconList 盤面資料
+         * @param processors 擴充功能
+         * @param maxWidth 盤面最大顯示寬
+         * @returns SlotDataParser 會把盤面資料記錄起來
+         */
+        public processIconData(row: number, col: number, iconList: number[], processors: IconDataProcessor[], maxWidth?: number): SlotDataParser {
+            const baseList = this.setIconList(row, iconList);
+            const showBoard: IconData[] = processors.reduce((list, processor) => processor(list), baseList);
+            this.setBoard(row, col, showBoard, maxWidth);
+            return this;
+        }
+
+        /**
+         * 設置細單盤面Icon的架構
+         * @param row 盤面高度
+         * @param col 盤面寬度
+         * @param showBoard 盤面IconList
+         * @param maxWidth  盤面最大寬
+         * @returns 
+         */
+        public setBoard(row: number, col: number, showBoard: IconData[], maxWidth?: number): SlotDataParser {
+            const board: BoardData = new BoardData(col, row, showBoard, maxWidth);
+            const section = this.createBoard(SlotDataStringType.board, board);
+            this.oneRound.push(section);
+            return this;
+        }
+
+        /**
+         * 根據iconList，設定每個Icon
+         * @param row 盤面高度
+         * @param col 盤面寬度
+         * @param iconList 盤面Icon
+         * @returns 盤面Icon資訊
+         */
+        public setIconList(row: number, iconList: number[]): IconData[] {
+            const baseList = iconList.map((icon, i) => {
+                const data = new IconData();
+                data.icon = icon;
+                data.x = Math.floor(i / row) + 1;
+                data.y = (i % row) + 1;
+                data.width = 1;
+                data.height = 1;
+                return data;
+            });
+            return baseList;
+        }
+
+        /**
+         * 設置整體標記，可多次標記顏色
+         * @param set2DPos 標記的2D位置
+         * @param color 顏色 請傳入"#RRGGBB"
+         * @returns 合併後的盤面 請放在{@link processIconData}的processors陣列裡
+         */
+        public setMark(set2DPos: number[][], color: string): IconDataProcessor {
+            return (list) => list.map((data) => {
+                const xIndex = data.x - 1;
+                const yIndex = data.y - 1;
+                if (set2DPos[xIndex]) {
+                    if (set2DPos[xIndex].includes(yIndex)) {
+                        data.mark = true;
+                        data.markColor = color;
+                    }
+                }
+                return data;
+            });
+        }
+
+        /**
+         * 添加多層圖案，請按照順序填入 會抓取每個資料的相對位置做處理
+         * @param zIndex icon的層級從2開始
+         * @param row 盤面高度
+         * @param posList 新增加icon的位置
+         * @param iconList 新增加icon相對應的圖案
+         * @param size icon的大小，可不放默認為{@link initNewSize}，輸入的話請放[[width1,height1],[width2,height2]...]
+         * @returns 合併後的盤面，請放在{@link processIconData}的processors陣列裡
+         */
+        public addIconList(zIndex: number, row: number, posList: number[], iconList: number[], size: number[][] = []): IconDataProcessor {
+            return (list) => {
+                if (size.length === 0) {
+                    size = this.initNewSize(posList.length);
+                }
+
+                posList.forEach((pos, i) => {
+                    const data = new IconData();
+                    data.icon = iconList[i];
+                    data.x = Math.floor(pos / row) + 1;
+                    data.y = (pos % row) + 1;
+                    data.z = zIndex;
+                    data.width = size[i][0];
+                    data.height = size[i][1];
+                    list.push(data);
+                })
+                return list;
+            }
+        }
+
+        /**
+         * 初始化icon的大小，都為[1,1]
+         * @returns 符合盤面Icon數量的[1,1]陣列
+         */
+        private initNewSize(iconLength: number): number[][] {
+            const size = [];
+            for (let i = 0; i < iconLength; i++) {
+                size.push([1, 1]);
+            }
+            return size;
+        }
+
+        /**
+         * 設置盤面上Icon的文字，會根據位置陣列Index抓取相對應的文字
+         * @param posList 位置陣列
+         * @param textList 文字陣列
+         * @returns 合併後的盤面，請放在{@link processIconData}的processors陣列裡
+         */
+        public setIconText(posList: number[], textList: string[]): IconDataProcessor {
+            return (list: IconData[]) => {
+                for (let i = 0; i < posList.length; i++) {
+                    const pos = posList[i];
+                    list[pos].text = textList[i];
+                }
+                return list;
+            }
+        }
+
+        /**
+         * 會將盤面上的圖示合併，請傳入符合盤面的長度，並以大於0的數字分組
+         * EX:3*5盤面，傳入[0,0,1,2,2,1..]，會將第2個位置與第5個位置合併以及第3個位置與第4個位置合併
+         * @param merges 合併模板
+         * @returns 合併後的盤面，請放在{@link processIconData}的processors陣列裡
+         */
+        public mergesIconData(merges: number[]): IconDataProcessor {
+            return (list: IconData[]) => {
+                const groups = new Map<number, number[]>();
+
+                for (let i = 0; i < list.length; i++) {
+                    const g = merges[i];
+                    if (g > 0) {
+                        if (!groups.has(g)) {
+                            groups.set(g, []);
+                        }
+                        groups.get(g).push(i);
+                    }
+                }
+
+                for (const indices of groups.values()) {
+                    let minX = Infinity;
+                    let minY = Infinity;
+                    let maxX = -Infinity;
+                    let maxY = -Infinity;
+
+                    for (const idx of indices) {
+                        const c = list[idx];
+                        if (c.x < minX) {
+                            minX = c.x;
+                        }
+                        if (c.y < minY) {
+                            minY = c.y;
+                        }
+                        if (c.x > maxX) {
+                            maxX = c.x;
+                        }
+                        if (c.y > maxY) {
+                            maxY = c.y;
+                        }
+                    }
+
+                    const mainIdx = indices.find(idx => list[idx].x === minX && list[idx].y === minY)!;
+                    const main = list[mainIdx];
+                    main.width = maxX - minX + 1;
+                    main.height = maxY - minY + 1;
+
+                    for (const idx of indices) {
+                        if (idx !== mainIdx) {
+                            list[idx].icon = -1;
+                            list[idx].width = 0;
+                            list[idx].height = 0;
+                        }
+                    }
+                }
+
+                return list.filter(c => c.icon !== -1 && c.width > 0 && c.height > 0);
+            };
+        }
+    }
+
+    /**
+     * 盤面的資訊
+     */
+    class BoardData {
+        /** 盤面的寬 */
+        public width: number = 0;
+        /** 盤面的高 */
+        public height: number = 0;
+        /** 盤面的最大寬 */
+        public maxWidth: number = 0;
+        /** 盤面的Icon */
+        public icons: IconData[] = [];
+
+        constructor(width: number, height: number, icons: IconData[], maxWidth?: number) {
+            this.width = width;
+            this.height = height;
+            this.icons = icons;
+            this.maxWidth = maxWidth ? maxWidth : width;
+        }
+    }
+
+    /**
+     * 盤面上的圖示
+     */
+    class IconData {
+        /** 盤面上的Icon */
+        public icon: number = 0;
+        /** 盤面上的X位置 */
+        public x: number = 1;
+        /** 盤面上的Y位置 */
+        public y: number = 1;
+        /** 盤面上Icon的層級 */
+        public z?: number;
+        /** 盤面上Icon的整體標記 */
+        public mark?: boolean;
+        /** 盤面上Icon的整體標記顏色 */
+        public markColor?: string;
+        /** 盤面上Icon的外框標記 */
+        public markBorder?: boolean;
+        /** 盤面上Icon的外框標記顏色 */
+        public markBorderColor?: string;
+        /** 盤面上Icon的背景標記 */
+        public markBackground?: boolean;
+        /** 盤面上Icon的背景標記顏色 */
+        public markBackgroundColor?: string;
+        /** 盤面上Icon的寬，如果有倍數大的話，都以左上角為基準點往右下做縮放*/
+        public width?: number;
+        /** 盤面上Icon的高，如果有倍數大的話，都以左上角為基準點往右下做縮放*/
+        public height?: number;
+        /** 盤面上Icon的角度 */
+        public rotate?: number;
+        /** 盤面上Icon的CSS樣式 */
+        public style?: string;
+
+        /** 圖上文字 */
+        public text?: string;
+        /** 文字顏色 */
+        public textColor?: string
+        /** 文字大小 */
+        public textSize?: number;
+
+        /**圖示黯淡 */
+        public dark?: boolean;
+        /**圖示明亮 */
+        public light?: boolean;
+        /**圖示灰階 */
+        public gray?: boolean;
+    }
+
+    // ------------------------------------------------
+    // 往下此處加入專案的解析程式碼Parser
+    // ================================================
+
+
+    enum SymbolType {
+        AUMO,
+        SIAMESE,
+        ERHU,
+        DAJU,
+        D_K,
+        C_K,
+        D_Q,
+        C_Q,
+        D_J,
+        C_J,
+        INFORMATION
+    }
+
+    class GameDataGame1015 {
+        public ng: RoundResult[] = [];
+        public fg: RoundResult[][] = [];
+        public fgWin: number = 0;
+        public totalWinOdd: number = 0;
+    }
+
+    class RoundResult {
+        public result: number[] = [];
+        public lockIconPos: number[] = [];
+        public unLockStartPos: number[] = [];
+        public unLockPos: number[] = [];
+        public orangeHandPrintCount: number = 0;
+        public purpleHandPrintCount: number = 0;
+        public multiplyOdds: number = 0;
+        public remainCount: number = 0;
+        public isWin: boolean = false;
+        public winIconPos: number[] = [];
+        public winData: WinDatas[] = [];
+        public score: number = 0;
+        public odds: number = 0;
+        public fgScore: number = -1;
+        public totalScore: number = 0;
+    }
+
+
+    class WinDatas {
+        public winIconSymbolID: number = 0;
+        public winOdds: number = 0;
+        public winCombination: number = 0;
+        public orangePos: number[] = [];
+        public purplePos: number[] = [];
+    }
+
+    class ConfigGame1015 {
+        public static readonly PROJECT_NAME = "Game1015";  // 遊戲名稱
+        public static readonly REEL_AMOUNT: number = 5;  // Slot 的滾輪數
+        public static readonly REEL_ICON_AMOUNT: number = 5;  // 每個Column的icon數
+        public static readonly ALL_ICONS_AMOUNT: number = this.REEL_AMOUNT * this.REEL_ICON_AMOUNT;
+        public static readonly SYMBOL_LIST: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        public static readonly INFORMATION_SYMBOL: number = SymbolType.INFORMATION;
+        public static readonly BOARD_ORDER: number[] = [0, 5, 10, 15, 20,
+            1, 6, 11, 16, 21,
+            2, 7, 12, 17, 22,
+            3, 8, 13, 18, 23,
+            4, 9, 14, 19, 24];
+        public static readonly FG_DEFAULT_MULTIPLE: number = 2;
+        public static readonly FG_DEFAULT_FREE_SPIN: number = 2;
+        public static readonly COLLECT_MAX_HAND_PRINT: number = 5;
+        public static readonly ORANGE_SYMBOL: number[] = [SymbolType.AUMO, SymbolType.ERHU, SymbolType.D_K, SymbolType.D_Q, SymbolType.D_J];
+        public static readonly PURPLE_SYMBOL: number[] = [SymbolType.SIAMESE, SymbolType.DAJU, SymbolType.C_K, SymbolType.C_Q, SymbolType.C_J];
+
+        public static readonly SYMBOL_0_ODDS = [0, 0, 2, 6, 20];
+        public static readonly SYMBOL_1_ODDS = [0, 0, 2, 6, 20];
+        public static readonly SYMBOL_2_ODDS = [0, 0, 1, 3, 10];
+        public static readonly SYMBOL_3_ODDS = [0, 0, 1, 3, 10];
+        public static readonly SYMBOL_4_ODDS = [0, 0, 0.32, 0.8, 1.6];
+        public static readonly SYMBOL_5_ODDS = [0, 0, 0.32, 0.8, 1.6];
+        public static readonly SYMBOL_6_ODDS = [0, 0, 0.28, 0.6, 1.2];
+        public static readonly SYMBOL_7_ODDS = [0, 0, 0.28, 0.6, 1.2];
+        public static readonly SYMBOL_8_ODDS = [0, 0, 0.24, 0.48, 1];
+        public static readonly SYMBOL_9_ODDS = [0, 0, 0.24, 0.48, 1];
+        public static readonly ODDS_LIST = [
+            this.SYMBOL_0_ODDS,
+            this.SYMBOL_1_ODDS,
+            this.SYMBOL_2_ODDS,
+            this.SYMBOL_3_ODDS,
+            this.SYMBOL_4_ODDS,
+            this.SYMBOL_5_ODDS,
+            this.SYMBOL_6_ODDS,
+            this.SYMBOL_7_ODDS,
+            this.SYMBOL_8_ODDS,
+            this.SYMBOL_9_ODDS
+        ];
+    }
+
+    const { ALL_ICONS_AMOUNT, REEL_AMOUNT: REELS_AMOUNT, REEL_ICON_AMOUNT: REELS_ICON_AMOUNT, BOARD_ORDER,
+        SYMBOL_LIST, INFORMATION_SYMBOL, ODDS_LIST, ORANGE_SYMBOL,
+        FG_DEFAULT_MULTIPLE, FG_DEFAULT_FREE_SPIN, COLLECT_MAX_HAND_PRINT } = ConfigGame1015;
+
+    class UtilityGame1015 {
+        public static parseServerGameData(betData: string): GameDataGame1015 {
+            const gameData: GameDataGame1015 = new GameDataGame1015();
+
+            let buffer = Utility.base64ToBinaryBuffer(betData);
+            let slotData = buffer.getBytesArrayAll();
+
+            gameData.fg = [];
+            gameData.totalWinOdd = 0;
+
+            const doneProcessGameData = this.processGameData(gameData, slotData);
+            return doneProcessGameData;
+        }
+
+        private static processGameData(gameData: GameDataGame1015, slotData: number[]): GameDataGame1015 {
+            let data: GameDataGame1015 = JSON.parse(JSON.stringify(gameData));
+            let ng: RoundResult[] = [];
+            let fg: RoundResult[][] = [];
+            let fgWin: number = 0;
+            const bet = 1;
+
+            const roundCount = this.getBytesAndCheck(slotData.splice(0, 2));
+
+            let roundData = this.processRoundData(slotData, bet, true, [0, 0]);
+            ng.push(roundData);
+
+            let fgResult: RoundResult[] = [];
+            let nextRoundData: RoundResult = new RoundResult();
+            let isFirstInFG: boolean = false;
+
+            while (slotData.length > 0) {
+                if (roundData.lockIconPos.length - roundData.winIconPos.length > 0) {
+                    roundData = this.processRoundData(slotData, bet, true, [roundData.orangeHandPrintCount, roundData.purpleHandPrintCount]);
+                    ng.push(roundData);
+                }
+                else {
+                    nextRoundData = this.processRoundData(slotData, bet, false, [roundData.orangeHandPrintCount, roundData.purpleHandPrintCount]);
+
+                    if (!isFirstInFG) {
+                        isFirstInFG = true;
+
+                        const orangeHandPrintCount = this.calculationHandPrint(roundData.orangeHandPrintCount);
+                        const purpleHandPrintCount = this.calculationHandPrint(roundData.purpleHandPrintCount);
+                        nextRoundData.multiplyOdds = FG_DEFAULT_MULTIPLE + orangeHandPrintCount[0];
+                        nextRoundData.orangeHandPrintCount -= orangeHandPrintCount[0] * COLLECT_MAX_HAND_PRINT;
+                        nextRoundData.remainCount = FG_DEFAULT_FREE_SPIN + purpleHandPrintCount[0];
+                        nextRoundData.purpleHandPrintCount -= purpleHandPrintCount[0] * COLLECT_MAX_HAND_PRINT;
+                        nextRoundData.odds *= nextRoundData.multiplyOdds;
+                        nextRoundData.score *= nextRoundData.multiplyOdds;
+                    }
+                    else {
+                        nextRoundData.multiplyOdds = roundData.multiplyOdds;
+                        nextRoundData.remainCount = roundData.remainCount;
+                        nextRoundData.odds *= nextRoundData.multiplyOdds;
+                        nextRoundData.score *= roundData.multiplyOdds;
+                    }
+
+
+                    const orangeHandPrintCount = this.calculationHandPrint(nextRoundData.orangeHandPrintCount);
+                    nextRoundData.multiplyOdds += orangeHandPrintCount[0];
+                    nextRoundData.orangeHandPrintCount = orangeHandPrintCount[1];
+
+                    const purpleHandPrintCount = this.calculationHandPrint(nextRoundData.purpleHandPrintCount);
+                    nextRoundData.remainCount += purpleHandPrintCount[0];
+                    nextRoundData.purpleHandPrintCount = purpleHandPrintCount[1];
+
+                    roundData = nextRoundData;
+                    fgResult.push(roundData);
+                    fgWin += roundData.score;
+                    if (!roundData.isWin) {
+                        fgResult.forEach((value) => {
+                            value.remainCount -= 1;
+                        });
+                        fg.push(fgResult);
+                        fgResult = [];
+                    }
+                }
+            }
+
+            let totalScore: number = 0;
+            let fgScore: number = 0;
+            let totalWinOdd: number = 0;
+
+            for (const data of ng) {
+                totalScore += data.score;
+                data.totalScore = parseFloat(totalScore.toFixed(4));
+                totalWinOdd += data.odds;
+            }
+
+            for (let data of fg) {
+                for (const value of data) {
+                    fgScore += value.score;
+                    value.fgScore = parseFloat(fgScore.toFixed(4));
+                    totalScore += value.score;
+                    value.totalScore = parseFloat(totalScore.toFixed(4));
+                    totalWinOdd += value.odds;
+                }
+            }
+
+
+            data.ng = ng;
+            data.fg = fg;
+            data.fgWin = parseFloat(fgWin.toFixed(4));
+            data.totalWinOdd = parseFloat(totalWinOdd.toFixed(4));
+            return data;
+        }
+
+        private static processRoundData(slotData: number[], bet: number, isNG: boolean, previousHandPrint: number[]): RoundResult {
+            let result: number[] = this.changeResultToReelData(slotData.splice(0, ALL_ICONS_AMOUNT));
+
+            let lockPos: number[] = [];
+            result.forEach((value, index) => {
+                if (value === INFORMATION_SYMBOL) {
+                    lockPos.push(index);
+                }
+            });
+
+            let allMatchPayTable = new AllMatchPayTable([], ODDS_LIST, SYMBOL_LIST);
+            let winMap = allMatchPayTable.getAllMatchWinData(result, REELS_AMOUNT, REELS_ICON_AMOUNT);
+            let winIconPos: number[] = [];
+            let winDatas: WinDatas[] = [];
+            let odds: number = 0;
+            let score: number = 0;
+
+            for (let m of winMap) {
+                winIconPos.push(...m.Pos);
+                let winData: WinDatas = new WinDatas();
+                winData.winIconSymbolID = m.WinSymbolID;
+                winData.winOdds = parseFloat((m.Odd / m.OneMatchPos.length).toFixed(4));
+                winData.winCombination = m.OneMatchPos.length;
+                if (ORANGE_SYMBOL.includes(m.WinSymbolID)) {
+                    winData.orangePos.push(...m.Pos);
+                }
+                else {
+                    winData.purplePos.push(...m.Pos);
+                }
+                winDatas.push(winData);
+                odds += m.Odd;
+            }
+            score = odds * bet;
+            winIconPos = winIconPos.set();
+            winIconPos = winIconPos.sort((a, b) => a - b);
+
+            let winIconCount = 0;
+            let unLockPos: number[] = [];
+            let unLockStartPos: number[] = [];
+            if (isNG) {
+                winIconCount = slotData.shift() || 0;
+            }
+            if (winIconCount > 0) {
+                let unLockCount = slotData.splice(0, winIconCount * 2);
+                unLockCount.forEach((value, index) => {
+                    if (index % 2 !== 0) {
+                        unLockPos.push(value);
+                    }
+                });
+                unLockStartPos = unLockCount.filter((value) => !unLockPos.includes(value));
+                unLockStartPos = this.changeServerOrderToBoardOrder(unLockStartPos);
+                unLockPos = this.changeServerOrderToBoardOrder(unLockPos);
+            }
+
+            let orangeHandPrintCount = previousHandPrint[0];
+            let purpleHandPrintCount = previousHandPrint[1];
+            if (lockPos.length - unLockPos.length <= 0 && winMap.length > 0) {
+                for (let m of winMap) {
+                    const set = new Set(unLockStartPos);
+                    if (ConfigGame1015.ORANGE_SYMBOL.includes(m.WinSymbolID)) {
+                        orangeHandPrintCount += m.Pos.filter((value) => !set.has(value)).length;
+                    }
+                    else if (ConfigGame1015.PURPLE_SYMBOL.includes(m.WinSymbolID)) {
+                        purpleHandPrintCount += m.Pos.filter((value) => !set.has(value)).length;
+                    }
+                }
+            }
+
+            const data: RoundResult = {
+                result: result,
+                lockIconPos: lockPos,
+                unLockStartPos: unLockStartPos,
+                unLockPos: unLockPos,
+                orangeHandPrintCount: orangeHandPrintCount,
+                purpleHandPrintCount: purpleHandPrintCount,
+                multiplyOdds: 0,
+                remainCount: 0,
+                isWin: odds > 0,
+                winIconPos: winIconPos,
+                winData: winDatas,
+                score: parseFloat(score.toFixed(4)),
+                odds: parseFloat(odds.toFixed(4)),
+                fgScore: 0,
+                totalScore: 0
+            };
+            return data;
+        }
+
+        private static calculationHandPrint(previousHandPrint: number): number[] {
+            if (previousHandPrint >= COLLECT_MAX_HAND_PRINT) {
+                let add = Math.floor(previousHandPrint / COLLECT_MAX_HAND_PRINT);
+                let handPrint = previousHandPrint - add * COLLECT_MAX_HAND_PRINT;
+                return [add, handPrint];
+            }
+            return [0, previousHandPrint];
+        }
+
+        private static changeServerOrderToBoardOrder(pos: number[]): number[] {
+            let newPos: number[] = [];
+            pos.forEach((value) => {
+                newPos.push(BOARD_ORDER[value]);
+            });
+            return newPos;
+        }
+
+        private static changeResultToReelData(result: number[]): number[] {
+            let reel0 = [];
+            let reel1 = [];
+            let reel2 = [];
+            let reel3 = [];
+            let reel4 = [];
+            for (let i = 0; i < result.length; i++) {
+                switch (i % REELS_AMOUNT) {
+                    case 0:
+                        reel0.push(result[i]);
+                        break;
+                    case 1:
+                        reel1.push(result[i]);
+                        break;
+                    case 2:
+                        reel2.push(result[i]);
+                        break;
+                    case 3:
+                        reel3.push(result[i]);
+                        break;
+                    case 4:
+                        reel4.push(result[i]);
+                        break;
+                }
+            }
+            return [...reel0, ...reel1, ...reel2, ...reel3, ...reel4];
+        }
+
+        private static getBytesAndCheck(slotData: number[]): number {
+            return (slotData[0] << 8) | slotData[1];
+        }
+    }
+
+    class AllMatchPayTable {
+        protected readonly wild: number[];
+        protected readonly payTable: number[][];
+        protected readonly iconList: number[];
+        protected reelAmount: number;
+        protected symbolLength: number;
+
+        /**
+         * @param wild WILD圖示
+         * @param oddList 賠率表
+         * @param iconList 中獎圖示表 (將有賠率的連線中獎圖示放入，SCATTER請另外算)
+         */
+        constructor(wild: number[], oddList: number[][], iconList: number[]) {
+            this.wild = wild;
+            this.iconList = iconList;
+            this.payTable = oddList;
+        }
+
+        /**
+         * @param iconData 盤面
+         * @param reelAmount 滾輪數量
+         * @param symbolLength 單一輪有幾個圖示
+         * @return 中獎圖示,賠率,贏的位置,輪播位置，中獎2D位置
+         */
+        public getAllMatchWinData(iconData: number[], reelAmount: number, symbolLength: number): WinData[] {
+            this.reelAmount = reelAmount;
+            this.symbolLength = symbolLength;
+            const icon2DData = this.convertSymbolTo2DArray(iconData);
+            return this.allMatchWinData(icon2DData);
+        }
+
+        protected allMatchWinData(icon2DData: number[][]): WinData[] {
+            let matchWinData: WinData[] = [];
+            for (let icon of this.iconList) {
+                const oneIconMatchMap = this.calculateOneIconAllMatch(icon, icon2DData);
+                for (const [key, value] of oneIconMatchMap) {
+                    const Win2DPos = this.convertWinIndexTo2DArray(value.Pos);
+                    const winData = new WinData(key, value.Odd, value.Pos, value.OneMatchPos, Win2DPos);
+                    matchWinData.push(winData);
+                }
+            }
+            return matchWinData;
+        }
+
+        protected calculateOneIconAllMatch(icon: number, icon2DData: number[][]): Map<number, PayLineData> {
+            const oneIconMatchMap = new Map<number, PayLineData>();
+            let combinedWire: number[][] = Array.from({ length: 0 }, () => []);
+            let AllPosList: number[] = [];
+            let tempOdds = 0;
+            let tempCount = 1;//計算分出去的條數
+            for (let i = 0; i < this.reelAmount; i++) {
+                const newLineOdds = this.payTable[icon][i];
+                const hasWild = this.wild.some(value => icon2DData[i].includes(value));//如果需要WILD都要匹配 some=>every
+                if (icon2DData[i].includes(icon) || hasWild) {
+                    let winPos: number[] = [];
+                    const pos = icon2DData[i].indexesOf(icon).map((x) => x + (i * this.symbolLength));
+                    AllPosList = this.mergeTwoArrays(AllPosList, pos);
+                    winPos = this.mergeTwoArrays(winPos, pos);
+                    if (hasWild) {
+                        const wildPos = this.getWildPos(icon2DData[i], (i * this.symbolLength));
+                        AllPosList = this.mergeTwoArrays(AllPosList, wildPos);
+                        winPos = this.mergeTwoArrays(winPos, wildPos);
+                    }
+                    combinedWire = this.getCombinedWireArray(combinedWire, winPos);
+                    const oneReelMatchCount = icon2DData[i].count(icon) + this.getWildCount(icon2DData[i]);
+                    tempCount = (tempCount * oneReelMatchCount).fixed();
+                    tempOdds = (newLineOdds * tempCount).fixed();
+                    if (tempOdds > 0) {
+                        const payLineData = new PayLineData(AllPosList, tempOdds, combinedWire);
+                        oneIconMatchMap.set(icon, payLineData);
+                    }
+                }
+                else {
+                    break;
+                }
+            }
+            return oneIconMatchMap;
+        }
+
+        protected getWildPos(iconList: number[], startPos: number): number[] {
+            let wildPosList: number[] = [];
+            for (let i = 0; i < this.wild.length; i++) {
+                const wildPos: number[] = iconList.indexesOf(this.wild[i]).map((x) => x + startPos);
+                wildPosList = wildPosList.concat(wildPos);
+            }
+            return wildPosList;
+        }
+
+        protected getWildCount(iconList: number[]): number {
+            let wildTotal: number = 0;;
+            for (let i = 0; i < this.wild.length; i++) {
+                const wildCount: number = iconList.count(this.wild[i]);
+                wildTotal += wildCount;
+            }
+            return wildTotal;
+        }
+
+        protected convertSymbolTo2DArray(iconData: number[]): number[][] {
+            let resultData: number[][] = [];
+
+            for (let index = 0; index < this.reelAmount; index++) {
+                resultData[index] = iconData.slice(index * this.symbolLength, (index + 1) * this.symbolLength);
+            }
+            return resultData;
+        }
+
+        protected getCombinedWireArray(combinedWire: number[][], posList: number[]): number[][] {
+            if (combinedWire.length === 0) {
+                combinedWire = posList.map((value) => [value]);
+                return combinedWire;
+            }
+            const newArray: number[][] = [];
+
+            for (let item of combinedWire) {
+                for (let pos of posList) {
+                    newArray.push([...item, pos]);
+                }
+            }
+            combinedWire = newArray.map((arr) => [...arr]);
+            return combinedWire;
+        }
+
+        private mergeTwoArrays(targetArray: number[], inputArray: number[]): number[] {
+            targetArray = targetArray.concat(inputArray);
+            targetArray = targetArray.set();
+            return targetArray;
+        }
+
+        protected convertWinIndexTo2DArray(winIconPos: number[]): number[][] {
+            let resultData: number[][] = Array.from({ length: this.reelAmount }, () => []);
+            for (let index = 0; index < winIconPos.length; index++) {
+                let reelID = Math.floor(winIconPos[index] / this.symbolLength);
+                let pos = winIconPos[index] % this.symbolLength;
+                resultData[reelID].push(pos);
+            }
+
+            return resultData;
+        }
+    }
+
+    class WinData {
+        public readonly WinSymbolID: number;
+        public readonly Odd: number;
+        public readonly Pos: number[];
+        public readonly Win2DPos: number[][];
+        public readonly OneMatchPos: number[][];
+
+        constructor(winSymbolIDodd: number, odd: number, pos: number[], oneMatchPos: number[][], win2DPos: number[][]) {
+            this.WinSymbolID = winSymbolIDodd;
+            this.Odd = odd;
+            this.Pos = pos;
+            this.OneMatchPos = oneMatchPos;
+            this.Win2DPos = win2DPos;
+        }
+    }
+
+    class PayLineData {
+        public readonly Pos: number[] = [];
+        public readonly Odd: number = 0;
+        public readonly OneMatchPos: number[][] = [];
+
+        constructor(pos: number[], odd: number, oneMatchPos: number[][]) {
+            this.Pos = pos;
+            this.Odd = odd;
+            this.OneMatchPos = oneMatchPos;
+        }
+    }
+
+
+    const icons: Record<number, IconConfig> = {
+        0: { src: "/images/game1015/Symbol_0.png", width: 152, height: 156 },
+        1: { src: "/images/game1015/Symbol_1.png", width: 152, height: 156 },
+        2: { src: "/images/game1015/Symbol_2.png", width: 152, height: 156 },
+        3: { src: "/images/game1015/Symbol_3.png", width: 152, height: 156 },
+        4: { src: "/images/game1015/Symbol_4.png", width: 152, height: 156 },
+        5: { src: "/images/game1015/Symbol_5.png", width: 152, height: 156 },
+        6: { src: "/images/game1015/Symbol_6.png", width: 152, height: 156 },
+        7: { src: "/images/game1015/Symbol_7.png", width: 152, height: 156 },
+        8: { src: "/images/game1015/Symbol_8.png", width: 152, height: 156 },
+        9: { src: "/images/game1015/Symbol_9.png", width: 152, height: 156 },
+        10: { src: "/images/game1015/Symbol_10.png", width: 152, height: 156 },
+        11: { src: "/images/game1015/Symbol_11.png", width: 152, height: 156 },
+        12: { src: "/images/game1015/Symbol_12.png", width: 152, height: 156 },
+        13: { src: "/images/game1015/Symbol_13.png", width: 152, height: 156 },
+        14: { src: "/images/game1015/Symbol_14.png", width: 152, height: 156 },
+    };
+
+    class TestReSpinWithIconLayers {
+
+        public test(gameData: GameDataGame1015, bet: number): GameRecordAST {
+            const test = new SlotDataParser(bet);
+            let totalWin = 0;
+
+            test.setGameMode("一般遊戲"); //設置遊戲模式
+            for (let i = 0; i < gameData.ng.length; i++) {
+                totalWin += gameData.ng[i].score;
+                const winIconSymbolList = gameData.ng[i].winData.map(winData => winData.winIconSymbolID);
+                const odds = gameData.ng[i].winData.map(winData => winData.winOdds.fixed());
+                const winCombination = gameData.ng[i].winData.map(winData => winData.winCombination.fixed());
+                const winIcon2DPos = this.convertIconPosInToReelPos(gameData.ng[i].winIconPos);
+                //設置細單標題
+                if (i === 0) {
+                    test.setTitle([[SlotDataStringType.text, "一般遊戲"]]);
+                }
+                else {
+                    test
+                        .setTitle([
+                            [SlotDataStringType.text, "一般遊戲"],
+                            [SlotDataStringType.symbol, "-"],
+                            [SlotDataStringType.text, "重新旋轉"],
+                            [SlotDataStringType.number, i]
+                        ]);
+                }
+
+                const items: Item[] = gameData.ng[i].lockIconPos.length - gameData.ng[i].winIconPos.length > 0 ? [
+                    [SlotDataStringType.icon, 10],
+                    [SlotDataStringType.symbol, "="],
+                    [SlotDataStringType.symbol, "("],
+                    [SlotDataStringType.number, 12 - gameData.ng[i].lockIconPos.length],
+                    [SlotDataStringType.symbol, "/"],
+                    [SlotDataStringType.number, 12],
+                    [SlotDataStringType.symbol, ")"],
+                ] : [
+                    [SlotDataStringType.icon, 10],
+                    [SlotDataStringType.symbol, "="],
+                    [SlotDataStringType.number, 2],
+                    [SlotDataStringType.text, "免費遊戲"],
+                ];
+
+                //設置細單
+                test
+                    .processIconData(ConfigGame1015.REEL_AMOUNT, ConfigGame1015.REEL_ICON_AMOUNT, gameData.ng[i].result, [
+                        test.setMark(winIcon2DPos, "#ff0000"),
+                    ])
+                    .setSummary(items)
+                    .setDetail(gameData.ng[i].isWin, {
+                        winIconSymbolList: winIconSymbolList,
+                        odds: odds,
+                        megaWayCombinationCount: winCombination
+                    })
+                    .setSummary([
+                        [SlotDataStringType.text, "單次贏分"],
+                        [SlotDataStringType.symbol, "="],
+                        [SlotDataStringType.number, gameData.ng[i].score]
+                    ])
+                    .setLineSummary([
+                        [SlotDataStringType.line, [
+                            [SlotDataStringType.text, "總贏分"],
+                            [SlotDataStringType.symbol, "="],
+                            [SlotDataStringType.number, totalWin]
+                        ]
+                        ],
+                        [SlotDataStringType.line, [
+                            [SlotDataStringType.text, "Test"],
+                            [SlotDataStringType.symbol, "="],
+                            [SlotDataStringType.number, 3]
+                        ]
+                        ]
+                    ])
+                    .combineOneRoundData();
+            }
+            test.setRecords();
+
+            test.setGameMode("免費遊戲");
+            for (let i = 0; i < gameData.fg.length; i++) {
+                for (let j = 0; j < gameData.fg[i].length; j++) {
+                    totalWin += gameData.fg[i][j].score;
+                    const winIconSymbolList = gameData.fg[i][j].winData.map(winData => winData.winIconSymbolID);
+                    const odds = gameData.fg[i][j].winData.map(winData => winData.winOdds.fixed());
+                    const winCombination = gameData.fg[i][j].winData.map(winData => winData.winCombination.fixed());
+                    const winIcon2DPos = this.convertIconPosInToReelPos(gameData.fg[i][j].winIconPos);
+                    if (j === 0) {
+                        test.setTitle([
+                            [SlotDataStringType.text, "免費遊戲"],
+                            [SlotDataStringType.number, i + 1]
+                        ]);
+                    }
+                    else {
+                        test
+                            .setTitle([
+                                [SlotDataStringType.text, "免費遊戲"],
+                                [SlotDataStringType.number, i + 1],
+                                [SlotDataStringType.symbol, "-"],
+                                [SlotDataStringType.text, "重新旋轉"],
+                                [SlotDataStringType.number, j]
+                            ]);
+                    }
+                    const addIconList = this.getAddIconList(gameData.fg[i][j].winIconPos, gameData.fg[i][j].result);
+                    test
+                        .processIconData(ConfigGame1015.REEL_AMOUNT, ConfigGame1015.REEL_ICON_AMOUNT, gameData.fg[i][j].result, [
+                            test.setMark(winIcon2DPos, "#FF0000"),
+                            test.addIconList(2, ConfigGame1015.REEL_AMOUNT, gameData.fg[i][j].winIconPos, addIconList),
+                            //this.addIconList2Example(gameData.fg[i][j].winIconPos, gameData.fg[i][j].result)
+                        ])
+                        .setSummary([
+                            [SlotDataStringType.text, "加成倍數"],
+                            [SlotDataStringType.symbol, "="],
+                            [SlotDataStringType.number, gameData.fg[i][j].multiplyOdds],
+                            [SlotDataStringType.symbol, "("],
+                            [SlotDataStringType.number, gameData.fg[i][j].orangeHandPrintCount],
+                            [SlotDataStringType.symbol, "/"],
+                            [SlotDataStringType.number, 5],
+                            [SlotDataStringType.symbol, ")"]
+                        ])
+                        .setSummary([
+                            [SlotDataStringType.text, "免費旋轉局數"],
+                            [SlotDataStringType.symbol, "="],
+                            [SlotDataStringType.number, gameData.fg[i][j].remainCount],
+                            [SlotDataStringType.symbol, "("],
+                            [SlotDataStringType.number, gameData.fg[i][j].purpleHandPrintCount],
+                            [SlotDataStringType.symbol, "/"],
+                            [SlotDataStringType.number, 5],
+                            [SlotDataStringType.symbol, ")"]
+                        ])
+                        .setDetail(gameData.fg[i][j].isWin, {
+                            winIconSymbolList: winIconSymbolList,
+                            odds: odds,
+                            megaWayCombinationCount: winCombination
+                        })
+                        .setSummary([
+                            [SlotDataStringType.text, "單次贏分"],
+                            [SlotDataStringType.symbol, "="],
+                            [SlotDataStringType.number, gameData.fg[i][j].score]
+                        ])
+                        .setSummary([
+                            [SlotDataStringType.text, "總贏分"],
+                            [SlotDataStringType.symbol, "="],
+                            [SlotDataStringType.number, totalWin]
+                        ])
+                        .combineOneRoundData();
+                }
+                test.setRecords();
+            }
+            const result = test.getFinalSlotData();
+            const gameRecordAST: GameRecordAST = {
+                ast: result,
+                icons: icons
+            }
+            return gameRecordAST;
+        }
+
+        private addIconList2Example(posList: number[], result: number[]): IconDataProcessor {
+            return (list) => {
+                const newList = [...list];
+                for (let i = 0; i < posList.length; i++) {
+                    const pos = posList[i];
+                    const MeowData = new IconData();
+                    MeowData.x = Math.floor(pos / ConfigGame1015.REEL_AMOUNT) + 1;
+                    MeowData.y = (pos % ConfigGame1015.REEL_AMOUNT) + 1;
+                    MeowData.icon = ConfigGame1015.ORANGE_SYMBOL.includes(result[pos]) ? 13 : 14;
+                    MeowData.z = 2;
+                    newList.push(MeowData);
+                }
+                return newList;
+            };
+        }
+
+        private getAddIconList(posList: number[], result: number[]): number[] {
+            const addIconList: number[] = [];
+            for (let i = 0; i < posList.length; i++) {
+                const pos = posList[i];
+                addIconList.push(ConfigGame1015.ORANGE_SYMBOL.includes(result[pos]) ? 13 : 14);
+            }
+            return addIconList;
+        }
+
+        private convertIconPosInToReelPos(iconPos: number[]): number[][] {
+            const returnPos: number[][] = Array.from({ length: ConfigGame1015.REEL_AMOUNT }, () => []);
+            for (let i = 0; i < iconPos.length; i++) {
+                let reelID = Math.floor(iconPos[i] / ConfigGame1015.REEL_ICON_AMOUNT);
+                returnPos[reelID].push(iconPos[i] % ConfigGame1015.REEL_ICON_AMOUNT);
+            }
+
+            return returnPos;
+        }
+    }
+
+    let parser = (slotData: string, bet: number, featureRatio: number): GameRecordAST => {
+        const resultData = UtilityGame1015.parseServerGameData(slotData);
+        const test = new TestReSpinWithIconLayers();
+        return test.test(resultData, bet);
+    }
+
+    slotDataParser9991015 = parser;
+}
+
+// console.log(slotDataParser000(''));

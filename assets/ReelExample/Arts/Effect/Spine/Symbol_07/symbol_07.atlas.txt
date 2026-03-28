@@ -1,0 +1,237 @@
+
+symbol_07.webp
+size: 2048,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+01_gold
+  rotate: false
+  xy: 1342, 110
+  size: 85, 102
+  orig: 85, 102
+  offset: 0, 0
+  index: -1
+05_grooves
+  rotate: false
+  xy: 1342, 214
+  size: 93, 110
+  orig: 93, 110
+  offset: 0, 0
+  index: -1
+06_board
+  rotate: false
+  xy: 1342, 326
+  size: 132, 160
+  orig: 132, 160
+  offset: 0, 0
+  index: -1
+Symbol_07_light/Symbol_07_light_00
+  rotate: false
+  xy: 2, 326
+  size: 132, 160
+  orig: 132, 160
+  offset: 0, 0
+  index: -1
+Symbol_07_light/Symbol_07_light_01
+  rotate: false
+  xy: 2, 164
+  size: 132, 160
+  orig: 132, 160
+  offset: 0, 0
+  index: -1
+Symbol_07_light/Symbol_07_light_02
+  rotate: false
+  xy: 2, 2
+  size: 132, 160
+  orig: 132, 160
+  offset: 0, 0
+  index: -1
+Symbol_07_light/Symbol_07_light_03
+  rotate: false
+  xy: 136, 326
+  size: 132, 160
+  orig: 132, 160
+  offset: 0, 0
+  index: -1
+Symbol_07_light/Symbol_07_light_04
+  rotate: false
+  xy: 136, 164
+  size: 132, 160
+  orig: 132, 160
+  offset: 0, 0
+  index: -1
+Symbol_07_light/Symbol_07_light_05
+  rotate: false
+  xy: 136, 2
+  size: 132, 160
+  orig: 132, 160
+  offset: 0, 0
+  index: -1
+Symbol_07_light/Symbol_07_light_06
+  rotate: false
+  xy: 270, 326
+  size: 132, 160
+  orig: 132, 160
+  offset: 0, 0
+  index: -1
+Symbol_07_light/Symbol_07_light_07
+  rotate: false
+  xy: 270, 164
+  size: 132, 160
+  orig: 132, 160
+  offset: 0, 0
+  index: -1
+Symbol_07_light/Symbol_07_light_08
+  rotate: false
+  xy: 270, 2
+  size: 132, 160
+  orig: 132, 160
+  offset: 0, 0
+  index: -1
+Symbol_07_light/Symbol_07_light_09
+  rotate: false
+  xy: 404, 326
+  size: 132, 160
+  orig: 132, 160
+  offset: 0, 0
+  index: -1
+Symbol_07_light/Symbol_07_light_10
+  rotate: false
+  xy: 404, 164
+  size: 132, 160
+  orig: 132, 160
+  offset: 0, 0
+  index: -1
+Symbol_07_light/Symbol_07_light_11
+  rotate: false
+  xy: 404, 2
+  size: 132, 160
+  orig: 132, 160
+  offset: 0, 0
+  index: -1
+Symbol_07_light/Symbol_07_light_12
+  rotate: false
+  xy: 538, 326
+  size: 132, 160
+  orig: 132, 160
+  offset: 0, 0
+  index: -1
+Symbol_07_light/Symbol_07_light_13
+  rotate: false
+  xy: 538, 164
+  size: 132, 160
+  orig: 132, 160
+  offset: 0, 0
+  index: -1
+Symbol_07_light/Symbol_07_light_14
+  rotate: false
+  xy: 538, 2
+  size: 132, 160
+  orig: 132, 160
+  offset: 0, 0
+  index: -1
+Symbol_07_light/Symbol_07_light_15
+  rotate: false
+  xy: 672, 326
+  size: 132, 160
+  orig: 132, 160
+  offset: 0, 0
+  index: -1
+Symbol_07_light/Symbol_07_light_16
+  rotate: false
+  xy: 672, 164
+  size: 132, 160
+  orig: 132, 160
+  offset: 0, 0
+  index: -1
+Symbol_07_light/Symbol_07_light_17
+  rotate: false
+  xy: 672, 2
+  size: 132, 160
+  orig: 132, 160
+  offset: 0, 0
+  index: -1
+Symbol_07_light/Symbol_07_light_18
+  rotate: false
+  xy: 806, 326
+  size: 132, 160
+  orig: 132, 160
+  offset: 0, 0
+  index: -1
+Symbol_07_light/Symbol_07_light_19
+  rotate: false
+  xy: 806, 164
+  size: 132, 160
+  orig: 132, 160
+  offset: 0, 0
+  index: -1
+Symbol_07_light/Symbol_07_light_20
+  rotate: false
+  xy: 806, 2
+  size: 132, 160
+  orig: 132, 160
+  offset: 0, 0
+  index: -1
+Symbol_07_light/Symbol_07_light_21
+  rotate: false
+  xy: 940, 326
+  size: 132, 160
+  orig: 132, 160
+  offset: 0, 0
+  index: -1
+Symbol_07_light/Symbol_07_light_22
+  rotate: false
+  xy: 940, 164
+  size: 132, 160
+  orig: 132, 160
+  offset: 0, 0
+  index: -1
+Symbol_07_light/Symbol_07_light_23
+  rotate: false
+  xy: 940, 2
+  size: 132, 160
+  orig: 132, 160
+  offset: 0, 0
+  index: -1
+Symbol_07_light/Symbol_07_light_24
+  rotate: false
+  xy: 1074, 326
+  size: 132, 160
+  orig: 132, 160
+  offset: 0, 0
+  index: -1
+Symbol_07_light/Symbol_07_light_25
+  rotate: false
+  xy: 1074, 164
+  size: 132, 160
+  orig: 132, 160
+  offset: 0, 0
+  index: -1
+Symbol_07_light/Symbol_07_light_26
+  rotate: false
+  xy: 1074, 2
+  size: 132, 160
+  orig: 132, 160
+  offset: 0, 0
+  index: -1
+Symbol_07_light/Symbol_07_light_27
+  rotate: false
+  xy: 1208, 326
+  size: 132, 160
+  orig: 132, 160
+  offset: 0, 0
+  index: -1
+Symbol_07_light/Symbol_07_light_28
+  rotate: false
+  xy: 1208, 164
+  size: 132, 160
+  orig: 132, 160
+  offset: 0, 0
+  index: -1
+Symbol_07_light/Symbol_07_light_29
+  rotate: false
+  xy: 1208, 2
+  size: 132, 160
+  orig: 132, 160
+  offset: 0, 0
+  index: -1

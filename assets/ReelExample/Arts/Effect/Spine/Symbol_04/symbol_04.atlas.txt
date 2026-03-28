@@ -1,0 +1,356 @@
+
+symbol_04.webp
+size: 1716,272
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+01_agave_01
+  rotate: false
+  xy: 1028, 9
+  size: 75, 31
+  orig: 75, 31
+  offset: 0, 0
+  index: -1
+01_agave_01_G
+  rotate: true
+  xy: 776, 62
+  size: 75, 31
+  orig: 75, 31
+  offset: 0, 0
+  index: -1
+01_agave_02
+  rotate: false
+  xy: 1128, 5
+  size: 75, 36
+  orig: 75, 36
+  offset: 0, 0
+  index: -1
+01_agave_02_G
+  rotate: false
+  xy: 1205, 5
+  size: 75, 36
+  orig: 75, 36
+  offset: 0, 0
+  index: -1
+01_bg
+  rotate: true
+  xy: 1133, 140
+  size: 130, 157
+  orig: 130, 157
+  offset: 0, 0
+  index: -1
+01_frame
+  rotate: true
+  xy: 2, 136
+  size: 134, 161
+  orig: 134, 161
+  offset: 0, 0
+  index: -1
+01_frame_sh
+  rotate: true
+  xy: 811, 11
+  size: 127, 156
+  orig: 127, 156
+  offset: 0, 0
+  index: -1
+01_glass_01
+  rotate: false
+  xy: 593, 2
+  size: 90, 63
+  orig: 90, 63
+  offset: 0, 0
+  index: -1
+01_glass_02
+  rotate: true
+  xy: 707, 47
+  size: 90, 67
+  orig: 90, 67
+  offset: 0, 0
+  index: -1
+01_glass_03
+  rotate: false
+  xy: 1425, 6
+  size: 22, 25
+  orig: 22, 25
+  offset: 0, 0
+  index: -1
+01_glass_04
+  rotate: false
+  xy: 269, 14
+  size: 55, 30
+  orig: 55, 30
+  offset: 0, 0
+  index: -1
+01_ice_01
+  rotate: false
+  xy: 1330, 3
+  size: 33, 28
+  orig: 33, 28
+  offset: 0, 0
+  index: -1
+01_ice_02
+  rotate: false
+  xy: 395, 21
+  size: 31, 27
+  orig: 31, 27
+  offset: 0, 0
+  index: -1
+01_lemon
+  rotate: true
+  xy: 225, 9
+  size: 45, 42
+  orig: 45, 42
+  offset: 0, 0
+  index: -1
+01_lemon_G
+  rotate: false
+  xy: 80, 7
+  size: 45, 42
+  orig: 45, 42
+  offset: 0, 0
+  index: -1
+01_lemon_sh
+  rotate: false
+  xy: 1365, 4
+  size: 58, 27
+  orig: 58, 27
+  offset: 0, 0
+  index: -1
+01_ripple_01
+  rotate: true
+  xy: 1695, 233
+  size: 37, 12
+  orig: 37, 12
+  offset: 0, 0
+  index: -1
+01_ripple_02
+  rotate: true
+  xy: 1695, 208
+  size: 23, 12
+  orig: 23, 12
+  offset: 0, 0
+  index: -1
+01_sh
+  rotate: false
+  xy: 685, 2
+  size: 68, 43
+  orig: 68, 43
+  offset: 0, 0
+  index: -1
+FX/Frame_Glow
+  rotate: true
+  xy: 165, 136
+  size: 134, 161
+  orig: 134, 161
+  offset: 0, 0
+  index: -1
+FX/Frame_SweepLight/Frame_SweepLight_00
+  rotate: true
+  xy: 1282, 3
+  size: 28, 46
+  orig: 28, 46
+  offset: 0, 0
+  index: -1
+FX/Frame_SweepLight/Frame_SweepLight_01
+  rotate: false
+  xy: 1675, 48
+  size: 37, 63
+  orig: 37, 63
+  offset: 0, 0
+  index: -1
+FX/Frame_SweepLight/Frame_SweepLight_02
+  rotate: true
+  xy: 142, 5
+  size: 49, 81
+  orig: 49, 81
+  offset: 0, 0
+  index: -1
+FX/Frame_SweepLight/Frame_SweepLight_03
+  rotate: true
+  xy: 473, 2
+  size: 61, 99
+  orig: 61, 99
+  offset: 0, 0
+  index: -1
+FX/Frame_SweepLight/Frame_SweepLight_04
+  rotate: true
+  xy: 473, 65
+  size: 72, 118
+  orig: 72, 118
+  offset: 0, 0
+  index: -1
+FX/Frame_SweepLight/Frame_SweepLight_05
+  rotate: true
+  xy: 2, 51
+  size: 83, 138
+  orig: 83, 138
+  offset: 0, 0
+  index: -1
+FX/Frame_SweepLight/Frame_SweepLight_06
+  rotate: true
+  xy: 1128, 43
+  size: 95, 157
+  orig: 95, 157
+  offset: 0, 0
+  index: -1
+FX/Frame_SweepLight/Frame_SweepLight_07
+  rotate: true
+  xy: 1292, 33
+  size: 108, 158
+  orig: 108, 158
+  offset: 0, 0
+  index: -1
+FX/Frame_SweepLight/Frame_SweepLight_08
+  rotate: false
+  xy: 1453, 112
+  size: 122, 158
+  orig: 122, 158
+  offset: 0, 0
+  index: -1
+FX/Frame_SweepLight/Frame_SweepLight_09
+  rotate: true
+  xy: 328, 139
+  size: 131, 159
+  orig: 131, 159
+  offset: 0, 0
+  index: -1
+FX/Frame_SweepLight/Frame_SweepLight_10
+  rotate: true
+  xy: 489, 139
+  size: 131, 159
+  orig: 131, 159
+  offset: 0, 0
+  index: -1
+FX/Frame_SweepLight/Frame_SweepLight_11
+  rotate: true
+  xy: 650, 139
+  size: 131, 159
+  orig: 131, 159
+  offset: 0, 0
+  index: -1
+FX/Frame_SweepLight/Frame_SweepLight_12
+  rotate: true
+  xy: 811, 140
+  size: 130, 159
+  orig: 130, 159
+  offset: 0, 0
+  index: -1
+FX/Frame_SweepLight/Frame_SweepLight_13
+  rotate: true
+  xy: 972, 140
+  size: 130, 159
+  orig: 130, 159
+  offset: 0, 0
+  index: -1
+FX/Frame_SweepLight/Frame_SweepLight_14
+  rotate: true
+  xy: 1292, 143
+  size: 127, 159
+  orig: 127, 159
+  offset: 0, 0
+  index: -1
+FX/Frame_SweepLight/Frame_SweepLight_15
+  rotate: false
+  xy: 1577, 113
+  size: 116, 157
+  orig: 116, 157
+  offset: 0, 0
+  index: -1
+FX/Frame_SweepLight/Frame_SweepLight_16
+  rotate: true
+  xy: 1452, 4
+  size: 106, 157
+  orig: 106, 157
+  offset: 0, 0
+  index: -1
+FX/Frame_SweepLight/Frame_SweepLight_17
+  rotate: true
+  xy: 969, 42
+  size: 96, 157
+  orig: 96, 157
+  offset: 0, 0
+  index: -1
+FX/Frame_SweepLight/Frame_SweepLight_18
+  rotate: true
+  xy: 328, 50
+  size: 87, 143
+  orig: 87, 143
+  offset: 0, 0
+  index: -1
+FX/Frame_SweepLight/Frame_SweepLight_19
+  rotate: true
+  xy: 142, 56
+  size: 78, 127
+  orig: 78, 127
+  offset: 0, 0
+  index: -1
+FX/Frame_SweepLight/Frame_SweepLight_20
+  rotate: true
+  xy: 593, 67
+  size: 70, 112
+  orig: 70, 112
+  offset: 0, 0
+  index: -1
+FX/Frame_SweepLight/Frame_SweepLight_21
+  rotate: false
+  xy: 1611, 10
+  size: 62, 101
+  orig: 62, 101
+  offset: 0, 0
+  index: -1
+FX/Frame_SweepLight/Frame_SweepLight_22
+  rotate: false
+  xy: 271, 46
+  size: 54, 88
+  orig: 54, 88
+  offset: 0, 0
+  index: -1
+FX/Frame_SweepLight/Frame_SweepLight_23
+  rotate: true
+  xy: 2, 2
+  size: 47, 76
+  orig: 47, 76
+  offset: 0, 0
+  index: -1
+FX/Frame_SweepLight/Frame_SweepLight_24
+  rotate: true
+  xy: 327, 7
+  size: 41, 66
+  orig: 41, 66
+  offset: 0, 0
+  index: -1
+FX/Frame_SweepLight/Frame_SweepLight_25
+  rotate: true
+  xy: 969, 5
+  size: 35, 57
+  orig: 35, 57
+  offset: 0, 0
+  index: -1
+FX/Frame_SweepLight/Frame_SweepLight_26
+  rotate: false
+  xy: 776, 13
+  size: 31, 47
+  orig: 31, 47
+  offset: 0, 0
+  index: -1
+FX/Frame_SweepLight/Frame_SweepLight_27
+  rotate: false
+  xy: 1675, 5
+  size: 26, 41
+  orig: 26, 41
+  offset: 0, 0
+  index: -1
+FX/Frame_SweepLight/Frame_SweepLight_28
+  rotate: false
+  xy: 428, 12
+  size: 23, 36
+  orig: 23, 36
+  offset: 0, 0
+  index: -1
+FX/Frame_SweepLight/Frame_SweepLight_29
+  rotate: false
+  xy: 1105, 7
+  size: 21, 33
+  orig: 21, 33
+  offset: 0, 0
+  index: -1

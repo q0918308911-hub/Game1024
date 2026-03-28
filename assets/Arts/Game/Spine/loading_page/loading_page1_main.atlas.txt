@@ -1,0 +1,146 @@
+
+loading_page1_main.webp
+size: 248,600
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Icon00_02/Icon00_02_00
+  rotate: false
+  xy: 124, 428
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon00_04/Icon00_04_00
+  rotate: false
+  xy: 2, 221
+  size: 120, 56
+  orig: 128, 64
+  offset: 4, 4
+  index: -1
+Icon00_05/Icon00_05_00
+  rotate: false
+  xy: 124, 2
+  size: 120, 48
+  orig: 128, 56
+  offset: 4, 4
+  index: -1
+Icon01_04/Icon01_04_00
+  rotate: false
+  xy: 2, 337
+  size: 120, 56
+  orig: 128, 64
+  offset: 4, 4
+  index: -1
+Icon01_05/Icon01_05_00
+  rotate: false
+  xy: 124, 152
+  size: 120, 48
+  orig: 128, 56
+  offset: 4, 4
+  index: -1
+Icon02_04/Icon02_04_00
+  rotate: false
+  xy: 124, 311
+  size: 120, 56
+  orig: 128, 64
+  offset: 4, 4
+  index: -1
+Icon02_05/Icon02_05_00
+  rotate: false
+  xy: 2, 120
+  size: 120, 48
+  orig: 128, 56
+  offset: 4, 4
+  index: -1
+Icon03_05/Icon03_05_00
+  rotate: false
+  xy: 124, 52
+  size: 120, 48
+  orig: 128, 56
+  offset: 4, 4
+  index: -1
+Icon04_04/Icon04_04_00
+  rotate: false
+  xy: 2, 454
+  size: 120, 57
+  orig: 128, 64
+  offset: 4, 3
+  index: -1
+Icon04_05/Icon04_05_00
+  rotate: false
+  xy: 2, 170
+  size: 120, 49
+  orig: 128, 56
+  offset: 4, 3
+  index: -1
+Icon05_02/Icon05_02_00
+  rotate: false
+  xy: 124, 514
+  size: 120, 84
+  orig: 128, 96
+  offset: 4, 6
+  index: -1
+Icon05_04/Icon05_04_00
+  rotate: false
+  xy: 2, 395
+  size: 120, 57
+  orig: 128, 64
+  offset: 4, 3
+  index: -1
+Icon05_05/Icon05_05_00
+  rotate: false
+  xy: 2, 70
+  size: 120, 48
+  orig: 128, 56
+  offset: 4, 4
+  index: -1
+Icon06_05/Icon06_05_00
+  rotate: false
+  xy: 2, 20
+  size: 120, 48
+  orig: 128, 56
+  offset: 4, 4
+  index: -1
+Icon07_04/Icon07_04_00
+  rotate: false
+  xy: 2, 279
+  size: 120, 56
+  orig: 128, 64
+  offset: 4, 4
+  index: -1
+Icon07_05/Icon07_05_00
+  rotate: false
+  xy: 124, 102
+  size: 120, 48
+  orig: 128, 56
+  offset: 4, 4
+  index: -1
+Icon08_02/Icon08_02_00
+  rotate: false
+  xy: 2, 513
+  size: 120, 85
+  orig: 128, 96
+  offset: 4, 5
+  index: -1
+Icon08_04/Icon08_04_00
+  rotate: false
+  xy: 124, 369
+  size: 120, 57
+  orig: 128, 64
+  offset: 4, 3
+  index: -1
+Icon08_05/Icon08_05_00
+  rotate: false
+  xy: 124, 202
+  size: 120, 49
+  orig: 128, 56
+  offset: 4, 3
+  index: -1
+Icon09_04/Icon09_04_00
+  rotate: false
+  xy: 124, 253
+  size: 120, 56
+  orig: 128, 64
+  offset: 4, 4
+  index: -1

@@ -1,0 +1,91 @@
+{
+    "$schema": "./@types/schema/package/index.json",
+    "package_version": 2,
+    "name": "component-json-tools",
+    "version": "1.0.0",
+    "author": "Bruce",
+    "editor": ">=3.8.3",
+    "scripts": {
+        "preinstall": "node ./scripts/preinstall.js",
+        "build": "tsc"
+    },
+    "description": "i18n:component-json-tools.description",
+    "main": "./dist/main.js",
+    "dependencies": {
+        "typescript": "^5.9.2"
+    },
+    "devDependencies": {
+        "@cocos/creator-types": "^3.8.3",
+        "@types/node": "^18.17.1"
+    },
+    "panels": {
+        "ExportJson": {
+            "title": "ExportJson Panel",
+            "type": "dockable",
+            "main": "dist/exportJsonPanels/index.js",
+            "size": {
+                "min-width": 400,
+                "min-height": 300,
+                "width": 400,
+                "height": 300
+            }
+        },
+        "ImportJson": {
+            "title": "ImportJson Panel",
+            "type": "dockable",
+            "main": "dist/importJsonPanels/index.js",
+            "size": {
+                "min-width": 400,
+                "min-height": 300,
+                "width": 400,
+                "height": 300
+            }
+        }
+    },
+    "contributions": {
+        "menu": [
+            {
+                "path": "i18n:component-json-tools.menu",
+                "label": "i18n:component-json-tools.open_export_json_panel",
+                "message": "open-export-json-panel"
+            },
+            {
+                "path": "i18n:component-json-tools.menu",
+                "label": "i18n:component-json-tools.open_import_json_panel",
+                "message": "open-import-json-panel"
+            }
+        ],
+        "messages": {
+            "after-reload": {
+                "methods": [
+                    "afterReload"
+                ]
+            },
+            "open-export-json-panel": {
+                "methods": [
+                    "openExportJsonPanel"
+                ]
+            },
+            "export-component-props": {
+                "methods": [
+                    "exportComponentProps"
+                ]
+            },
+            "open-import-json-panel": {
+                "methods": [
+                    "openImportJsonPanel"
+                ]
+            },
+            "import-component-props": {
+                "methods": [
+                    "importComponentProps"
+                ]
+            },
+            "export-json-for-component": {
+                "methods": [
+                    "exportJsonForComponent"
+                ]
+            }
+        }
+    }
+}

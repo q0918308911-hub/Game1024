@@ -1,0 +1,92 @@
+{
+    "$schema": "./@types/schema/package/index.json",
+    "package_version": 2,
+    "name": "custom-extension-manager",
+    "version": "1.0.0",
+    "author": "Cocos Creator",
+    "editor": ">=3.8.3",
+    "scripts": {
+        "preinstall": "node ./scripts/preinstall.js",
+        "build": "tsc"
+    },
+    "description": "i18n:custom-extension-manager.description",
+    "main": "./dist/main.js",
+    "devDependencies": {
+        "@cocos/creator-types": "^3.8.3",
+        "@types/node": "^18.17.1"
+    },
+    "panels": {
+        "default": {
+            "title": "custom-extension-manager Default Panel",
+            "type": "dockable",
+            "main": "dist/panels/default",
+            "size": {
+                "min-width": 400,
+                "min-height": 300,
+                "width": 600,
+                "height": 450
+            }
+        }
+    },
+    "contributions": {
+        "messages": {
+            "after-reload": {
+                "methods": [
+                    "afterReload"
+                ]
+            },
+            "install-all-extensions-dependencies": {
+                "methods": [
+                    "installAllExtensionsDependencies"
+                ]
+            },
+            "refresh-extensions-dummy": {
+                "methods": [
+                    "refreshExtensionsDummy"
+                ]
+            },
+            "create-extension": {
+                "methods": [
+                    "createExtension"
+                ]
+            },
+            "open-extension-in-vscode": {
+                "methods": [
+                    "openExtensionInVscode"
+                ]
+            },
+            "reload-extension": {
+                "methods": [
+                    "reloadExtension"
+                ]
+            },
+            "delete-extension": {
+                "methods": [
+                    "deleteExtension"
+                ]
+            },
+            "enable-extension": {
+                "methods": [
+                    "enableExtension"
+                ]
+            },
+            "disable-extension": {
+                "methods": [
+                    "disableExtension"
+                ]
+            }
+        },
+        "asset-db": {
+            "mount": {
+                "path": "../../plugin",
+                "readonly": true
+            }
+        },
+        "assets": {
+            "menu": {
+                "methods": "./dist/AssetMenu.js",
+                "assetMenu": "onAssetMenu"
+            }
+        }
+    }
+}

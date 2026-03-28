@@ -1,0 +1,27 @@
+
+loading_page1_bot.webp
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+FG_reel
+  rotate: false
+  xy: 2, 452
+  size: 696, 407
+  orig: 696, 407
+  offset: 0, 0
+  index: -1
+fx_FG_reel_backlight_l
+  rotate: false
+  xy: 2, 2
+  size: 265, 448
+  orig: 265, 448
+  offset: 0, 0
+  index: -1
+fx_FG_reel_backlight_r
+  rotate: false
+  xy: 269, 33
+  size: 262, 417
+  orig: 262, 417
+  offset: 0, 0
+  index: -1

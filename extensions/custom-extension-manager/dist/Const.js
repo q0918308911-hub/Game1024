@@ -1,0 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.HTML_TEMPLATE = exports.BLANK_TEMPLATE = void 0;
+exports.BLANK_TEMPLATE = 'custom-extension-manager-blank-template';
+exports.HTML_TEMPLATE = 'custom-extension-manager-html-template';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQ29uc3QuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi9zb3VyY2UvQ29uc3QudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQWEsUUFBQSxjQUFjLEdBQUcseUNBQXlDLENBQUM7QUFDM0QsUUFBQSxhQUFhLEdBQUcsd0NBQXdDLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY29uc3QgQkxBTktfVEVNUExBVEUgPSAnY3VzdG9tLWV4dGVuc2lvbi1tYW5hZ2VyLWJsYW5rLXRlbXBsYXRlJztcclxuZXhwb3J0IGNvbnN0IEhUTUxfVEVNUExBVEUgPSAnY3VzdG9tLWV4dGVuc2lvbi1tYW5hZ2VyLWh0bWwtdGVtcGxhdGUnOyJdfQ==

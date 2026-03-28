@@ -1,0 +1,42 @@
+<div style="display:flex; flex-direction:column; height:100%;">
+    <div>
+        <text>輸入目標資料夾路徑(以逗號分隔)</text>
+        <input type="text" id="texture-target-folder-input" style="margin-left:8px; padding:4px; width:200px;" />
+    </div>
+
+    <div>
+        <text>轉換遮罩類型</text>
+        <br>
+        <ui-button id="convert-prefab-mask-button">轉換 prefab</ui-button>
+        <ui-button id="convert-scene-mask-button">轉換當前場景</ui-button>
+    </div>
+
+    <div style="margin-bottom:8px;">
+        <text>圖片資源操作</text>
+        <br>
+        <ui-button id="refresh-texture-info-button">刷新貼圖資訊</ui-button>
+        <ui-button id="close-mipmap-button">關閉所有貼圖的mipmap</ui-button>
+        <ui-button id="trim-mode-to-none-button">調整所有TrimType為 none</ui-button>
+    </div>
+
+    <div>
+        <text>進行所有操作</text>
+        <br>
+        <ui-button id="all-operation-button">進行所有操作</ui-button>
+    </div>
+
+    <div>
+        <text>貼圖總數量: </text>
+        <text id="total-texture-amount-text"></text>
+        <br>
+        <text>貼圖總GPU記憶體大小: </text>
+        <text id="total-memory-text"></text>
+        <br>
+        <text>貼圖總像素量: </text>
+        <text id="total-pixel-count-text"></text>
+    </div>
+
+    <!-- 可上下捲動 -->
+    <div id="texture-info-container" style="flex:1; overflow-y:auto; border:1px solid #aaa; padding:8px;">
+    </div>
+</div>

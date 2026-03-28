@@ -1,0 +1,58 @@
+﻿{
+  "tw": {
+    "GameHelp_00_1001_1": "金框圖示贏分後，將轉變成百搭圖示。",
+    "GameHelp_00_1001_2": "透過連續得分，獲得更高的乘數。",
+    "GameMsg_1001_1_1": "收集 3 個 <<scatter_icon>> 可獲得免費遊戲。",
+    "GameMsg_1001_1_2": "出現金框圖示，有機會獲得 <<s_wild_icon>> 或 <<b_wild_icon>>",
+    "GameMsg_1001_1_3": "免費遊戲中，最高可達10倍獎勵倍數。"
+  },
+  "cn": {
+    "GameHelp_00_1001_1": "金框符号得分后，会变成百搭符号。",
+    "GameHelp_00_1001_2": "通过连续得分，可以获得更高的倍数。",
+    "GameMsg_1001_1_1": "收集 3 个 <<scatter_icon>> ，即可获得免费游戏。",
+    "GameMsg_1001_1_2": "出现金框符号，有机会获得 <<s_wild_icon>> 、 <<b_wild_icon>> 。",
+    "GameMsg_1001_1_3": "在免费游戏中，最高可获得 10 倍的奖励倍数。"
+  },
+  "en": {
+    "GameHelp_00_1001_1": "After winning with a golden-framed symbol, it will convert into a WILD symbol.",
+    "GameHelp_00_1001_2": "By winning consecutively, you can get higher multipliers.",
+    "GameMsg_1001_1_1": "Collect 3 <<scatter_icon>> to trigger the FREE GAME.",
+    "GameMsg_1001_1_2": "When a GOLDEN-FRAMED SYMBOL appears, there is a chance to get <<s_wild_icon>> or <<b_wild_icon>>.",
+    "GameMsg_1001_1_3": "During the FREE GAME, the bonus multiplier can reach up to 10x."
+  },
+  "vn": {
+    "GameHelp_00_1001_1": "Sau khi icon khung vàng đạt điểm, sẽ chuyển đổi thành icon WILD.",
+    "GameHelp_00_1001_2": "Thông qua đạt điểm thưởng liên tục để nhận được số nhân càng cao hơn.",
+    "GameMsg_1001_1_1": "Thu thập 3 cái <<scatter_icon>> để nhận được FREE GAME.",
+    "GameMsg_1001_1_2": "Khi xuất hiện ICON KHUNG VÀNG, sẽ có cơ hội nhận được <<s_wild_icon>>, <<b_wild_icon>>",
+    "GameMsg_1001_1_3": "Trong FREE GAME, tối đa có thể đạt đến thưởng bội số gấp 10 lần"
+  },
+  "jp": {
+    "GameHelp_00_1001_1": "金枠図柄は勝つと、WILD図柄になる！",
+    "GameHelp_00_1001_2": "連続得点でより高い倍率GET！",
+    "GameMsg_1001_1_1": "<<scatter_icon>>が3つ揃うと、FREE GAMEを獲得",
+    "GameMsg_1001_1_2": "金枠図柄が出現すると、<<s_wild_icon>>、<<b_wild_icon>>を獲得可能",
+    "GameMsg_1001_1_3": "FREE GAME中に最大10倍のマルチプライヤーを獲得可能"
+  },
+  "th": {
+    "GameHelp_00_1001_1": "เมื่อสัญลักษณ์ในกรอบทองชนะได้แต้ม  สัญลักษณ์นั้นจะเปลี่ยนเป็นWILD",
+    "GameHelp_00_1001_2": "ชนะต่อเนื่องเพื่อรับตัวคูณที่สูงขึ้น",
+    "GameMsg_1001_1_1": "สะสม <<scatter_icon>> ครบ 3 อัน จะได้รับฟรีเกม",
+    "GameMsg_1001_1_2": "เมื่อปรากฏกรอบทอง มีโอกาสได้รับ <<s_wild_icon>> หรือ <<b_wild_icon>>",
+    "GameMsg_1001_1_3": "ในฟรีเกม มีโอกาสรับรางวัลตัวคูณสูงสุดถึง 10 เท่า"
+  },
+  "es": {
+    "GameHelp_00_1001_1": "金框圖示贏分後，將轉變成百搭圖示。",
+    "GameHelp_00_1001_2": "透過連續得分，獲得更高的乘數。",
+    "GameMsg_1001_1_1": "收集 3 個 <<scatter_icon>> 可獲得免費遊戲。",
+    "GameMsg_1001_1_2": "出現金框圖示，有機會獲得 <<s_wild_icon>> 或 <<b_wild_icon>>",
+    "GameMsg_1001_1_3": "免費遊戲中，最高可達10倍獎勵倍數。"
+  },
+  "kr": {
+    "GameHelp_00_1001_1": "金框圖示贏分後，將轉變成百搭圖示。",
+    "GameHelp_00_1001_2": "透過連續得分，獲得更高的乘數。",
+    "GameMsg_1001_1_1": "收集 3 個 <<scatter_icon>> 可獲得免費遊戲。",
+    "GameMsg_1001_1_2": "出現金框圖示，有機會獲得 <<s_wild_icon>> 或 <<b_wild_icon>>",
+    "GameMsg_1001_1_3": "免費遊戲中，最高可達10倍獎勵倍數。"
+  }
+}

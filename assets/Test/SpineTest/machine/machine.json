@@ -1,0 +1,3172 @@
+{
+"skeleton": { "hash": "ALakBKk4NDySip8t2qsYaPCD+SQ", "spine": "3.6.53", "width": 867.8, "height": 1184, "images": "./images/" },
+"bones": [
+	{ "name": "root" },
+	{ "name": "NFG", "parent": "root", "y": 63.37, "scaleX": -1 }
+],
+"slots": [
+	{ "name": "ng_reel_shadow_R", "bone": "root", "attachment": "ng_reel_shadow_02" },
+	{ "name": "ng_reel_shadow", "bone": "root", "attachment": "ng_reel_shadow_02" },
+	{ "name": "screen_fg", "bone": "root" },
+	{ "name": "screen_ng", "bone": "root", "attachment": "screen_ng" },
+	{ "name": "grid", "bone": "root" },
+	{ "name": "ng_reel_ng_5_R", "bone": "root", "attachment": "ng_reel_ng_00" },
+	{ "name": "ng_reel_ng_5", "bone": "root", "attachment": "ng_reel_ng_00" },
+	{ "name": "ng_reel_ng_7_R", "bone": "root", "attachment": "ng_reel_ng_01" },
+	{ "name": "ng_reel_ng_7", "bone": "root", "attachment": "ng_reel_ng_01" },
+	{ "name": "ng_reel_ng_10_R", "bone": "root", "attachment": "ng_reel_ng_02" },
+	{ "name": "ng_reel_ng_10", "bone": "root", "attachment": "ng_reel_ng_02" },
+	{ "name": "fg_reel_glow_ng_02_R", "bone": "root", "attachment": "fg_reel_glow_ng" },
+	{ "name": "fg_reel_glow_ng_02", "bone": "root", "attachment": "fg_reel_glow_ng" },
+	{ "name": "fg_reel_glow_ng_00_R", "bone": "root", "attachment": "fg_reel_glow_ng_00" },
+	{ "name": "fg_reel_glow_ng_00", "bone": "root", "attachment": "fg_reel_glow_ng_00" },
+	{ "name": "fg_reel_glow_ng_01_R", "bone": "root", "attachment": "fg_reel_glow_ng_01" },
+	{ "name": "fg_reel_glow_ng_01", "bone": "root", "attachment": "fg_reel_glow_ng_01" },
+	{ "name": "ng_reel_glow_ng_02_R", "bone": "root" },
+	{ "name": "ng_reel_glow_ng_02", "bone": "root" },
+	{ "name": "ng_reel_glow_ng_00_R", "bone": "root" },
+	{ "name": "ng_reel_glow_ng_00", "bone": "root" },
+	{ "name": "ng_reel_glow_ng_01_R", "bone": "root" },
+	{ "name": "ng_reel_glow_ng_01", "bone": "root" },
+	{ "name": "ng_reel_fg_3_b_R", "bone": "root", "attachment": "ng_reel_fg_3_b" },
+	{ "name": "ng_reel_fg_3_b", "bone": "root", "attachment": "ng_reel_fg_3_b" },
+	{ "name": "ng_reel_fg_4_b_R", "bone": "root", "attachment": "ng_reel_fg_4_b" },
+	{ "name": "ng_reel_fg_4_b", "bone": "root", "attachment": "ng_reel_fg_4_b" },
+	{ "name": "ng_reel_fg_2_b_R", "bone": "root", "attachment": "ng_reel_fg_2_b" },
+	{ "name": "ng_reel_fg_2_b", "bone": "root", "attachment": "ng_reel_fg_2_b" },
+	{ "name": "ng_reel_fg_1_b_R", "bone": "root", "attachment": "ng_reel_fg_1_b" },
+	{ "name": "ng_reel_fg_1_b", "bone": "root", "attachment": "ng_reel_fg_1_b" },
+	{ "name": "ng_reel_fg_0", "bone": "root", "attachment": "ng_reel_fg_0" },
+	{ "name": "ng_reel_ng_4_R", "bone": "root", "attachment": "ng_reel_ng_4" },
+	{ "name": "ng_reel_ng_4", "bone": "root", "attachment": "ng_reel_ng_4" },
+	{ "name": "ng_reel_ng_3_R", "bone": "root", "attachment": "ng_reel_ng_3" },
+	{ "name": "ng_reel_ng_3", "bone": "root", "attachment": "ng_reel_ng_3" },
+	{ "name": "ng_reel_ng_2_R", "bone": "root", "attachment": "ng_reel_ng_2" },
+	{ "name": "ng_reel_ng_2", "bone": "root", "attachment": "ng_reel_ng_2" },
+	{ "name": "ng_reel_ng_1_R", "bone": "root", "attachment": "ng_reel_ng_1" },
+	{ "name": "ng_reel_ng_1", "bone": "root", "attachment": "ng_reel_ng_1" },
+	{ "name": "ng_reel_ng_0", "bone": "root", "attachment": "ng_reel_ng_0" },
+	{ "name": "mult_board_FG", "bone": "root" },
+	{ "name": "mult_light_purple", "bone": "root" },
+	{ "name": "mult_light_orange", "bone": "root" },
+	{ "name": "mult_light_blue", "bone": "root" },
+	{ "name": "icon_lattice_fg", "bone": "root" },
+	{ "name": "icon_lattice_fg21", "bone": "root" },
+	{ "name": "icon_lattice_fg6", "bone": "root" },
+	{ "name": "icon_lattice_fg11", "bone": "root" },
+	{ "name": "icon_lattice_fg16", "bone": "root" },
+	{ "name": "icon_lattice_fg2", "bone": "root" },
+	{ "name": "icon_lattice_fg7", "bone": "root" },
+	{ "name": "icon_lattice_fg12", "bone": "root" },
+	{ "name": "icon_lattice_fg17", "bone": "root" },
+	{ "name": "icon_lattice_fg3", "bone": "root" },
+	{ "name": "icon_lattice_fg8", "bone": "root" },
+	{ "name": "icon_lattice_fg13", "bone": "root" },
+	{ "name": "icon_lattice_fg18", "bone": "root" },
+	{ "name": "icon_lattice_fg4", "bone": "root" },
+	{ "name": "icon_lattice_fg9", "bone": "root" },
+	{ "name": "icon_lattice_fg14", "bone": "root" },
+	{ "name": "icon_lattice_fg19", "bone": "root" },
+	{ "name": "icon_lattice_fg5", "bone": "root" },
+	{ "name": "icon_lattice_fg10", "bone": "root" },
+	{ "name": "icon_lattice_fg15", "bone": "root" },
+	{ "name": "icon_lattice_fg20", "bone": "root" },
+	{ "name": "icon_lattice_ng", "bone": "root" },
+	{ "name": "icon_lattice_ng6", "bone": "root" },
+	{ "name": "icon_lattice_ng11", "bone": "root" },
+	{ "name": "icon_lattice_ng16", "bone": "root" },
+	{ "name": "icon_lattice_ng5", "bone": "root" },
+	{ "name": "icon_lattice_ng7", "bone": "root" },
+	{ "name": "icon_lattice_ng12", "bone": "root" },
+	{ "name": "icon_lattice_ng17", "bone": "root" },
+	{ "name": "icon_lattice_ng4", "bone": "root" },
+	{ "name": "icon_lattice_ng8", "bone": "root" },
+	{ "name": "icon_lattice_ng13", "bone": "root" },
+	{ "name": "icon_lattice_ng18", "bone": "root" },
+	{ "name": "icon_lattice_ng3", "bone": "root" },
+	{ "name": "icon_lattice_ng9", "bone": "root" },
+	{ "name": "icon_lattice_ng14", "bone": "root" },
+	{ "name": "icon_lattice_ng19", "bone": "root" },
+	{ "name": "icon_lattice_ng2", "bone": "root" },
+	{ "name": "icon_lattice_ng10", "bone": "root" },
+	{ "name": "icon_lattice_ng15", "bone": "root" },
+	{ "name": "icon_lattice_ng20", "bone": "root" }
+],
+"skins": {
+	"default": {
+		"fg_reel_glow_ng_00": {
+			"fg_reel_glow_ng_00": {
+				"type": "mesh",
+				"uvs": [ 0.99845, 1, 0.00155, 1, 0.00155, 0, 0.99845, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ 1, 1, 0, -316.47, 1, 1, 1, -321, -316.47, 1, 1, 1, -321, -292.47, 1, 1, 1, 0, -292.47, 1 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 322,
+				"height": 24
+			}
+		},
+		"fg_reel_glow_ng_00_R": {
+			"fg_reel_glow_ng_00": {
+				"type": "mesh",
+				"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ 0.5, -253.1, -321.5, -253.1, -321.5, -229.1, 0.5, -229.1 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 322,
+				"height": 24
+			}
+		},
+		"fg_reel_glow_ng_01": {
+			"fg_reel_glow_ng_01": {
+				"type": "mesh",
+				"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ -290.5, -230.1, -327.5, -230.1, -327.5, 206.9, -290.5, 206.9 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 37,
+				"height": 437
+			}
+		},
+		"fg_reel_glow_ng_01_R": {
+			"fg_reel_glow_ng_01": {
+				"type": "mesh",
+				"uvs": [ 1, 0.99771, 0, 0.99771, 0, 0.00229, 1, 0.00229 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ 1, 1, -290.5, -292.47, 1, 1, 1, -327.5, -292.47, 1, 1, 1, -327.5, 142.53, 1, 1, 1, -290.5, 142.53, 1 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 37,
+				"height": 437
+			}
+		},
+		"fg_reel_glow_ng_02": {
+			"fg_reel_glow_ng": {
+				"type": "mesh",
+				"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ 0.5, 205.9, -300.5, 205.9, -300.5, 237.9, 0.5, 237.9 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 301,
+				"height": 32
+			}
+		},
+		"fg_reel_glow_ng_02_R": {
+			"fg_reel_glow_ng": {
+				"type": "mesh",
+				"uvs": [ 0.99834, 1, 0.00166, 1, 0.00166, 0, 0.99834, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ 1, 1, 0, 142.53, 1, 1, 1, -300, 142.53, 1, 1, 1, -300, 174.53, 1, 1, 1, 0, 174.53, 1 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 301,
+				"height": 32
+			}
+		},
+		"grid": {
+			"grid": { "y": -6, "width": 646, "height": 482 }
+		},
+		"icon_lattice_fg": {
+			"icon_lattice_fg": { "x": -116.12, "y": 169, "width": 112, "height": 112 }
+		},
+		"icon_lattice_fg10": {
+			"icon_lattice_fg": { "x": -232, "y": 52.9, "width": 112, "height": 112 }
+		},
+		"icon_lattice_fg11": {
+			"icon_lattice_fg": { "x": -116.12, "y": -63.13, "width": 112, "height": 112 }
+		},
+		"icon_lattice_fg12": {
+			"icon_lattice_fg": { "x": 0.25, "y": -63.13, "width": 112, "height": 112 }
+		},
+		"icon_lattice_fg13": {
+			"icon_lattice_fg": { "x": 115.93, "y": -63.13, "width": 112, "height": 112 }
+		},
+		"icon_lattice_fg14": {
+			"icon_lattice_fg": { "x": 231.79, "y": -63.13, "width": 112, "height": 112 }
+		},
+		"icon_lattice_fg15": {
+			"icon_lattice_fg": { "x": -232, "y": -63.13, "width": 112, "height": 112 }
+		},
+		"icon_lattice_fg16": {
+			"icon_lattice_fg": { "x": -116.12, "y": -179.03, "width": 112, "height": 112 }
+		},
+		"icon_lattice_fg17": {
+			"icon_lattice_fg": { "x": 0.25, "y": -179.03, "width": 112, "height": 112 }
+		},
+		"icon_lattice_fg18": {
+			"icon_lattice_fg": { "x": 115.93, "y": -179.03, "width": 112, "height": 112 }
+		},
+		"icon_lattice_fg19": {
+			"icon_lattice_fg": { "x": 231.79, "y": -179.03, "width": 112, "height": 112 }
+		},
+		"icon_lattice_fg2": {
+			"icon_lattice_fg": { "x": 0.25, "y": 169, "width": 112, "height": 112 }
+		},
+		"icon_lattice_fg20": {
+			"icon_lattice_fg": { "x": -232, "y": -179.03, "width": 112, "height": 112 }
+		},
+		"icon_lattice_fg21": {
+			"icon_lattice_fg": { "x": -116.12, "y": 169, "width": 112, "height": 112 }
+		},
+		"icon_lattice_fg3": {
+			"icon_lattice_fg": { "x": 115.93, "y": 169, "width": 112, "height": 112 }
+		},
+		"icon_lattice_fg4": {
+			"icon_lattice_fg": { "x": 231.79, "y": 169, "width": 112, "height": 112 }
+		},
+		"icon_lattice_fg5": {
+			"icon_lattice_fg": { "x": -232, "y": 169, "width": 112, "height": 112 }
+		},
+		"icon_lattice_fg6": {
+			"icon_lattice_fg": { "x": -116.12, "y": 52.9, "width": 112, "height": 112 }
+		},
+		"icon_lattice_fg7": {
+			"icon_lattice_fg": { "x": 0.25, "y": 52.9, "width": 112, "height": 112 }
+		},
+		"icon_lattice_fg8": {
+			"icon_lattice_fg": { "x": 115.93, "y": 52.9, "width": 112, "height": 112 }
+		},
+		"icon_lattice_fg9": {
+			"icon_lattice_fg": { "x": 231.79, "y": 52.9, "width": 112, "height": 112 }
+		},
+		"icon_lattice_ng": {
+			"icon_lattice_ng": { "x": -232, "y": 169, "width": 112, "height": 112 }
+		},
+		"icon_lattice_ng10": {
+			"icon_lattice_ng": { "x": -116.1, "y": 52.9, "width": 112, "height": 112 }
+		},
+		"icon_lattice_ng11": {
+			"icon_lattice_ng": { "x": -232, "y": -63.13, "width": 112, "height": 112 }
+		},
+		"icon_lattice_ng12": {
+			"icon_lattice_ng": { "x": 231.8, "y": -63.13, "width": 112, "height": 112 }
+		},
+		"icon_lattice_ng13": {
+			"icon_lattice_ng": { "x": 115.9, "y": -63.13, "width": 112, "height": 112 }
+		},
+		"icon_lattice_ng14": {
+			"icon_lattice_ng": { "x": 0.25, "y": -63.13, "width": 112, "height": 112 }
+		},
+		"icon_lattice_ng15": {
+			"icon_lattice_ng": { "x": -116.1, "y": -63.13, "width": 112, "height": 112 }
+		},
+		"icon_lattice_ng16": {
+			"icon_lattice_ng": { "x": -232, "y": -179, "width": 112, "height": 112 }
+		},
+		"icon_lattice_ng17": {
+			"icon_lattice_ng": { "x": 231.8, "y": -179, "width": 112, "height": 112 }
+		},
+		"icon_lattice_ng18": {
+			"icon_lattice_ng": { "x": 115.9, "y": -179, "width": 112, "height": 112 }
+		},
+		"icon_lattice_ng19": {
+			"icon_lattice_ng": { "x": 0.25, "y": -179, "width": 112, "height": 112 }
+		},
+		"icon_lattice_ng2": {
+			"icon_lattice_ng": { "x": -116.1, "y": 169, "width": 112, "height": 112 }
+		},
+		"icon_lattice_ng20": {
+			"icon_lattice_ng": { "x": -116.1, "y": -179, "width": 112, "height": 112 }
+		},
+		"icon_lattice_ng3": {
+			"icon_lattice_ng": { "x": 0.25, "y": 169, "width": 112, "height": 112 }
+		},
+		"icon_lattice_ng4": {
+			"icon_lattice_ng": { "x": 115.9, "y": 169, "width": 112, "height": 112 }
+		},
+		"icon_lattice_ng5": {
+			"icon_lattice_ng": { "x": 231.8, "y": 169, "width": 112, "height": 112 }
+		},
+		"icon_lattice_ng6": {
+			"icon_lattice_ng": { "x": -232, "y": 52.9, "width": 112, "height": 112 }
+		},
+		"icon_lattice_ng7": {
+			"icon_lattice_ng": { "x": 231.8, "y": 52.9, "width": 112, "height": 112 }
+		},
+		"icon_lattice_ng8": {
+			"icon_lattice_ng": { "x": 115.9, "y": 52.9, "width": 112, "height": 112 }
+		},
+		"icon_lattice_ng9": {
+			"icon_lattice_ng": { "x": 0.25, "y": 52.9, "width": 112, "height": 112 }
+		},
+		"mult_board_FG": {
+			"mult_board_FG": { "y": 281.5, "width": 502, "height": 123 }
+		},
+		"mult_light_blue": {
+			"mult_light_blue": { "y": 281.5, "width": 502, "height": 123 }
+		},
+		"mult_light_orange": {
+			"mult_light_orange": { "y": 285.5, "width": 460, "height": 85 }
+		},
+		"mult_light_purple": {
+			"mult_light_purple": { "y": 285.5, "width": 460, "height": 85 }
+		},
+		"ng_reel_fg_0": {
+			"ng_reel_fg_0": { "y": 396.5, "width": 490, "height": 89 }
+		},
+		"ng_reel_fg_1_b": {
+			"ng_reel_fg_1_b": {
+				"type": "mesh",
+				"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ 0.5, 319, -295.5, 319, -295.5, 483, 0.5, 483 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 296,
+				"height": 164
+			}
+		},
+		"ng_reel_fg_1_b_R": {
+			"ng_reel_fg_1_b": {
+				"type": "mesh",
+				"uvs": [ 0.99831, 1, 0.00169, 1, 0.00169, 0, 0.99831, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ 1, 1, 0, 255.63, 1, 1, 1, -295, 255.63, 1, 1, 1, -295, 419.63, 1, 1, 1, 0, 419.63, 1 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 296,
+				"height": 164
+			}
+		},
+		"ng_reel_fg_2_b": {
+			"ng_reel_fg_2_b": {
+				"type": "mesh",
+				"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ 0.5, 270, -358.5, 270, -358.5, 525, 0.5, 525 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 359,
+				"height": 255
+			}
+		},
+		"ng_reel_fg_2_b_R": {
+			"ng_reel_fg_2_b": {
+				"type": "mesh",
+				"uvs": [ 0.99861, 1, 0.00139, 1, 0.00139, 0, 0.99861, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ 1, 1, 0, 206.63, 1, 1, 1, -358, 206.63, 1, 1, 1, -358, 461.63, 1, 1, 1, 0, 461.63, 1 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 359,
+				"height": 255
+			}
+		},
+		"ng_reel_fg_3_b": {
+			"ng_reel_fg_3_b": {
+				"type": "mesh",
+				"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ -314, -143, -369, -143, -369, 285, -314, 285 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 55,
+				"height": 428
+			}
+		},
+		"ng_reel_fg_3_b_R": {
+			"ng_reel_fg_3_b": {
+				"type": "mesh",
+				"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ 1, 1, -314, -206.37, 1, 1, 1, -369, -206.37, 1, 1, 1, -369, 221.63, 1, 1, 1, -314, 221.63, 1 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 55,
+				"height": 428
+			}
+		},
+		"ng_reel_fg_4_b": {
+			"ng_reel_fg_4_b": {
+				"type": "mesh",
+				"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ 0.5, -338, -305.5, -338, -305.5, -293, 0.5, -293 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 306,
+				"height": 45
+			}
+		},
+		"ng_reel_fg_4_b_R": {
+			"ng_reel_fg_4_b": {
+				"type": "mesh",
+				"uvs": [ 0.99837, 1, 0.00163, 1, 0.00163, 0, 0.99837, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ 1, 1, 0, -401.37, 1, 1, 1, -305, -401.37, 1, 1, 1, -305, -356.37, 1, 1, 1, 0, -356.37, 1 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 306,
+				"height": 45
+			}
+		},
+		"ng_reel_glow_ng_00": {
+			"ng_reel_glow_ng_00": {
+				"type": "mesh",
+				"uvs": [ 0.99845, 1, 0.00155, 1, 0.00155, 0, 0.99845, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ 0, -251.6, -321, -251.6, -321, -228.6, 0, -228.6 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 322,
+				"height": 23
+			}
+		},
+		"ng_reel_glow_ng_00_R": {
+			"ng_reel_glow_ng_00": {
+				"type": "mesh",
+				"uvs": [ 0.99845, 1, 0.00155, 1, 0.00155, 0, 0.99845, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ 1, 1, 0, -314.97, 1, 1, 1, -321, -314.97, 1, 1, 1, -321, -291.97, 1, 1, 1, 0, -291.97, 1 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 322,
+				"height": 23
+			}
+		},
+		"ng_reel_glow_ng_01": {
+			"ng_reel_glow_ng_01": {
+				"type": "mesh",
+				"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ -290.5, -229.62, -327.5, -229.62, -327.5, 205.38, -290.5, 205.38 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 37,
+				"height": 435
+			}
+		},
+		"ng_reel_glow_ng_01_R": {
+			"ng_reel_glow_ng_01": {
+				"type": "mesh",
+				"uvs": [ 1, 0.9977, 0, 0.9977, 0, 0.0023, 1, 0.0023 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ 1, 1, -290.4, -291.99, 1, 1, 1, -327.4, -291.99, 1, 1, 1, -327.4, 141.01, 1, 1, 1, -290.4, 141.01, 1 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 37,
+				"height": 435
+			}
+		},
+		"ng_reel_glow_ng_02": {
+			"ng_reel_glow_ng": {
+				"type": "mesh",
+				"uvs": [ 0.99834, 1, 0.00166, 1, 0.00166, 0, 0.99834, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ 0, 204.39, -300, 204.39, -300, 239.39, 0, 239.39 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 301,
+				"height": 35
+			}
+		},
+		"ng_reel_glow_ng_02_R": {
+			"ng_reel_glow_ng": {
+				"type": "mesh",
+				"uvs": [ 0.99834, 1, 0.00166, 1, 0.00166, 0, 0.99834, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ 1, 1, 0, 141.02, 1, 1, 1, -300, 141.02, 1, 1, 1, -300, 176.02, 1, 1, 1, 0, 176.02, 1 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 301,
+				"height": 35
+			}
+		},
+		"ng_reel_ng_0": {
+			"ng_reel_ng_0": { "y": 396.5, "width": 600, "height": 172 }
+		},
+		"ng_reel_ng_1": {
+			"ng_reel_ng_1": {
+				"type": "mesh",
+				"uvs": [ 0.99831, 1, 0.00169, 1, 0.00169, 0, 0.99831, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ -0.03, 319.01, -295.03, 319.01, -295.03, 483.01, -0.03, 483.01 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 296,
+				"height": 164
+			}
+		},
+		"ng_reel_ng_10": {
+			"ng_reel_ng_02": {
+				"type": "mesh",
+				"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ -294.9, -238.97, -395.9, -238.97, -395.9, 220.03, -294.9, 220.03 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 101,
+				"height": 459
+			}
+		},
+		"ng_reel_ng_10_R": {
+			"ng_reel_ng_02": {
+				"type": "mesh",
+				"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ 1, 1, -294.9, -302.34, 1, 1, 1, -395.9, -302.34, 1, 1, 1, -395.9, 156.66, 1, 1, 1, -294.9, 156.66, 1 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 101,
+				"height": 459
+			}
+		},
+		"ng_reel_ng_1_R": {
+			"ng_reel_ng_1": {
+				"type": "mesh",
+				"uvs": [ 0.99831, 1, 0.00169, 1, 0.00169, 0, 0.99831, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ 1, 1, -0.03, 255.64, 1, 1, 1, -295.03, 255.64, 1, 1, 1, -295.03, 419.64, 1, 1, 1, -0.03, 419.64, 1 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 296,
+				"height": 164
+			}
+		},
+		"ng_reel_ng_2": {
+			"ng_reel_ng_2": {
+				"type": "mesh",
+				"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ 0.5, 270, -358.5, 270, -358.5, 525, 0.5, 525 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 359,
+				"height": 255
+			}
+		},
+		"ng_reel_ng_2_R": {
+			"ng_reel_ng_2": {
+				"type": "mesh",
+				"uvs": [ 0.99861, 1, 0.00139, 1, 0.00139, 0, 0.99861, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ 1, 1, 0, 206.63, 1, 1, 1, -358, 206.63, 1, 1, 1, -358, 461.63, 1, 1, 1, 0, 461.63, 1 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 359,
+				"height": 255
+			}
+		},
+		"ng_reel_ng_3": {
+			"ng_reel_ng_3": {
+				"type": "mesh",
+				"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ -314, -143, -369, -143, -369, 285, -314, 285 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 55,
+				"height": 428
+			}
+		},
+		"ng_reel_ng_3_R": {
+			"ng_reel_ng_3": {
+				"type": "mesh",
+				"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ 1, 1, -314, -206.37, 1, 1, 1, -369, -206.37, 1, 1, 1, -369, 221.63, 1, 1, 1, -314, 221.63, 1 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 55,
+				"height": 428
+			}
+		},
+		"ng_reel_ng_4": {
+			"ng_reel_ng_4": {
+				"type": "mesh",
+				"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ 0.51, -338.03, -305.49, -338.03, -305.49, -293.03, 0.51, -293.03 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 306,
+				"height": 45
+			}
+		},
+		"ng_reel_ng_4_R": {
+			"ng_reel_ng_4": {
+				"type": "mesh",
+				"uvs": [ 0.99837, 1, 0.00163, 1, 0.00163, 0, 0.99837, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ 1, 1, 0.01, -401.41, 1, 1, 1, -304.99, -401.41, 1, 1, 1, -304.99, -356.41, 1, 1, 1, 0.01, -356.41, 1 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 306,
+				"height": 45
+			}
+		},
+		"ng_reel_ng_5": {
+			"ng_reel_ng_00": {
+				"type": "mesh",
+				"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ 0.5, 219.03, -357.5, 219.03, -357.5, 525.03, 0.5, 525.03 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 358,
+				"height": 306
+			}
+		},
+		"ng_reel_ng_5_R": {
+			"ng_reel_ng_00": {
+				"type": "mesh",
+				"uvs": [ 0.9986, 1, 0.0014, 1, 0.0014, 0, 0.9986, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ 1, 1, 0, 155.66, 1, 1, 1, -357, 155.66, 1, 1, 1, -357, 461.66, 1, 1, 1, 0, 461.66, 1 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 358,
+				"height": 306
+			}
+		},
+		"ng_reel_ng_7": {
+			"ng_reel_ng_01": {
+				"type": "mesh",
+				"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ 0.5, -583.94, -396.5, -583.94, -396.5, -237.94, 0.5, -237.94 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 397,
+				"height": 346
+			}
+		},
+		"ng_reel_ng_7_R": {
+			"ng_reel_ng_01": {
+				"type": "mesh",
+				"uvs": [ 0.99874, 1, 0.00126, 1, 0.00126, 0, 0.99874, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ 1, 1, 0, -647.31, 1, 1, 1, -396, -647.31, 1, 1, 1, -396, -301.31, 1, 1, 1, 0, -301.31, 1 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 397,
+				"height": 346
+			}
+		},
+		"ng_reel_shadow": {
+			"ng_reel_shadow_02": {
+				"type": "mesh",
+				"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ 0.1, -639.09, -433.9, -639.09, -433.9, 544.91, 0.1, 544.91 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 434,
+				"height": 1184
+			}
+		},
+		"ng_reel_shadow_R": {
+			"ng_reel_shadow_02": {
+				"type": "mesh",
+				"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+				"triangles": [ 1, 2, 3, 1, 3, 0 ],
+				"vertices": [ 1, 1, 0.1, -702.46, 1, 1, 1, -433.9, -702.46, 1, 1, 1, -433.9, 481.54, 1, 1, 1, 0.1, 481.54, 1 ],
+				"hull": 4,
+				"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+				"width": 434,
+				"height": 1184
+			}
+		},
+		"screen_fg": {
+			"screen_fg": { "y": -6, "width": 646, "height": 482 }
+		},
+		"screen_ng": {
+			"screen_ng": { "y": -6, "width": 646, "height": 482 }
+		}
+	}
+},
+"animations": {
+	"FG-back": {
+		"slots": {
+			"fg_reel_glow_ng_00": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"fg_reel_glow_ng_01": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"fg_reel_glow_ng_02": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"fg_reel_glow_ng_00_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"fg_reel_glow_ng_01_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"fg_reel_glow_ng_02_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"grid": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_fg" }
+				]
+			},
+			"icon_lattice_fg2": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_fg" }
+				]
+			},
+			"icon_lattice_fg3": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_fg" }
+				]
+			},
+			"icon_lattice_fg4": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_fg" }
+				]
+			},
+			"icon_lattice_fg5": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_fg" }
+				]
+			},
+			"icon_lattice_fg6": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_fg" }
+				]
+			},
+			"icon_lattice_fg7": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_fg" }
+				]
+			},
+			"icon_lattice_fg8": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_fg" }
+				]
+			},
+			"icon_lattice_fg9": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_fg" }
+				]
+			},
+			"icon_lattice_fg10": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_fg" }
+				]
+			},
+			"icon_lattice_fg11": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_fg" }
+				]
+			},
+			"icon_lattice_fg12": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_fg" }
+				]
+			},
+			"icon_lattice_fg13": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_fg" }
+				]
+			},
+			"icon_lattice_fg14": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_fg" }
+				]
+			},
+			"icon_lattice_fg15": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_fg" }
+				]
+			},
+			"icon_lattice_fg16": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_fg" }
+				]
+			},
+			"icon_lattice_fg17": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_fg" }
+				]
+			},
+			"icon_lattice_fg18": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_fg" }
+				]
+			},
+			"icon_lattice_fg19": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_fg" }
+				]
+			},
+			"icon_lattice_fg20": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_fg" }
+				]
+			},
+			"icon_lattice_fg21": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_fg" }
+				]
+			},
+			"icon_lattice_ng": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng2": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng3": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng4": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng5": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng6": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng7": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng8": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng9": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng10": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng11": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng12": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng13": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng14": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng15": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng16": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng17": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng18": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng19": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng20": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"mult_board_FG": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"mult_light_blue": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"mult_light_orange": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"mult_light_purple": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_0": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_1_b": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_1_b_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_2_b": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_2_b_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_3_b": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_3_b_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_4_b": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_4_b_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_glow_ng_00": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_glow_ng_01": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_glow_ng_02": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_glow_ng_00_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_glow_ng_01_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_glow_ng_02_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_0": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_1": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_2": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_3": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_4": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_5": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_7": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_10": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_10_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_1_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_2_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_3_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_4_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_5_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_7_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_shadow": {
+				"attachment": [
+					{ "time": 0, "name": "ng_reel_shadow_02" }
+				]
+			},
+			"ng_reel_shadow_R": {
+				"attachment": [
+					{ "time": 0, "name": "ng_reel_shadow_02" }
+				]
+			},
+			"screen_fg": {
+				"attachment": [
+					{ "time": 0, "name": "screen_fg" }
+				]
+			},
+			"screen_ng": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			}
+		}
+	},
+	"FG-front": {
+		"slots": {
+			"fg_reel_glow_ng_00": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"fg_reel_glow_ng_01": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"fg_reel_glow_ng_02": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"fg_reel_glow_ng_00_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"fg_reel_glow_ng_01_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"fg_reel_glow_ng_02_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"grid": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg2": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg3": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg4": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg5": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg6": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg7": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg8": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg9": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg10": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg11": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg12": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg13": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg14": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg15": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg16": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg17": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg18": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg19": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg20": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng2": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng3": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng4": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng5": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng6": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng7": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng8": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng9": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng10": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng11": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng12": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng13": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng14": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng15": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng16": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng17": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng18": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng19": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng20": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"mult_board_FG": {
+				"attachment": [
+					{ "time": 0, "name": "mult_board_FG" }
+				]
+			},
+			"mult_light_blue": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"mult_light_orange": {
+				"attachment": [
+					{ "time": 0, "name": "mult_light_orange" }
+				]
+			},
+			"mult_light_purple": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_0": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_1_b": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_1_b_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_2_b": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_2_b_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_3_b": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_3_b_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_4_b": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_4_b_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_glow_ng_00": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_glow_ng_01": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_glow_ng_02": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_glow_ng_00_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_glow_ng_01_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_glow_ng_02_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_0": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_1": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_2": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_3": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_4": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_5": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_7": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_10": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_10_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_1_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_2_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_3_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_4_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_5_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_7_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_shadow": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_shadow_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"screen_fg": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"screen_ng": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			}
+		}
+	},
+	"FG-mid": {
+		"slots": {
+			"fg_reel_glow_ng_00": {
+				"attachment": [
+					{ "time": 0, "name": "fg_reel_glow_ng_00" }
+				]
+			},
+			"fg_reel_glow_ng_01": {
+				"attachment": [
+					{ "time": 0, "name": "fg_reel_glow_ng_01" }
+				]
+			},
+			"fg_reel_glow_ng_02": {
+				"attachment": [
+					{ "time": 0, "name": "fg_reel_glow_ng" }
+				]
+			},
+			"fg_reel_glow_ng_00_R": {
+				"attachment": [
+					{ "time": 0, "name": "fg_reel_glow_ng_00" }
+				]
+			},
+			"fg_reel_glow_ng_01_R": {
+				"attachment": [
+					{ "time": 0, "name": "fg_reel_glow_ng_01" }
+				]
+			},
+			"fg_reel_glow_ng_02_R": {
+				"attachment": [
+					{ "time": 0, "name": "fg_reel_glow_ng" }
+				]
+			},
+			"grid": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg2": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg3": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg4": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg5": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg6": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg7": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg8": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg9": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg10": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg11": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg12": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg13": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg14": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg15": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg16": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg17": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg18": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg19": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg20": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng2": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng3": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng4": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng5": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng6": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng7": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng8": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng9": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng10": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng11": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng12": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng13": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng14": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng15": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng16": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng17": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng18": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng19": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng20": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"mult_board_FG": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"mult_light_blue": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"mult_light_orange": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"mult_light_purple": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_0": {
+				"attachment": [
+					{ "time": 0, "name": "ng_reel_fg_0" }
+				]
+			},
+			"ng_reel_fg_1_b_R": {
+				"attachment": [
+					{ "time": 0, "name": "ng_reel_fg_1_b" }
+				]
+			},
+			"ng_reel_fg_2_b_R": {
+				"attachment": [
+					{ "time": 0, "name": "ng_reel_fg_2_b" }
+				]
+			},
+			"ng_reel_fg_3_b_R": {
+				"attachment": [
+					{ "time": 0, "name": "ng_reel_fg_3_b" }
+				]
+			},
+			"ng_reel_fg_4_b": {
+				"attachment": [
+					{ "time": 0, "name": "ng_reel_fg_4_b" }
+				]
+			},
+			"ng_reel_fg_4_b_R": {
+				"attachment": [
+					{ "time": 0, "name": "ng_reel_fg_4_b" }
+				]
+			},
+			"ng_reel_glow_ng_00": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_glow_ng_01": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_glow_ng_02": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_glow_ng_00_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_glow_ng_01_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_glow_ng_02_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_0": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_1": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_2": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_3": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_4": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_1_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_2_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_3_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_4_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_shadow": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_shadow_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"screen_fg": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"screen_ng": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			}
+		}
+	},
+	"NG-back": {
+		"slots": {
+			"fg_reel_glow_ng_00": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"fg_reel_glow_ng_01": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"fg_reel_glow_ng_02": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"fg_reel_glow_ng_00_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"fg_reel_glow_ng_01_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"fg_reel_glow_ng_02_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"grid": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg2": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg3": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg4": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg5": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg6": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg7": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg8": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg9": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg10": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg11": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg12": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg13": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg14": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg15": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg16": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg17": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg18": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg19": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg20": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_ng" }
+				]
+			},
+			"icon_lattice_ng2": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_ng" }
+				]
+			},
+			"icon_lattice_ng3": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_ng" }
+				]
+			},
+			"icon_lattice_ng4": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_ng" }
+				]
+			},
+			"icon_lattice_ng5": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_ng" }
+				]
+			},
+			"icon_lattice_ng6": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_ng" }
+				]
+			},
+			"icon_lattice_ng7": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_ng" }
+				]
+			},
+			"icon_lattice_ng8": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_ng" }
+				]
+			},
+			"icon_lattice_ng9": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_ng" }
+				]
+			},
+			"icon_lattice_ng10": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_ng" }
+				]
+			},
+			"icon_lattice_ng11": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_ng" }
+				]
+			},
+			"icon_lattice_ng12": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_ng" }
+				]
+			},
+			"icon_lattice_ng13": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_ng" }
+				]
+			},
+			"icon_lattice_ng14": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_ng" }
+				]
+			},
+			"icon_lattice_ng15": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_ng" }
+				]
+			},
+			"icon_lattice_ng16": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_ng" }
+				]
+			},
+			"icon_lattice_ng17": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_ng" }
+				]
+			},
+			"icon_lattice_ng18": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_ng" }
+				]
+			},
+			"icon_lattice_ng19": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_ng" }
+				]
+			},
+			"icon_lattice_ng20": {
+				"attachment": [
+					{ "time": 0, "name": "icon_lattice_ng" }
+				]
+			},
+			"mult_board_FG": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"mult_light_blue": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"mult_light_orange": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"mult_light_purple": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_0": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_1_b": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_1_b_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_2_b": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_2_b_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_3_b": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_3_b_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_4_b": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_4_b_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_glow_ng_00": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_glow_ng_01": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_glow_ng_02": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_glow_ng_00_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_glow_ng_01_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_glow_ng_02_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_0": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_1": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_2": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_3": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_4": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_5": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_7": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_10": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_10_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_1_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_2_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_3_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_4_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_5_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_7_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_shadow": {
+				"attachment": [
+					{ "time": 0, "name": "ng_reel_shadow_02" }
+				]
+			},
+			"ng_reel_shadow_R": {
+				"attachment": [
+					{ "time": 0, "name": "ng_reel_shadow_02" }
+				]
+			},
+			"screen_fg": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"screen_ng": {
+				"attachment": [
+					{ "time": 0, "name": "screen_ng" }
+				]
+			}
+		}
+	},
+	"NG-front": {
+		"slots": {
+			"fg_reel_glow_ng_00": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"fg_reel_glow_ng_01": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"fg_reel_glow_ng_02": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"fg_reel_glow_ng_00_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"fg_reel_glow_ng_01_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"fg_reel_glow_ng_02_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"grid": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg2": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg3": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg4": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg5": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg6": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg7": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg8": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg9": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg10": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg11": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg12": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg13": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg14": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg15": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg16": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg17": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg18": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg19": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg20": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng2": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng3": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng4": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng5": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng6": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng7": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng8": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng9": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng10": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng11": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng12": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng13": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng14": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng15": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng16": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng17": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng18": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng19": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng20": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"mult_board_FG": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"mult_light_blue": {
+				"attachment": [
+					{ "time": 0, "name": "mult_light_blue" }
+				]
+			},
+			"mult_light_orange": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"mult_light_purple": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_0": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_1_b": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_1_b_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_2_b": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_2_b_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_3_b": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_3_b_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_4_b": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_4_b_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_glow_ng_00": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_glow_ng_01": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_glow_ng_02": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_glow_ng_00_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_glow_ng_01_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_glow_ng_02_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_0": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_1": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_2": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_3": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_4": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_5": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_7": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_10": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_10_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_1_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_2_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_3_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_4_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_5_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_ng_7_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_shadow": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_shadow_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"screen_fg": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"screen_ng": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			}
+		}
+	},
+	"NG-mid": {
+		"slots": {
+			"fg_reel_glow_ng_00": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"fg_reel_glow_ng_01": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"fg_reel_glow_ng_02": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"fg_reel_glow_ng_00_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"fg_reel_glow_ng_01_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"fg_reel_glow_ng_02_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"grid": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg2": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg3": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg4": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg5": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg6": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg7": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg8": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg9": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg10": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg11": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg12": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg13": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg14": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg15": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg16": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg17": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg18": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg19": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_fg20": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng2": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng3": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng4": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng5": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng6": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng7": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng8": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng9": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng10": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng11": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng12": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng13": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng14": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng15": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng16": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng17": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng18": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng19": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"icon_lattice_ng20": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"mult_board_FG": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"mult_light_blue": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"mult_light_orange": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"mult_light_purple": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_0": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_1_b_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_2_b_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_3_b_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_4_b": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_fg_4_b_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_glow_ng_00": {
+				"attachment": [
+					{ "time": 0, "name": "ng_reel_glow_ng_00" }
+				]
+			},
+			"ng_reel_glow_ng_01": {
+				"attachment": [
+					{ "time": 0, "name": "ng_reel_glow_ng_01" }
+				]
+			},
+			"ng_reel_glow_ng_02": {
+				"attachment": [
+					{ "time": 0, "name": "ng_reel_glow_ng" }
+				]
+			},
+			"ng_reel_glow_ng_00_R": {
+				"attachment": [
+					{ "time": 0, "name": "ng_reel_glow_ng_00" }
+				]
+			},
+			"ng_reel_glow_ng_01_R": {
+				"attachment": [
+					{ "time": 0, "name": "ng_reel_glow_ng_01" }
+				]
+			},
+			"ng_reel_glow_ng_02_R": {
+				"attachment": [
+					{ "time": 0, "name": "ng_reel_glow_ng" }
+				]
+			},
+			"ng_reel_ng_0": {
+				"attachment": [
+					{ "time": 0, "name": "ng_reel_ng_0" }
+				]
+			},
+			"ng_reel_ng_1": {
+				"attachment": [
+					{ "time": 0, "name": "ng_reel_ng_1" }
+				]
+			},
+			"ng_reel_ng_2": {
+				"attachment": [
+					{ "time": 0, "name": "ng_reel_ng_2" }
+				]
+			},
+			"ng_reel_ng_3": {
+				"attachment": [
+					{ "time": 0, "name": "ng_reel_ng_3" }
+				]
+			},
+			"ng_reel_ng_4": {
+				"attachment": [
+					{ "time": 0, "name": "ng_reel_ng_4" }
+				]
+			},
+			"ng_reel_ng_1_R": {
+				"attachment": [
+					{ "time": 0, "name": "ng_reel_ng_1" }
+				]
+			},
+			"ng_reel_ng_2_R": {
+				"attachment": [
+					{ "time": 0, "name": "ng_reel_ng_2" }
+				]
+			},
+			"ng_reel_ng_3_R": {
+				"attachment": [
+					{ "time": 0, "name": "ng_reel_ng_3" }
+				]
+			},
+			"ng_reel_ng_4_R": {
+				"attachment": [
+					{ "time": 0, "name": "ng_reel_ng_4" }
+				]
+			},
+			"ng_reel_shadow": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"ng_reel_shadow_R": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"screen_fg": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			},
+			"screen_ng": {
+				"attachment": [
+					{ "time": 0, "name": null }
+				]
+			}
+		}
+	}
+}
+}

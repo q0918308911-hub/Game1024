@@ -1,0 +1,40 @@
+{
+  "__version__": "1.3.8",
+  "textureCompressConfig": {
+    "userPreset": {
+      "5d7J65U55IWIQF4/hWSdwE": {
+        "name": "MyCompress",
+        "options": {
+          "web": {
+            "png": {
+              "quality": 95
+            }
+          }
+        }
+      },
+      "82NGFNNkdPhZX9f9gNm0VT": {
+        "name": "Webp Compress",
+        "options": {
+          "web": {
+            "webp": {
+              "quality": 100
+            }
+          }
+        }
+      },
+      "16RX4S6IZOZo11/iDOz6Ws": null,
+      "3dJYw0keJNV7ez4V25FT/g": null,
+      "40iKKwO8RBG7uRgDVu3jf8": {
+        "name": "Webp 80 Compress",
+        "options": {
+          "web": {
+            "webp": {
+              "quality": 80
+            }
+          }
+        }
+      }
+    },
+    "customConfigs": {}
+  }
+}

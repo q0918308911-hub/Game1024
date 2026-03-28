@@ -1,0 +1,111 @@
+
+FG.webp
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+FreeBack_title_txt
+  rotate: false
+  xy: 2, 2
+  size: 460, 88
+  orig: 460, 88
+  offset: 0, 0
+  index: -1
+FreeStart_contents00_txt
+  rotate: false
+  xy: 602, 169
+  size: 312, 76
+  orig: 312, 76
+  offset: 0, 0
+  index: -1
+FreeStart_title_txt
+  rotate: false
+  xy: 1090, 342
+  size: 288, 76
+  orig: 288, 76
+  offset: 0, 0
+  index: -1
+backup_L
+  rotate: false
+  xy: 1230, 15
+  size: 137, 325
+  orig: 137, 325
+  offset: 0, 0
+  index: -1
+backup_R
+  rotate: false
+  xy: 1369, 15
+  size: 137, 325
+  orig: 137, 325
+  offset: 0, 0
+  index: -1
+body_L
+  rotate: false
+  xy: 1888, 600
+  size: 138, 325
+  orig: 138, 325
+  offset: 0, 0
+  index: -1
+body_R
+  rotate: false
+  xy: 1090, 15
+  size: 138, 325
+  orig: 138, 325
+  offset: 0, 0
+  index: -1
+glow
+  rotate: false
+  xy: 2, 247
+  size: 1086, 678
+  orig: 1086, 678
+  offset: 0, 0
+  index: -1
+line_L
+  rotate: false
+  xy: 1670, 162
+  size: 166, 411
+  orig: 166, 411
+  offset: 0, 0
+  index: -1
+line_R
+  rotate: false
+  xy: 1838, 162
+  size: 166, 411
+  orig: 166, 411
+  offset: 0, 0
+  index: -1
+number_frame_Out
+  rotate: false
+  xy: 2, 92
+  size: 598, 153
+  orig: 598, 153
+  offset: 0, 0
+  index: -1
+number_frame_in
+  rotate: false
+  xy: 1090, 420
+  size: 578, 153
+  orig: 578, 153
+  offset: 0, 0
+  index: -1
+rubber_L
+  rotate: false
+  xy: 1508, 58
+  size: 61, 179
+  orig: 61, 179
+  offset: 0, 0
+  index: -1
+rubber_R
+  rotate: false
+  xy: 1508, 239
+  size: 62, 179
+  orig: 62, 179
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 1090, 575
+  size: 796, 350
+  orig: 796, 350
+  offset: 0, 0
+  index: -1

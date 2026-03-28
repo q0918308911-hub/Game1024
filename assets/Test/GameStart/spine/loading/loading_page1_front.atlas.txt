@@ -1,0 +1,41 @@
+
+loading_page1_front.webp
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Info_shadow_bot_L
+  rotate: false
+  xy: 730, 479
+  size: 541, 99
+  orig: 541, 99
+  offset: 0, 0
+  index: -1
+fx_appear_light
+  rotate: false
+  xy: 2, 575
+  size: 726, 696
+  orig: 726, 696
+  offset: 0, 0
+  index: -1
+fx_appear_light_sym_add
+  rotate: false
+  xy: 730, 905
+  size: 362, 366
+  orig: 362, 366
+  offset: 0, 0
+  index: -1
+icon_08_wolf_3x3
+  rotate: false
+  xy: 730, 580
+  size: 318, 323
+  orig: 318, 323
+  offset: 0, 0
+  index: -1
+supersed
+  rotate: false
+  xy: 1094, 1261
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1

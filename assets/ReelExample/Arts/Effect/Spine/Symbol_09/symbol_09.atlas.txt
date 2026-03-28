@@ -1,0 +1,419 @@
+
+symbol_09.webp
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+01_frame
+  rotate: false
+  xy: 974, 856
+  size: 134, 162
+  orig: 134, 162
+  offset: 0, 0
+  index: -1
+01_w
+  rotate: false
+  xy: 1238, 21
+  size: 90, 72
+  orig: 90, 72
+  offset: 0, 0
+  index: -1
+01_w_sh
+  rotate: false
+  xy: 1238, 95
+  size: 96, 79
+  orig: 96, 79
+  offset: 0, 0
+  index: -1
+02_board
+  rotate: false
+  xy: 974, 692
+  size: 131, 162
+  orig: 131, 162
+  offset: 0, 0
+  index: -1
+02_relief_01
+  rotate: false
+  xy: 1238, 176
+  size: 93, 118
+  orig: 93, 118
+  offset: 0, 0
+  index: -1
+Shine
+  rotate: false
+  xy: 974, 562
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+Symbol_09_light/Symbol_09_light_00
+  rotate: false
+  xy: 2, 818
+  size: 160, 200
+  orig: 160, 200
+  offset: 0, 0
+  index: -1
+Symbol_09_light/Symbol_09_light_01
+  rotate: false
+  xy: 2, 616
+  size: 160, 200
+  orig: 160, 200
+  offset: 0, 0
+  index: -1
+Symbol_09_light/Symbol_09_light_02
+  rotate: false
+  xy: 2, 414
+  size: 160, 200
+  orig: 160, 200
+  offset: 0, 0
+  index: -1
+Symbol_09_light/Symbol_09_light_03
+  rotate: false
+  xy: 2, 212
+  size: 160, 200
+  orig: 160, 200
+  offset: 0, 0
+  index: -1
+Symbol_09_light/Symbol_09_light_04
+  rotate: false
+  xy: 2, 10
+  size: 160, 200
+  orig: 160, 200
+  offset: 0, 0
+  index: -1
+Symbol_09_light/Symbol_09_light_05
+  rotate: false
+  xy: 164, 818
+  size: 160, 200
+  orig: 160, 200
+  offset: 0, 0
+  index: -1
+Symbol_09_light/Symbol_09_light_06
+  rotate: false
+  xy: 164, 616
+  size: 160, 200
+  orig: 160, 200
+  offset: 0, 0
+  index: -1
+Symbol_09_light/Symbol_09_light_07
+  rotate: false
+  xy: 164, 414
+  size: 160, 200
+  orig: 160, 200
+  offset: 0, 0
+  index: -1
+Symbol_09_light/Symbol_09_light_08
+  rotate: false
+  xy: 164, 212
+  size: 160, 200
+  orig: 160, 200
+  offset: 0, 0
+  index: -1
+Symbol_09_light/Symbol_09_light_09
+  rotate: false
+  xy: 164, 10
+  size: 160, 200
+  orig: 160, 200
+  offset: 0, 0
+  index: -1
+Symbol_09_light/Symbol_09_light_10
+  rotate: false
+  xy: 326, 818
+  size: 160, 200
+  orig: 160, 200
+  offset: 0, 0
+  index: -1
+Symbol_09_light/Symbol_09_light_11
+  rotate: false
+  xy: 326, 616
+  size: 160, 200
+  orig: 160, 200
+  offset: 0, 0
+  index: -1
+Symbol_09_light/Symbol_09_light_12
+  rotate: false
+  xy: 326, 414
+  size: 160, 200
+  orig: 160, 200
+  offset: 0, 0
+  index: -1
+Symbol_09_light/Symbol_09_light_13
+  rotate: false
+  xy: 326, 212
+  size: 160, 200
+  orig: 160, 200
+  offset: 0, 0
+  index: -1
+Symbol_09_light/Symbol_09_light_14
+  rotate: false
+  xy: 326, 10
+  size: 160, 200
+  orig: 160, 200
+  offset: 0, 0
+  index: -1
+Symbol_09_light/Symbol_09_light_15
+  rotate: false
+  xy: 488, 818
+  size: 160, 200
+  orig: 160, 200
+  offset: 0, 0
+  index: -1
+Symbol_09_light/Symbol_09_light_16
+  rotate: false
+  xy: 488, 616
+  size: 160, 200
+  orig: 160, 200
+  offset: 0, 0
+  index: -1
+Symbol_09_light/Symbol_09_light_17
+  rotate: false
+  xy: 488, 414
+  size: 160, 200
+  orig: 160, 200
+  offset: 0, 0
+  index: -1
+Symbol_09_light/Symbol_09_light_18
+  rotate: false
+  xy: 488, 212
+  size: 160, 200
+  orig: 160, 200
+  offset: 0, 0
+  index: -1
+Symbol_09_light/Symbol_09_light_19
+  rotate: false
+  xy: 488, 10
+  size: 160, 200
+  orig: 160, 200
+  offset: 0, 0
+  index: -1
+Symbol_09_light/Symbol_09_light_20
+  rotate: false
+  xy: 650, 818
+  size: 160, 200
+  orig: 160, 200
+  offset: 0, 0
+  index: -1
+Symbol_09_light/Symbol_09_light_21
+  rotate: false
+  xy: 650, 616
+  size: 160, 200
+  orig: 160, 200
+  offset: 0, 0
+  index: -1
+Symbol_09_light/Symbol_09_light_22
+  rotate: false
+  xy: 650, 414
+  size: 160, 200
+  orig: 160, 200
+  offset: 0, 0
+  index: -1
+Symbol_09_light/Symbol_09_light_23
+  rotate: false
+  xy: 650, 212
+  size: 160, 200
+  orig: 160, 200
+  offset: 0, 0
+  index: -1
+Symbol_09_light/Symbol_09_light_24
+  rotate: false
+  xy: 650, 10
+  size: 160, 200
+  orig: 160, 200
+  offset: 0, 0
+  index: -1
+Symbol_09_light/Symbol_09_light_25
+  rotate: false
+  xy: 812, 818
+  size: 160, 200
+  orig: 160, 200
+  offset: 0, 0
+  index: -1
+Symbol_09_light/Symbol_09_light_26
+  rotate: false
+  xy: 812, 616
+  size: 160, 200
+  orig: 160, 200
+  offset: 0, 0
+  index: -1
+Symbol_09_light/Symbol_09_light_27
+  rotate: false
+  xy: 812, 414
+  size: 160, 200
+  orig: 160, 200
+  offset: 0, 0
+  index: -1
+Symbol_09_light/Symbol_09_light_28
+  rotate: false
+  xy: 812, 212
+  size: 160, 200
+  orig: 160, 200
+  offset: 0, 0
+  index: -1
+Symbol_09_light/Symbol_09_light_29
+  rotate: false
+  xy: 812, 10
+  size: 160, 200
+  orig: 160, 200
+  offset: 0, 0
+  index: -1
+W_glow
+  rotate: false
+  xy: 974, 450
+  size: 130, 110
+  orig: 130, 110
+  offset: 0, 0
+  index: -1
+W_light/W_light_00
+  rotate: false
+  xy: 1104, 580
+  size: 130, 110
+  orig: 130, 110
+  offset: 0, 0
+  index: -1
+W_light/W_light_01
+  rotate: false
+  xy: 1107, 744
+  size: 130, 110
+  orig: 130, 110
+  offset: 0, 0
+  index: -1
+W_light/W_light_02
+  rotate: false
+  xy: 1110, 908
+  size: 130, 110
+  orig: 130, 110
+  offset: 0, 0
+  index: -1
+W_light/W_light_03
+  rotate: false
+  xy: 974, 338
+  size: 130, 110
+  orig: 130, 110
+  offset: 0, 0
+  index: -1
+W_light/W_light_04
+  rotate: false
+  xy: 974, 226
+  size: 130, 110
+  orig: 130, 110
+  offset: 0, 0
+  index: -1
+W_light/W_light_05
+  rotate: false
+  xy: 974, 114
+  size: 130, 110
+  orig: 130, 110
+  offset: 0, 0
+  index: -1
+W_light/W_light_06
+  rotate: false
+  xy: 974, 2
+  size: 130, 110
+  orig: 130, 110
+  offset: 0, 0
+  index: -1
+W_light/W_light_07
+  rotate: false
+  xy: 1106, 468
+  size: 130, 110
+  orig: 130, 110
+  offset: 0, 0
+  index: -1
+W_light/W_light_08
+  rotate: false
+  xy: 1236, 632
+  size: 130, 110
+  orig: 130, 110
+  offset: 0, 0
+  index: -1
+W_light/W_light_09
+  rotate: false
+  xy: 1239, 796
+  size: 130, 110
+  orig: 130, 110
+  offset: 0, 0
+  index: -1
+W_light/W_light_10
+  rotate: false
+  xy: 1242, 908
+  size: 130, 110
+  orig: 130, 110
+  offset: 0, 0
+  index: -1
+W_light/W_light_11
+  rotate: false
+  xy: 1106, 356
+  size: 130, 110
+  orig: 130, 110
+  offset: 0, 0
+  index: -1
+W_light/W_light_12
+  rotate: false
+  xy: 1106, 244
+  size: 130, 110
+  orig: 130, 110
+  offset: 0, 0
+  index: -1
+W_light/W_light_13
+  rotate: false
+  xy: 1106, 132
+  size: 130, 110
+  orig: 130, 110
+  offset: 0, 0
+  index: -1
+W_light/W_light_14
+  rotate: false
+  xy: 1106, 20
+  size: 130, 110
+  orig: 130, 110
+  offset: 0, 0
+  index: -1
+W_light/W_light_15
+  rotate: false
+  xy: 1238, 520
+  size: 130, 110
+  orig: 130, 110
+  offset: 0, 0
+  index: -1
+W_light/W_light_16
+  rotate: false
+  xy: 1368, 684
+  size: 130, 110
+  orig: 130, 110
+  offset: 0, 0
+  index: -1
+W_light/W_light_17
+  rotate: false
+  xy: 1371, 796
+  size: 130, 110
+  orig: 130, 110
+  offset: 0, 0
+  index: -1
+W_light/W_light_18
+  rotate: false
+  xy: 1374, 908
+  size: 130, 110
+  orig: 130, 110
+  offset: 0, 0
+  index: -1
+W_light/W_light_19
+  rotate: false
+  xy: 1238, 408
+  size: 130, 110
+  orig: 130, 110
+  offset: 0, 0
+  index: -1
+W_light/W_light_20
+  rotate: false
+  xy: 1238, 296
+  size: 130, 110
+  orig: 130, 110
+  offset: 0, 0
+  index: -1
+star
+  rotate: false
+  xy: 1330, 29
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1

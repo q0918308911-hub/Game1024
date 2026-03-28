@@ -1,0 +1,209 @@
+
+machine.png
+size: 1773,1536
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fg_reel_glow_ng
+  rotate: false
+  xy: 1447, 602
+  size: 301, 32
+  orig: 301, 32
+  offset: 0, 0
+  index: -1
+fg_reel_glow_ng_00
+  rotate: false
+  xy: 1447, 576
+  size: 322, 24
+  orig: 322, 24
+  offset: 0, 0
+  index: -1
+fg_reel_glow_ng_01
+  rotate: false
+  xy: 1734, 1097
+  size: 37, 437
+  orig: 37, 437
+  offset: 0, 0
+  index: -1
+grid
+  rotate: false
+  xy: 438, 1052
+  size: 646, 482
+  orig: 646, 482
+  offset: 0, 0
+  index: -1
+icon_lattice_fg
+  rotate: false
+  xy: 1303, 199
+  size: 112, 112
+  orig: 112, 112
+  offset: 0, 0
+  index: -1
+icon_lattice_ng
+  rotate: false
+  xy: 1303, 85
+  size: 112, 112
+  orig: 112, 112
+  offset: 0, 0
+  index: -1
+mult_board_FG
+  rotate: false
+  xy: 438, 269
+  size: 502, 123
+  orig: 502, 123
+  offset: 0, 0
+  index: -1
+mult_light_blue
+  rotate: false
+  xy: 401, 144
+  size: 502, 123
+  orig: 502, 123
+  offset: 0, 0
+  index: -1
+mult_light_orange
+  rotate: false
+  xy: 1040, 400
+  size: 460, 85
+  orig: 460, 85
+  offset: 0, 0
+  index: -1
+mult_light_purple
+  rotate: false
+  xy: 1040, 313
+  size: 460, 85
+  orig: 460, 85
+  offset: 0, 0
+  index: -1
+ng_reel_fg_0
+  rotate: false
+  xy: 401, 53
+  size: 490, 89
+  orig: 490, 89
+  offset: 0, 0
+  index: -1
+ng_reel_fg_1_b
+  rotate: false
+  xy: 1446, 886
+  size: 296, 164
+  orig: 296, 164
+  offset: 0, 0
+  index: -1
+ng_reel_fg_2_b
+  rotate: false
+  xy: 1086, 487
+  size: 359, 255
+  orig: 359, 255
+  offset: 0, 0
+  index: -1
+ng_reel_fg_3_b
+  rotate: false
+  xy: 1605, 121
+  size: 55, 428
+  orig: 55, 428
+  offset: 0, 0
+  index: -1
+ng_reel_fg_4_b
+  rotate: false
+  xy: 401, 6
+  size: 306, 45
+  orig: 306, 45
+  offset: 0, 0
+  index: -1
+ng_reel_glow_ng
+  rotate: false
+  xy: 1447, 636
+  size: 301, 35
+  orig: 301, 35
+  offset: 0, 0
+  index: -1
+ng_reel_glow_ng_00
+  rotate: false
+  xy: 1447, 551
+  size: 322, 23
+  orig: 322, 23
+  offset: 0, 0
+  index: -1
+ng_reel_glow_ng_01
+  rotate: false
+  xy: 1719, 114
+  size: 37, 435
+  orig: 37, 435
+  offset: 0, 0
+  index: -1
+ng_reel_ng_0
+  rotate: false
+  xy: 438, 394
+  size: 600, 172
+  orig: 600, 172
+  offset: 0, 0
+  index: -1
+ng_reel_ng_00
+  rotate: false
+  xy: 1086, 744
+  size: 358, 306
+  orig: 358, 306
+  offset: 0, 0
+  index: -1
+ng_reel_ng_01
+  rotate: false
+  xy: 2, 2
+  size: 397, 346
+  orig: 397, 346
+  offset: 0, 0
+  index: -1
+ng_reel_ng_02
+  rotate: false
+  xy: 1502, 90
+  size: 101, 459
+  orig: 101, 459
+  offset: 0, 0
+  index: -1
+ng_reel_ng_1
+  rotate: false
+  xy: 1447, 673
+  size: 296, 164
+  orig: 296, 164
+  offset: 0, 0
+  index: -1
+ng_reel_ng_2
+  rotate: false
+  xy: 942, 56
+  size: 359, 255
+  orig: 359, 255
+  offset: 0, 0
+  index: -1
+ng_reel_ng_3
+  rotate: false
+  xy: 1662, 121
+  size: 55, 428
+  orig: 55, 428
+  offset: 0, 0
+  index: -1
+ng_reel_ng_4
+  rotate: false
+  xy: 1446, 839
+  size: 306, 45
+  orig: 306, 45
+  offset: 0, 0
+  index: -1
+ng_reel_shadow_02
+  rotate: false
+  xy: 2, 350
+  size: 434, 1184
+  orig: 434, 1184
+  offset: 0, 0
+  index: -1
+screen_fg
+  rotate: false
+  xy: 438, 568
+  size: 646, 482
+  orig: 646, 482
+  offset: 0, 0
+  index: -1
+screen_ng
+  rotate: false
+  xy: 1086, 1052
+  size: 646, 482
+  orig: 646, 482
+  offset: 0, 0
+  index: -1

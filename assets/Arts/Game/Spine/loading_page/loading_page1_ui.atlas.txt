@@ -1,0 +1,27 @@
+
+loading_page1_ui.webp
+size: 620,356
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Loading_info_title_01
+  rotate: false
+  xy: 609, 345
+  size: 8, 8
+  orig: 8, 8
+  offset: 0, 0
+  index: -1
+Loading_info_txt_01
+  rotate: false
+  xy: 609, 345
+  size: 8, 8
+  orig: 8, 8
+  offset: 0, 0
+  index: -1
+p1_ui
+  rotate: false
+  xy: 2, 2
+  size: 605, 351
+  orig: 605, 351
+  offset: 0, 0
+  index: -1

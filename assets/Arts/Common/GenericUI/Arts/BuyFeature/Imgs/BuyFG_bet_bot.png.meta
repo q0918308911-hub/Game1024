@@ -1,0 +1,134 @@
+{
+  "ver": "1.0.27",
+  "importer": "image",
+  "imported": true,
+  "uuid": "867a07c6-fe6a-42aa-8677-2671eca08779",
+  "files": [
+    ".json",
+    ".png"
+  ],
+  "subMetas": {
+    "6c48a": {
+      "importer": "texture",
+      "uuid": "867a07c6-fe6a-42aa-8677-2671eca08779@6c48a",
+      "displayName": "BuyFG_bet_bot",
+      "id": "6c48a",
+      "name": "texture",
+      "userData": {
+        "wrapModeS": "clamp-to-edge",
+        "wrapModeT": "clamp-to-edge",
+        "imageUuidOrDatabaseUri": "867a07c6-fe6a-42aa-8677-2671eca08779",
+        "isUuid": true,
+        "visible": false,
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f9941": {
+      "importer": "sprite-frame",
+      "uuid": "867a07c6-fe6a-42aa-8677-2671eca08779@f9941",
+      "displayName": "BuyFG_bet_bot",
+      "id": "f9941",
+      "name": "spriteFrame",
+      "userData": {
+        "trimType": "auto",
+        "trimThreshold": 1,
+        "rotated": false,
+        "offsetX": 0,
+        "offsetY": 0,
+        "trimX": 5,
+        "trimY": 2,
+        "width": 360,
+        "height": 56,
+        "rawWidth": 370,
+        "rawHeight": 60,
+        "borderTop": 0,
+        "borderBottom": 0,
+        "borderLeft": 0,
+        "borderRight": 0,
+        "packable": true,
+        "pixelsToUnit": 100,
+        "pivotX": 0.5,
+        "pivotY": 0.5,
+        "meshType": 0,
+        "vertices": {
+          "rawPosition": [
+            -180,
+            -28,
+            0,
+            180,
+            -28,
+            0,
+            -180,
+            28,
+            0,
+            180,
+            28,
+            0
+          ],
+          "indexes": [
+            0,
+            1,
+            2,
+            2,
+            1,
+            3
+          ],
+          "uv": [
+            5,
+            58,
+            365,
+            58,
+            5,
+            2,
+            365,
+            2
+          ],
+          "nuv": [
+            0.013513513513513514,
+            0.03333333333333333,
+            0.9864864864864865,
+            0.03333333333333333,
+            0.013513513513513514,
+            0.9666666666666667,
+            0.9864864864864865,
+            0.9666666666666667
+          ],
+          "minPos": [
+            -180,
+            -28,
+            0
+          ],
+          "maxPos": [
+            180,
+            28,
+            0
+          ]
+        },
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "867a07c6-fe6a-42aa-8677-2671eca08779@6c48a",
+        "atlasUuid": ""
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "type": "sprite-frame",
+    "hasAlpha": true,
+    "fixAlphaTransparencyArtifacts": false,
+    "redirect": "867a07c6-fe6a-42aa-8677-2671eca08779@6c48a"
+  }
+}

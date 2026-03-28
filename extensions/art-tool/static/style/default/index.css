@@ -1,0 +1,21 @@
+#app {
+    color: var(--color-normal-contrast-weakest);
+    margin: auto;
+    width: 180px;
+}
+
+div[style*="flex-direction:column"] {
+    gap: 12px; /* 可以依需求調整間隔大小 */
+}
+
+div > button {
+    margin-right: 8px; /* 水平按鈕間隔 */
+}
+
+text {
+    font-family: "Arial", "Helvetica", sans-serif; /* 設定主要字體及備用字體 */
+    font-size: 14px;       /* 可選，設定全局字體大小 */
+    font-weight: normal;   /* 可選，設定字重 */
+    color: white;
+}
+

@@ -1,0 +1,41 @@
+{
+    "$schema": "./@types/schema/package/index.json",
+    "package_version": 2,
+    "name": "check-pos-z",
+    "version": "1.0.0",
+    "author": "Bruce",
+    "editor": ">=3.8.3",
+    "title": "i18n:check-pos-z.title",
+    "scripts": {
+        "preinstall": "node ./scripts/preinstall.js",
+        "build": "tsc",
+        "watch": "tsc -w"
+    },
+    "description": "i18n:check-pos-z.description",
+    "main": "./dist/main.js",
+    "devDependencies": {
+        "@cocos/creator-types": "^3.8.3",
+        "@types/node": "^18.17.1",
+        "typescript": "^4.3.4"
+    },
+    "contributions": {
+        "assets": {
+            "menu": {
+                "methods": "./dist/AssetMenu.js",
+                "assetMenu": "onAssetMenu"
+            }
+        },
+        "messages": {
+            "after-reload": {
+                "methods": [
+                    "afterReload"
+                ]
+            },
+            "check-node-position-z": {
+                "methods": [
+                    "checkNodePositionZ"
+                ]
+            }
+        }
+    }
+}

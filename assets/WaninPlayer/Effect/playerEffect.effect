@@ -1,0 +1,73 @@
+// Copyright (c) 2017-2020 Xiamen Yaji Software Co., Ltd.
+CCEffect %{
+  techniques:
+  - passes:
+    - vert: sprite-vs:vert
+      frag: sprite-fs:frag
+      depthStencilState:
+        depthTest: false
+        depthWrite: false
+      blendState:
+        targets:
+        - blend: true
+          blendSrc: src_alpha
+          blendDst: one_minus_src_alpha
+          blendDstAlpha: one_minus_src_alpha
+      rasterizerState:
+        cullMode: none
+      properties:
+        colorUVScale: { value: 0.4945 }
+        alphaUVScale: { value: 0.4945 }
+        alphaUVOffset: { value: 0.5054 }
+}%
+
+CCProgram sprite-vs %{
+  precision highp float;
+  #include <builtin/uniforms/cc-global>
+
+
+  in vec3 a_position;
+  in vec2 a_texCoord;
+
+  out vec2 uv0;
+  out vec2 uv1;
+  uniform UVScale{
+    float colorUVScale;
+    float alphaUVScale;
+    float alphaUVOffset;
+  };
+
+  vec4 vert () {
+    vec4 pos = vec4(a_position, 1);
+      pos = cc_matViewProj * pos;
+
+    uv0 = vec2(a_texCoord.x, (a_texCoord.y * colorUVScale));
+    uv1 = vec2(a_texCoord.x, (a_texCoord.y * alphaUVScale) + alphaUVOffset);
+
+    return pos;
+  }
+}%
+
+CCProgram sprite-fs %{
+  precision highp float;
+  #include <builtin/internal/embedded-alpha>
+
+
+  in vec2 uv0;
+  in vec2 uv1;
+    #pragma builtin(local)
+    layout(set = 2, binding = 12) uniform sampler2D cc_spriteTexture;
+
+
+  vec4 frag () {
+    vec4 o = vec4(1, 1, 1, 1);
+    vec4 a_o = vec4(1, 1, 1, 1);
+
+    a_o = texture(cc_spriteTexture, uv1);
+    o = texture(cc_spriteTexture, uv0);
+
+    o.a = a_o.r;
+
+    return o;
+  }
+}%

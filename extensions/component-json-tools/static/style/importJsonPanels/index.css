@@ -1,0 +1,24 @@
+#app {
+    color: var(--color-normal-contrast-weakest);
+    margin: auto;
+    width: 180px;
+}
+
+div {
+    margin-bottom: 10px;
+}
+
+#title {
+    color: var(--color-normal-contrast-weakest);
+    margin: auto;
+    width: 100%;
+    font-size: 18px;
+}
+
+#nodeField {
+    width: 100px;
+}
+
+#jsonSelect {
+    width: 150px;
+}

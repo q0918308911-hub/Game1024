@@ -1,0 +1,107 @@
+{
+"skeleton": { "hash": "RT+F/tKpptnyObnNXJcNlSgiT9Q", "spine": "3.8.99", "x": -442.48, "y": -274, "width": 892.01, "height": 672 },
+"bones": [
+	{ "name": "root" },
+	{ "name": "FG_reel", "parent": "root" },
+	{ "name": "fx_FG_reel_backlight_l", "parent": "FG_reel", "x": -260, "y": 62 },
+	{ "name": "fx_FG_reel_backlight_r", "parent": "FG_reel", "x": 260, "y": 47.5 },
+	{ "name": "fx_FG_reel_backlight_l2", "parent": "FG_reel", "x": -178.48, "y": 62, "scaleX": 2, "scaleY": 1.5 },
+	{ "name": "fx_FG_reel_backlight_r2", "parent": "FG_reel", "x": 187.54, "y": 47.5, "scaleX": 2, "scaleY": 1.5 }
+],
+"slots": [
+	{ "name": "fx_FG_reel_backlight_r", "bone": "fx_FG_reel_backlight_r", "attachment": "fx_FG_reel_backlight_r" },
+	{ "name": "fx_FG_reel_backlight_r2", "bone": "fx_FG_reel_backlight_r2", "attachment": "fx_FG_reel_backlight_r", "blend": "additive" },
+	{ "name": "fx_FG_reel_backlight_l", "bone": "fx_FG_reel_backlight_l", "attachment": "fx_FG_reel_backlight_l" },
+	{ "name": "fx_FG_reel_backlight_l2", "bone": "fx_FG_reel_backlight_l2", "attachment": "fx_FG_reel_backlight_l", "blend": "additive" },
+	{ "name": "FG_reel", "bone": "FG_reel", "attachment": "FG_reel" },
+	{ "name": "FG_reel_front", "bone": "FG_reel", "attachment": "FG_reel" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"FG_reel": {
+				"FG_reel": { "x": 4, "y": 83.5, "width": 696, "height": 407 }
+			},
+			"FG_reel_front": {
+				"FG_reel": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0.90686, 1, 0.87565, 0.90255, 0.87167, 0.24752, 0.12489, 0.24974, 0.12457, 0.90342, 0.87523, 0.90421, 0.90601, 0.99999, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 3, 9, 10, 4, 9, 3, 0, 2, 3, 4, 8, 9, 5, 8, 4, 7, 8, 5, 7, 5, 6, 2, 0, 1, 10, 0, 3 ],
+					"vertices": [ 352, -120, 287.18, -120, 265.46, -80.34, 262.69, 186.26, -257.08, 185.36, -257.3, -80.69, 265.16, -81.01, 286.58, -120, -344, -120, -344, 287, 352, 287 ],
+					"hull": 11
+				}
+			},
+			"fx_FG_reel_backlight_l": {
+				"fx_FG_reel_backlight_l": { "x": 0.5, "width": 265, "height": 448 }
+			},
+			"fx_FG_reel_backlight_l2": {
+				"fx_FG_reel_backlight_l": { "x": 0.5, "width": 265, "height": 448 }
+			},
+			"fx_FG_reel_backlight_r": {
+				"fx_FG_reel_backlight_r": { "width": 262, "height": 417 }
+			},
+			"fx_FG_reel_backlight_r2": {
+				"fx_FG_reel_backlight_r": { "width": 262, "height": 417 }
+			}
+		}
+	}
+],
+"animations": {
+	"L": {
+		"bones": {
+			"FG_reel": {
+				"translate": [
+					{ "y": 13 }
+				]
+			}
+		}
+	},
+	"P": {
+		"bones": {
+			"FG_reel": {
+				"translate": [
+					{ "y": 27 }
+				]
+			}
+		}
+	},
+	"loop": {
+		"slots": {
+			"fx_FG_reel_backlight_l2": {
+				"color": [
+					{ "color": "ffffff00", "curve": "stepped" },
+					{ "time": 1.5, "color": "ffffff00" },
+					{ "time": 1.7667, "color": "ffffff64" },
+					{ "time": 2.1, "color": "ffffff00", "curve": "stepped" },
+					{ "time": 3, "color": "ffffff00" }
+				]
+			},
+			"fx_FG_reel_backlight_r2": {
+				"color": [
+					{ "color": "ffffff00", "curve": "stepped" },
+					{ "time": 1.5, "color": "ffffff00" },
+					{ "time": 1.7667, "color": "ffffff64" },
+					{ "time": 2.1, "color": "ffffff00" }
+				]
+			}
+		},
+		"bones": {
+			"fx_FG_reel_backlight_r2": {
+				"translate": [
+					{ "x": -46.58, "curve": "stepped" },
+					{ "time": 1.5, "x": -46.58, "curve": 0, "c3": 0.536 },
+					{ "time": 2.1 }
+				]
+			},
+			"fx_FG_reel_backlight_l2": {
+				"translate": [
+					{ "x": 44, "curve": "stepped" },
+					{ "time": 1.5, "x": 44, "curve": 0, "c3": 0.536 },
+					{ "time": 2.1 }
+				]
+			}
+		}
+	}
+}
+}

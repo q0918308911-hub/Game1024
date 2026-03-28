@@ -1,0 +1,19 @@
+#app {
+    color: var(--color-normal-contrast-weakest);
+    margin: auto;
+    width: 180px;
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 60px; /* 為底部按鈕留出空間 */
+}
+
+#div {
+    margin-bottom: 10px;
+}
+
+/* 將創建按鈕固定在右下角 */
+#btn-create {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}

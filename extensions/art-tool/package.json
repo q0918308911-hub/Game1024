@@ -1,0 +1,70 @@
+{
+    "$schema": "./@types/schema/package/index.json",
+    "package_version": 2,
+    "name": "art-tool",
+    "version": "1.0.0",
+    "author": "Cocos Creator",
+    "editor": ">=3.8.3",
+    "scripts": {
+        "preinstall": "node ./scripts/preinstall.js",
+        "build": "tsc"
+    },
+    "description": "i18n:art-tool.description",
+    "main": "./dist/main.js",
+    "devDependencies": {
+        "@cocos/creator-types": "^3.8.3",
+        "@types/node": "^18.17.1"
+    },
+    "panels": {
+        "default": {
+            "title": "i18n:art-tool.panel_name",
+            "type": "dockable",
+            "main": "dist/panels/default",
+            "size": {
+                "min-width": 400,
+                "min-height": 300,
+                "width": 1024,
+                "height": 800
+            }
+        }
+    },
+    "contributions": {
+        "scene": {
+            "script": "./dist/SceneScript.js"
+        },
+        "menu": [
+            {
+                "path": "i18n:art-tool.menu",
+                "label": "i18n:art-tool.open_panel",
+                "message": "open-panel"
+            }
+        ],
+        "messages": {
+            "after-reload": {
+                "methods": [
+                    "afterReload"
+                ]
+            },
+            "open-panel": {
+                "methods": [
+                    "openPanel"
+                ]
+            },
+            "scene:ready": {
+                "methods": [
+                    "sceneReady"
+                ]
+            },
+            "convert-prefab": {
+                "methods": [
+                    "convertPrefab"
+                ]
+            },
+            "open-current-prefab": {
+                "methods": [
+                    "openCurrentPrefab"
+                ]
+            }
+        }
+    }
+}

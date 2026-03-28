@@ -1,0 +1,72 @@
+{
+  "name": "Web_Slot",
+  "server": "",
+  "platform": "web-mobile",
+  "buildPath": "project://build",
+  "debug": false,
+  "md5Cache": true,
+  "skipCompressTexture": false,
+  "sourceMaps": false,
+  "polyfills": {
+    "asyncFunctions": true
+  },
+  "experimentalEraseModules": false,
+  "startSceneAssetBundle": false,
+  "bundleConfigs": [],
+  "useBuiltinServer": false,
+  "mainBundleIsRemote": false,
+  "mainBundleCompressionType": "merge_dep",
+  "useSplashScreen": false,
+  "bundleCommonChunk": false,
+  "packAutoAtlas": true,
+  "startScene": "e68e619c-c714-4d2f-a042-3c7a20dcf74a",
+  "outputName": "game1001",
+  "taskName": "web-mobile",
+  "scenes": [
+    {
+      "url": "db://assets/Game/Game1001/Scenes/Game1001.scene",
+      "uuid": "b3ca8aeb-ffbd-4e44-afa4-8e6045175701"
+    },
+    {
+      "url": "db://assets/Game/Game1001/Scenes/Game1001_Start.scene",
+      "uuid": "e68e619c-c714-4d2f-a042-3c7a20dcf74a"
+    }
+  ],
+  "buildMode": "normal",
+  "packages": {
+    "adsense-h5g-plugin": {
+      "enableAdsense": false,
+      "enableTestAd": false,
+      "__version__": "1.0.1",
+      "AFPHostPropertyCode": "ca-host-pub-5396158963872751",
+      "AFPHostDomain": "douyougame.com",
+      "otherAFPHostPropertyCode": "",
+      "otherAFPDomain": ""
+    },
+    "web-mobile": {
+      "orientation": "auto",
+      "embedWebDebugger": false,
+      "cullEngineAsmJsModule": false,
+      "__version__": "1.0.1"
+    },
+    "cocos-service": {
+      "configID": "3ab0e6",
+      "services": [],
+      "__version__": "3.0.7"
+    }
+  },
+  "__version__": "1.3.7",
+  "logDest": "project://temp/builder/log/web-mobile2024-4-10 09-47.log",
+  "overwriteProjectSettings": {
+    "includeModules": {
+      "physics": "inherit-project-setting",
+      "physics-2d": "inherit-project-setting",
+      "gfx-webgl2": "inherit-project-setting"
+    },
+    "macroConfig": {
+      "cleanupImageCache": "inherit-project-setting"
+    }
+  },
+  "nativeCodeBundleMode": "both",
+  "wasmCompressionMode": false
+}

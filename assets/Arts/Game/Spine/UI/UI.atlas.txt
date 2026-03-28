@@ -1,0 +1,20 @@
+
+UI.webp
+size: 1136,1264
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+FG_frame
+  rotate: false
+  xy: 2, 632
+  size: 1132, 628
+  orig: 1132, 628
+  offset: 0, 0
+  index: -1
+NG_frame
+  rotate: false
+  xy: 2, 2
+  size: 1056, 628
+  orig: 1056, 628
+  offset: 0, 0
+  index: -1
